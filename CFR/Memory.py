@@ -9,6 +9,9 @@ class Memory:
     def sample_batch(self, batch_size=10_000):
         return shuffle(list(self.__storage[:batch_size]))
 
+    def append(self, info_set, regrets):
+        self.__storage.append(info_set, regrets)
+
 
         
         

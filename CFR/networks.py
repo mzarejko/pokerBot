@@ -57,7 +57,7 @@ class Poker_network:
                                 activation='relu')(conc_hist_cards)
         dense_all_second = Dense(self.__small_hidden, kernel_initializer=self.__init_weights,
                                  activation='relu')(dense_all_first)
-        output = Dense(len(params.ACTIONS), activation='linear')(dense_all_second)
+        output = Dense(params.ACTIONS_NUM, activation='linear')(dense_all_second)
 
         model = Model(inputs=[hole_input_layer, board_input_layer, hist_input_layer],
                       outputs=output)
@@ -66,5 +66,5 @@ class Poker_network:
                       optimizer=Adam(learning_rate=self.LEARNING_RATE))
         return model
 
-    def predict(self, info_set):
-        return self.model.predict(info_set)
+    def predict(self, hole, board, hist):
+        return self.model.predict([hole, board, hist])

@@ -25,6 +25,8 @@ class Poker_limit_Emulator:
         self.__current_stacks = {player_uuid: params.STACK,
                                opponent_uuid: params.STACK}
         self.__turn = None
+        self.__hole_cards = {player_uuid: [],
+                             opponent_uuid: []}
 
     def initial_game(self):
         self.emulator.set_game_rule(player_num=params.NUM_PLAYERS,
@@ -34,6 +36,7 @@ class Poker_limit_Emulator:
         
         small_blind = random.choice([self.player_uuid, self.opponent_uuid]) 
         self.__turn = small_blind
+        self.__comunity_cards = np.zeros([len(params.CARDS)])
 
         if small_blind == self.player_uuid:
             players_info = {
@@ -84,7 +87,9 @@ class Poker_limit_Emulator:
                      f'{self.opponent_uuid} {opponent_cards}')
 
         state = self.__deal_player_cards(state, player_cards, opponent_cards)
-        return state, self.__convert_to_one_hot(player_cards), self.__convert_to_one_hot(opponent_cards)
+        self.__hole_cards[self.player_uuid] = self.__convert_to_one_hot(player_cards)
+        self.__hole_cards[self.opponent_uuid] = self.__convert_to_one_hot(opponent_cards)
+        return state
         
     def __deal_player_cards(self, game_state, player_cards, opponent_cards):
         for player in game_state["table"].seats.players:
@@ -99,6 +104,14 @@ class Poker_limit_Emulator:
                                               player.uuid, 
                                               hole_cards)
         return game_state
+
+    def get_hole_cards(self, uuid):
+        if uuid == self.player_uuid:
+            return self.__hole_cards[self.player_uuid]
+        elif uuid == self.opponent_uuid:
+            return self.__hole_cards[self.opponent_uuid]
+        else:
+            raise Exception("error: uuid not exits: ", uuid)
 
     def get_reward(self):
         if self.is_terminal():
@@ -148,7 +161,12 @@ class Poker_limit_Emulator:
         return self.__current_event[0]['round_state']['street']
 
     def sample_action(self):
-        return np.random.choice(params.ACTIONS) 
+        return np.random.choice([params.Actions.RAISE,
+                                 params.Actions.CALL,
+                                 params.Actions.FOLD]) 
+
+    def get_community_cards(self):
+        return self.__comunity_cards
 
     def act(self, state, action):
         # update turn
@@ -158,17 +176,17 @@ class Poker_limit_Emulator:
             self.__turn = self.player_uuid
         
         # perform actions
-        if action == params.ACTIONS[0]:
+        if action == params.Actions.RAISE:
             state, events = self.emulator.apply_action(state, action,
                                                            params.BIG_BLIND+self.__offset)
             logging.info(f'action : raise {params.BIG_BLIND + self.__offset}')
             self.__offset += params.BIG_BLIND
 
-        elif action == params.ACTIONS[1]:
+        elif action == params.Actions.CALL:
             state, events = self.emulator.apply_action(state, action, self.__offset)
             logging.info(f'action : call {self.__offset}')
 
-        elif action == params.ACTIONS[2]:
+        elif action == params.Actions.FOLD:
             state, events = self.emulator.apply_action(state, action, 0)
             logging.info(f'action : fold')
 
@@ -180,5 +198,6 @@ class Poker_limit_Emulator:
         
         community_card = events[0]['round_state']['community_card']
         logging.info(f'community_card : {community_card}\n')
+        self.__comunity_cards = self.__convert_to_one_hot(community_card)
         
-        return state, community_card
+        return state, self.__comunity_cards

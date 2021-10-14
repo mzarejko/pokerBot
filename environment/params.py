@@ -1,3 +1,5 @@
+from enum import Enum
+
 SMALL_BLIND = 5
 ROUNDS_LIMIT = 1 
 ANTE = 0
@@ -22,4 +24,9 @@ NUM_BOARD_CARDS = 5
 FLOP_CARDS = 3
 TURN_CARDS = 1
 RIVER_CARDS = 1
-ACTIONS = ['raise', 'fold', 'call']
+ACTIONS_NUM = 3
+
+class Actions(str, Enum):
+    RAISE = 'raise'
+    FOLD = 'fold w'
+    CALL = 'call'

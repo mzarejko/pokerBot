@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import Enum
 from .networks import Poker_network
 from .Memory import Memory
 import numpy as np
@@ -18,52 +18,87 @@ class DCFR:
 
     def __init__(self, iterations, k):
         self.BET_HISTORY_LENGTH = 20
-        self.bet_history = np.zeros([self.BET_HISTORY_LENGTH])
         
-        self.advantage_memory = Memory()
         self.strategy_memory = Memory()
-        self.advantage_net_player = Poker_network(self.BET_HISTORY_LENGTH)
-        self.advantage_net_opponent = Poker_network(self.BET_HISTORY_LENGTH)
+        self.memory = {Players.PLAYER: Memory(),
+                       Players.OPPONENT: Memory()}
+
+        self.advantage_net = {Players.PLAYER: Poker_network(self.BET_HISTORY_LENGTH),
+                              Players.OPPONENT: Poker_network(self.BET_HISTORY_LENGTH)}
         self.strategy_net = Poker_network(self.BET_HISTORY_LENGTH)
         
         self.ITERATIONS = iterations
         self.K = k
         self.env = Poker_limit_Emulator(Players.PLAYER, Players.OPPONENT)
 
-    def append_bet_to_history(self, timestemp):
-        self.bet_history[timestemp] = 1
-
     def train(self):
-        for t in self.ITERATIONS:
+        for _ in self.ITERATIONS:
             state = self.env.initial_game()
-            state, player_cards, opponent_cards = self.env.choose_cards(state)
-            for p in params.NUM_PLAYERS:
+            state = self.env.choose_cards(state)
+            for p in [Players.PLAYER, Players.OPPONENT]:
                 for k in self.K:
-                    self.traverse(state, timestemp=0)
+                    bet_history = np.zeros([self.BET_HISTORY_LENGTH])
+                    self.traverse(bet_history, state, 0, self.env.get_hole_cards(p),
+                                  self.env.get_community_cards(), p)
     
+    def __predict_strategy(self, hole, board, hist, turn):
+        advantages = self.advantage_net[turn].predict(hole, board, hist)
+        positive_imm_regrets = []
+        for imm_regret in advantages:
+            positive_imm_regrets.append(max(0, imm_regret))
+            
+        cumulative_regrets = sum(positive_imm_regrets)
+        
+        if cumulative_regrets > 0:
+            strategy = positive_imm_regrets / cumulative_regrets
+        else:
+            strategy = np.zeros([params.ACTIONS_NUM])
+            strategy[np.argmax(advantages)] = 1
+
+        return strategy
 
     def traverse(self, 
-                 history,  
+                 bet_history,  
                  state, 
                  timestemp,
-                 player_cards,
-                 opponent_cards,
-                 prob_player=1, 
-                 prob_opponent=1, 
-                 chance_prob=1):
+                 hole_cards,
+                 community_cards,
+                 traverser):
+
         if self.env.is_terminal():
             return self.env.get_reward()
 
-        if self.env.get_turn() == Players.PLAYER:
-            action_utils = np.zeros([len(params.ACTIONS)])
+        if self.env.get_turn() == traverser:
+            action_utils = np.zeros([params.ACTIONS_NUM])
 
+            strategy = self.__predict_strategy(hole_cards, 
+                                                  community_cards,
+                                                  bet_history,
+                                                  traverser)
+             
+            for id, action in enumerate([params.Actions.RAISE,
+                                     params.Actions.CALL,
+                                     params.Actions.FOLD]):
 
-            _, strategy = self.__predict_strategy()
+                new_state, community_cards = self.env.act(state, action)
+                if action == params.Actions.RAISE:
+                    bet_history[timestemp] = 1
 
+                if traverser == Players.PLAYER:
+                    action_utils[id] = -1 * self.traverse(bet_history, new_state, timestemp+1,
+                                                          hole_cards, community_cards,
+                                                          Players.OPPONENT)
+                elif traverser == Players.OPPONENT:
+                    action_utils[id] = -1 * self.traverse(bet_history, new_state, timestemp+1,
+                                                          hole_cards, community_cards,
+                                                          Players.PLAYER)
 
-    
-    def collect_samples(self, history, turn, nn1, nn2):
-        pass
+            util = sum(action_utils*strategy)
+            regrets = action_utils - util
+            self.collect_samples(bet_history, hole_cards, community_cards, traverser, regrets)
+
+    def collect_samples(self, history_bet, hole_cards, community_cards, traverser, regrets):
+        self.memory[traverser].append((hole_cards, community_cards, history_bet), regrets)
         
 
 
