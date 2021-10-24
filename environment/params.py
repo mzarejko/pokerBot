@@ -1,5 +1,3 @@
-from enum import Enum
-
 SMALL_BLIND = 5
 ROUNDS_LIMIT = 1 
 ANTE = 0
@@ -19,14 +17,7 @@ CARDS = ['C2', 'D2', 'H2', 'S2',
          'CQ', 'DQ', 'HQ', 'SQ',
          'CK', 'DK', 'HK', 'SK',
          'CA', 'DA', 'HA', 'SA']
-NUM_HOLE_CARDS = 2
-NUM_BOARD_CARDS = 5
-FLOP_CARDS = 3
-TURN_CARDS = 1
-RIVER_CARDS = 1
 ACTIONS_NUM = 3
+BET_HISTORY_LENGTH = 52
 
-class Actions(str, Enum):
-    RAISE = 'raise'
-    FOLD = 'fold w'
-    CALL = 'call'
+
