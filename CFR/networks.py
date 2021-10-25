@@ -23,7 +23,7 @@ class Poker_network:
                  activation,
                  small_hidden=64, 
                  large_hidden=192,
-                 learning_rate=0.0001):
+                 learning_rate=0.01):
         self.__small_hidden = small_hidden
         self.__large_hidden = large_hidden
         self.__init_weights = initializers.Zeros()
@@ -50,8 +50,7 @@ class Poker_network:
 
         dense_fourth = Dense(self.__small_hidden, kernel_initializer=self.__init_weights,
                                  activation='relu')(dense_third)
-        norm_layer = BatchNormalization()(dense_fourth)
-        output = Dense(params.ACTIONS_NUM, activation=self.__activation)(norm_layer)
+        output = Dense(params.ACTIONS_NUM, activation=self.__activation)(dense_fourth)
 
         model = Model(inputs=input_layer,outputs=output)
 

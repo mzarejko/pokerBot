@@ -11,9 +11,7 @@ from tensorflow.keras.callbacks import TensorBoard
 import time
 from .Tree_visualizer.Json_creator import Json_creator
 
-
 logging.basicConfig(filename='./logs.log', level=logging.DEBUG)
-
 
 sys.path.append('../environment')
 from environment.emulator import Poker_limit_Emulator, params
@@ -23,8 +21,6 @@ class Players(StrEnum):
     PLAYER = 'player'
     OPPONENT = 'opponent'
 
-
-ModTensorBoard(log_dir=f'logs/{Players.PLAYER}/{time.time()}')
 
 class DCFR:
 
@@ -59,7 +55,6 @@ class DCFR:
 
                 if self.memory[traverser].is_enough_samples():
                     self.advantage_net[traverser].clear_net()
-                    breakpoint()
                     info_set, advantages = self.memory[traverser].get_storage()
 
                     if i+1 % visual_each_time == 0:
@@ -71,10 +66,11 @@ class DCFR:
             if show_tree:
                 self.__tree_vis.save_file(f'data.json')
                 self.__tree_vis.clear_tree()
-        info_set, strategies = self.strategy_memory.get_storage()
-        self.strategy_net.train_net(info_set, strategies,
-                                    TensorBoard(log_dir=f'logs/strategy/{time.time()}'))
-        self.strategy_net.save_model(f'model_{time.time()}')
+        if self.strategy_memory.is_enough_samples():
+            info_set, strategies = self.strategy_memory.get_storage()
+            self.strategy_net.train_net(info_set, strategies,
+                                        TensorBoard(log_dir=f'logs/strategy/{time.time()}'))
+            self.strategy_net.save_model(f'model_{time.time()}')
 
     def __predict_strategy(self, hole, board, hist, turn):
         advantages = self.advantage_net[turn].predict(hole, board, hist).ravel()
