@@ -1,6 +1,8 @@
-from CFR.DeepCFR import DCFR
+from DCFR.DeepCFR import DCFR
+from environment.HULH import HULH_Emulator
 
 if __name__ == '__main__':
-    p = DCFR()
-    p.iterate(1, 5, 1)
+    env = HULH_Emulator('P1', 'P2')
+    p = DCFR(env)
+    p.iterate(10, 1_000, 2)
 

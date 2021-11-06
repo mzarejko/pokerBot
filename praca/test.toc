@@ -1,0 +1,15 @@
+\babel@toc {polish}{}
+\contentsline {chapter}{\numberline {1}Wstęp}{2}{}%
+\contentsline {section}{\numberline {1.1}Cel i zakres pracy}{3}{}%
+\contentsline {section}{\numberline {1.2}Przegląd dostępnych rozwiązań}{3}{}%
+\contentsline {subsection}{\numberline {1.2.1}Teoria Gier}{4}{}%
+\contentsline {subsubsection}{Gra w postaci ekstensywnej}{4}{}%
+\contentsline {subsubsection}{Równość Nasha}{4}{}%
+\contentsline {subsubsection}{Podział gier}{5}{}%
+\contentsline {subsubsection}{Metryki}{5}{}%
+\contentsline {subsection}{\numberline {1.2.2}Historia modeli Poker Texas Hold'em}{5}{}%
+\contentsline {chapter}{\numberline {2}CFR}{6}{}%
+\contentsline {section}{\numberline {2.1}Regret Matching}{6}{}%
+\contentsline {section}{\numberline {2.2}Regret Minimization}{7}{}%
+\contentsline {section}{\numberline {2.3}Counterfactual Regret}{7}{}%
+\contentsline {section}{\numberline {2.4}Monte Counterfactual Regret Minimization}{7}{}%
