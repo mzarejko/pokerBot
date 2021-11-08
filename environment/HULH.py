@@ -18,7 +18,7 @@ class HULH_Emulator:
         self.ANTE = 5
         self.NUM_PLAYERS = 2
         self.BIG_BLIND = 10
-        self.STACK = 100
+        self.STACK = 80
         self.CARDS = ['C2', 'D2', 'H2', 'S2',
                       'C3', 'D3', 'H3', 'S3',
                       'C4', 'D4', 'H4', 'S4',

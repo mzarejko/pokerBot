@@ -1,15 +1,21 @@
 \babel@toc {polish}{}
 \contentsline {chapter}{\numberline {1}Wstęp}{2}{}%
 \contentsline {section}{\numberline {1.1}Cel i zakres pracy}{3}{}%
-\contentsline {section}{\numberline {1.2}Przegląd dostępnych rozwiązań}{3}{}%
-\contentsline {subsection}{\numberline {1.2.1}Teoria Gier}{4}{}%
-\contentsline {subsubsection}{Gra w postaci ekstensywnej}{4}{}%
-\contentsline {subsubsection}{Równość Nasha}{4}{}%
-\contentsline {subsubsection}{Podział gier}{5}{}%
-\contentsline {subsubsection}{Metryki}{5}{}%
-\contentsline {subsection}{\numberline {1.2.2}Historia modeli Poker Texas Hold'em}{5}{}%
-\contentsline {chapter}{\numberline {2}CFR}{6}{}%
-\contentsline {section}{\numberline {2.1}Regret Matching}{6}{}%
-\contentsline {section}{\numberline {2.2}Regret Minimization}{7}{}%
-\contentsline {section}{\numberline {2.3}Counterfactual Regret}{7}{}%
-\contentsline {section}{\numberline {2.4}Monte Counterfactual Regret Minimization}{7}{}%
+\contentsline {section}{\numberline {1.2}Teoria oraz istniejące rozwiązania gry}{3}{}%
+\contentsline {subsection}{\numberline {1.2.1}Analiza Texas hold'em Poker}{4}{}%
+\contentsline {subsubsection}{Loose Passive}{4}{}%
+\contentsline {subsubsection}{Loose Aggressive}{5}{}%
+\contentsline {subsubsection}{Tight Passive}{5}{}%
+\contentsline {subsubsection}{Tight Aggressive}{5}{}%
+\contentsline {subsection}{\numberline {1.2.2}Uczenie przez wzmacnianie}{6}{}%
+\contentsline {subsection}{\numberline {1.2.3}Teoria Gier}{6}{}%
+\contentsline {subsubsection}{Gra w postaci ekstensywnej}{6}{}%
+\contentsline {subsubsection}{Równość Nasha}{7}{}%
+\contentsline {subsubsection}{Podział gier}{7}{}%
+\contentsline {subsection}{\numberline {1.2.4}Historia modeli Texas Hold'em Poker}{7}{}%
+\contentsline {section}{\numberline {1.3}Counterfactual Regret Minimization}{7}{}%
+\contentsline {subsection}{\numberline {1.3.1}Regret Matching}{7}{}%
+\contentsline {subsection}{\numberline {1.3.2}Regret Minimization}{8}{}%
+\contentsline {subsection}{\numberline {1.3.3}Counterfactual Regret}{9}{}%
+\contentsline {subsection}{\numberline {1.3.4}Monte Carlo Conterfactual Regret Minimization}{9}{}%
+\contentsline {chapter}{\numberline {2}Deep CFR}{10}{}%

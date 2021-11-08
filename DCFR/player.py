@@ -5,9 +5,9 @@ import time
 
 class Brain:
 
-    def __init__(self, activation, env, uuid):
+    def __init__(self, activation, env, uuid, memory_size=100_000):
         self.uuid = uuid
-        self.__memory = Memory()
+        self.__memory = Memory(size=memory_size)
         self.__net = Poker_network(env, activation) 
 
     def collect_samples(self, bet_history, hole_cards, community_cards, output):
@@ -19,7 +19,7 @@ class Brain:
             info_set, outputs = self.__memory.get_storage()
             if verbose:
                 self.__net.train_net(info_set, outputs, 
-                                                TensorBoard(log_dir=f'logs/adv/{self.uuid}/{time.time()}'))
+                                     tensorboard=TensorBoard(log_dir=f'./logs/{self.uuid}/{time.time()}'))
             else:
                 self.__net.train_net(info_set, outputs)
 

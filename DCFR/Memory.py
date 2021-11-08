@@ -3,7 +3,7 @@ import numpy as np
 
 class Memory:
 
-    def __init__(self, size=20_000, min_size=1_000):
+    def __init__(self, size, min_size=5_000):
         self.__info_sets = deque(maxlen=size)
         self.__outputs = deque(maxlen=size)
         self.__min_size = min_size

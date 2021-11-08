@@ -22,8 +22,8 @@ class Poker_network:
 
         self.LEARNING_RATE = learning_rate
         self.HIST_INPUT = env.BET_HISTORY_LENGTH 
-        self.BATCH_SIZE = 6_000
-        self.EPOCHS = 32_000
+        self.BATCH_SIZE = 500
+        self.EPOCHS = 16_000
 
         self.__env = env
         self.model = self.create_network()
@@ -35,13 +35,9 @@ class Poker_network:
                                   activation='relu')(flat)
         dense_second = Dense(self.__large_hidden, kernel_initializer=self.__init_weights,
                                    activation='relu')(dense_first)
-        dense_third = Dense(self.__large_hidden, kernel_initializer=self.__init_weights,
-                                   activation='relu')(dense_second)
-        dense_fourth = Dense(self.__small_hidden, kernel_initializer=self.__init_weights,
-                                  activation='relu')(dense_third)
 
         dense_last = Dense(self.__small_hidden, kernel_initializer=self.__init_weights,
-                                 activation='relu')(dense_fourth)
+                                 activation='relu')(dense_second)
         norm = BatchNormalization()(dense_last)
         output = Dense(self.__env.ACTIONS_NUM, activation=self.__activation)(norm)
 

@@ -1,0 +1,80 @@
+R1:
+
+enable
+conf t
+hostname R1
+no ip domain-lookup
+service password-encryption
+enable secret class
+line con 0
+password cisco
+login
+logg syn
+line vty 0 4
+password cisco
+login
+banner motd #jsfjowejfwofjw#
+
+int g0/1
+ip address 172.30.10.1 255.255.255.0
+no shut
+int s0/0/0
+ip address 10.1.1.1 255.255.255.252
+clock rate 12800
+no shut
+
+
+R2:
+
+enable
+conf t
+hostname R2
+no ip domain-lookup
+service password-encryption
+enable secret class
+line con 0
+password cisco
+login
+logg syn
+line vty 0 4
+password cisco
+login
+banner motd #jsfjowejfwofjw#
+
+int g0/0
+ip address 209.165.201.1 255.255.255.0
+no shut
+int s0/0/0
+ip address 10.1.1.2 255.255.255.252
+no shut
+
+int s0/0/1
+ip address 10.2.2.2 255.255.255.252
+clock rate 128000
+no shut
+
+
+R3:
+
+enable
+conf t
+hostname R3
+no ip domain-lookup
+service password-encryption
+enable secret class
+line con 0
+password cisco
+login
+logg syn
+line vty 0 4
+password cisco
+login
+banner motd #jsfjowejfwofjw#
+
+int g0/1
+ip address 172.30.30.1 255.255.255.0
+no shut
+int s0/0/1
+ip address 10.2.2.1 255.255.255.252
+no shut
+

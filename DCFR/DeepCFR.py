@@ -2,6 +2,7 @@ import numpy as np
 from tqdm import tqdm
 from .Tree_visualizer.Json_creator import Json_creator
 from .player import Brain 
+import time
 
 
 class DCFR:
@@ -9,23 +10,23 @@ class DCFR:
     def __init__(self, env):
         self.__player = Brain('linear', env, env.player_uuid)
         self.__opponent = Brain('linear', env, env.opponent_uuid)
-        self.__strategy = Brain('softmax', env, 'strategy')
+        self.__strategy = Brain('softmax', env, 'strategy', memory_size=200_000)
         self.__env = env
         self.__tree_diagram = Json_creator()
 
     def __save_tree(self):
-        self.__tree_diagram.save_file(f'./DCFR/Tree_visualizer/data.json')
+        self.__tree_diagram.save_file(f'./DCFR/Tree_visualizer/data_{time.time()}.json')
         self.__tree_diagram.clear_tree()
 
-    def iterate(self, iterate, k, checkpoints=None, verbose_timestep=None):
+    def iterate(self, iterate, k_iter, checkpoints=None, verbose_timestep=None):
         for i in tqdm(range(iterate), position=0, desc="Iterate", ncols=100):
             state, events = self.__env.initial_game()
 
             for traverser in [self.__player, self.__opponent]:
-                for _ in tqdm(range(k), position=1, desc=f"travers {i+1}, {traverser.uuid}", ncols=100):
+                for k in tqdm(range(k_iter), position=1, desc=f"travers {i+1}, {traverser.uuid}", ncols=100):
                     # number of two actions Small blind + Big blind
                     start_timestep = 2 
-                    if verbose_timestep == i+1:
+                    if verbose_timestep['i'] == i+1 and verbose_timestep['k_max'] > k:
                         self.traverse(state, 
                                       events,
                                       traverser,
@@ -40,7 +41,7 @@ class DCFR:
 
                 traverser.train_net()
 
-            if i+1 % checkpoints == 0:
+            if (i+1) % checkpoints == 0:
                 self.__strategy.train_net(verbose=True)
                 self.__strategy.save()
 
