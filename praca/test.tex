@@ -68,20 +68,21 @@
 \tableofcontents{}
 \newpage
 
-\setlength{\parindent}{1.5em}
-\setlength{\parskip}{1em}
+\setlength{\parindent}{0.5em}
+\setlength{\parskip}{0.5em}
 \renewcommand{\baselinestretch}{2.0}
 
 \chapter{Wstęp}
 
 Duży rozwój nauki w ostatnich latach związany z uczeniem maszynowym, spowodował powstanie wielu
-nowoczesnych algorytmów i technologi, które pomagają dzisiaj w codziennych czynnościach lub 
+nowoczesnych algorytmów i technologi, które pomagają aktualnie w codziennych czynnościach lub 
 zastępują ludzi w odpowiedzialnych procesach. 
 
-Przykładem rozwijanych narzędzi związanych z uczeniem maszynowym, używanych w życiu
-prywatnym są asystenci głosowi, tłumacze językowe, modele wyświetlające elementy na
+Można wymienić dzisiaj wiele rozwijanych narzędzi związanych z uczeniem maszynowym, które
+są używanych w życiu
+prywatnym. Są to między innymi asystenci głosowi, tłumacze językowe, modele wyświetlające elementy na
 stronach internetowych na podstawie gustu użytkownika, gry wideo lub inteligentne samochody.
-Dodatkowo sztuczna inteligencja jest mocno wykorzystywana w większości firmach, między 
+Dodatkowo sztuczna inteligencja jest mocno wykorzystywana w wielu firmach, między 
 innymi na halach produkcyjnych, w transporcie, medycynie, cyberbezpieczeństwie. 
 Po mimo tylu możliwości i zastosowań, omawiany temat zyskuje największą popularność
 medialną przez gry rywalizacyjne, gdzie głównym zadaniem jest pokazanie przewagi algorytmów względem
@@ -90,40 +91,40 @@ musieli stoczyć pojedynek z wytrenowaną sztuczną inteligencją.
 
 
 Między innymi w 2016 roku zorganizowano
-mecz między Fan Hui, mistrzem Europy w chińskiej grze 'Go' oraz algorytmem 'AlphaGo' \cite{Go}.
-Model utworzony przez zespół 'DeepMind' osiągnął duży sukces przez wygraną z przeciwnikiem,
-do tej pory gra była uważana powszechnie za skomplikowaną i trudną do rozwiązania.
+mecz między Fan Hui, mistrzem Europy w chińskiej grze Go oraz algorytmem AlphaGo \cite{Go}.
+Model utworzony przez zespół DeepMind osiągnął duży sukces przez wygraną z przeciwnikiem.
+Do tej pory gra była uważana powszechnie za skomplikowaną i trudną do rozwiązania.
 
-W 2019 roku utworzono model zwany 'OpenAI Five' czyli pierwsze na świecie AI, które pokonało
-mistrza świata "Team OG" w rywalizacji typu e-sport \cite{Dota2}. Gra 'Dota 2' polega na rywalizacji 5-osobowych
+W 2019 roku utworzono model zwany OpenAI Five czyli pierwsze na świecie AI, które pokonało
+mistrza świata Team OG w rywalizacji typu e-sport \cite{Dota2}. Gra Dota 2 polega na rywalizacji 5-osobowych
 zespołów na okreslonej mapie.
 Wydarzenie było mocno omawiane w mediach z powodu pierwszego takiego osiągnięcia w skali światowej
 oraz skąplikowania gry. 
-Dla porównania środowisko 'Go' zawiera 150 możliwych ruchów na turę, "Dota 2"
+Dla porównania środowisko Go zawiera 150 możliwych ruchów na turę, Dota 2
 może posiadać ich 20 000 w czasie 45 minut \cite{Dota2}.
 
 
 Takie wydarzenia pokazały, że w dzisejszych czasach sztuczna inteligencja może przewyrzszać
 myśleniem strategicznym człowieka.
 Często w tworzeniu takich programów dużym wyzwaniem jest poziom skomplikowania gry. 
-Zależy to między innymi od typu środowisko, deterministycznego lub stochastyczne, 
-od ilości zadań wymaganych aby wygrać grę lub od tego czy przestrzeń wymiarowa jest
+Zależy to między innymi od typu środowiska, deterministycznego lub stochastyczne, 
+od poziomu dynamiki gry lub od tego czy przestrzeń wymiarowa jest
 dyskretna lub nieskończona.
 Aktualnie jednak jednym z największych problemów takich programów jest niedostateczny
 zakres dostępnych informacji o środowisku. Sztuczna inteligencja, aby zwyciężać
 musi zostać nauczona grać, więc potrzebuje dużej ilości danych wejściowych, które są 
-rozróżnialne. Przykładem gry, która jest pozbawiona tego problemu są szachy \cite{chess}. 
+rozróżnialne. Przykładem gry, która jest pozbawiona tego problemu są szachy. 
 Sztuczna inteligencja wykonuje ruchy bazując na informacjach w jaki sposób są ułożone pionki
 w danym momencie i na historii dotychczasowej gry. Zmiana stanu środowiska jest
 zauważalna przez gracza co pozwala na natychmiastową reakcję i prostsze sposoby na uczenie
 maszynowe. Przykładem gry ciężkiej do rozwiązania, w której występuje nie pełny zestaw informacji 
-jest Poker Texas Holdem \cite{chess}, po mimo wiedzy o kartach w ręce i na stole, gracz nie posiada wiedzy o 
+jest Poker Texas Holdem, po mimo wiedzy o kartach w ręce i na stole, gracz nie posiada wiedzy o 
 kartach przeciwników, w takim przypadku dwa pozornie identyczne stany środowiska w
 rzeczywistości mogą się różnić. Z powodu takich cech większość popularnych algorytmów jak 
-'DQN', 'Actor-Critic' lub 'AlphaZero' staje sie bezużyteczna i nie daje dobrych rezultatów.
+DQN, Actor-Critic lub AlphaZero staje sie bezużyteczna i nie daje dobrych rezultatów.
 
 W niniejszej pracy przedstawiono sposób możliwego rozwiązania takiego problemu przy pomocy 
-algorytmu o nazwie "Deep CFR". Pierwszy i drugi rozdział dokładnie opisuje cele pracy, zakres 
+algorytmu o nazwie Deep CFR. Pierwszy i drugi rozdział dokładnie opisuje cele pracy, zakres 
 projektu, 
 oraz zagadnienia wymagane aby zrozumieć działanie algorytmu. W trzecim rozdziale skupiono się na
 implementacji, czwarty pokazuje uzyskane wyniki.
@@ -131,34 +132,33 @@ implementacji, czwarty pokazuje uzyskane wyniki.
 
 \section{Cel i zakres pracy}
 
-Głównym celem pracy jest implementacji algorytmu "Deep CFR" do gry "Heads Up Limit Texas 
-Poker Hold'em". Jest to popólarna wersja rozgrywki 2-osobowej gdzie uczestnicy nie mogą wybrać
+Głównym celem pracy jest implementacji algorytmu Deep CFR do gry Heads Up Limit Texas 
+Poker Hold'em. Jest to popólarna wersja rozgrywki 2-osobowej gdzie uczestnicy nie mogą wybrać
 samodzielnie kwoty podbicia stawki, jest ona ograniczona przez ustaloną wartość. Takie środowisko
 minimalizuje możliwe ruchy do 3 akcji. Używając omawianego algorytmu
 wytrenowano 5 modeli rozpoznawania, które zostały następnie wykorzystane do rozegrania
 turnieju składającego się na wszystkie kombinacje rozgrywek modeli po
-10 powtórzen gry. Taki proces pozwoli określić, który model najlepiej gra w 
-"Heads Up Limit Texas Poker Hold'em". 
+10 powtórzen gry. Taki proces pozwoli określić, który model wydaje się najbardziej dopracowany. 
 
 \section{Teoria oraz istniejące rozwiązania gry}
 
 W ciągu ostatnich 10 lat powstało wiele algorytmów rozwiązujących różne werjse gry Poker.
-Miedzy innymi 'Counterfactual Regret Minimization','Extensive-Form Fictitious Play', 
-'Neural Fictitious Self-Play' wykorzystujący sieci neuronowe  oraz algorytm 'DQN' lub
-'Regret Policy Gradients'. Pierwszy z wymienionych, CFR powstał w 2007 roku i był pierwszą 
-pomyślną próbą rozwiązania środowiska 'Texas Hold'em'. To na jego podstawie utworzono wiele nowoczesnych
-algorytmów, które rozwiązały gre HULH \cite{eq}. W 2010 roku powstał algorytm XFP testowany na 
-prostszej wersji gry, 'Texas Hold'em' \cite{FSEG}. Jednym z nowocześniejszych algorytmów jest
-'Regret Policy Gradients' oparty na MDP.
-Z wymienionych algorytmów zaimplementowanym rozwiązaniem w niniejszej pracy jest 'CFR' 
+Miedzy innymi Counterfactual Regret Minimization,Extensive-Form Fictitious Play, 
+Neural Fictitious Self-Play wykorzystujący sieci neuronowe  oraz algorytm DQN lub
+Regret Policy Gradients. Pierwszy z wymienionych, CFR powstał w 2007 roku i był jednym z pierwszych 
+pomyślną próbą rozwiązania środowiska Texas Hold'em \cite{rmg}. To na jego podstawie utworzono wiele nowoczesnych
+algorytmów, które dają szanse rozwiązać takie środowiska jak HULH \cite{eq}. W 2010 roku powstał algorytm XFP testowany na 
+prostszej wersji gry Texas Hold'em \cite{FSEG}. Innym istniejącym algorytmów jest
+Regret Policy Gradients oparty na MDP.
+Z wymienionych algorytmów zaimplementowanym rozwiązaniem w niniejszej pracy jest CFR 
 rozszerzony o sieci neuronowe,
-zwany 'Deep CFR' z wersją gry 'Heads Up Limit Texas Hold'em'. Daje on szybką zbierzność do odpowiedniego stanu, który zostanie omówiony w
-dalszej części rozdziału, dodatkowo jest prostszy i wymaga mniejszej mocy obliczeniowej niż bazowy 
+zwany Deep CFR z wersją gry Heads Up Limit Texas Hold'em. Daje on szybką zbierzność,
+dodatkowo jest prostszy i wymaga mniejszej mocy obliczeniowej niż bazowy 
 CFR \cite{dcfr}.
 
 \subsection{Analiza Texas hold'em Poker}
 
-Omawiana gra jest jedną z najpopularniejszych gier występujących w kasynach, dodatkowo jest to
+Omawiana gra jest jedną z najpopularniejszych rywalizacji występujących w kasynach, dodatkowo jest to
 dominująca gra hazardowa. Można ją zcharakteryzować tym, że jest nie deterministyczna oraz częściowo 
 obserwowalna \cite{sp}.  
 
@@ -168,6 +168,7 @@ losowość czy umiejętności. Jak wynika z badań dużym aspektem pomagającym 
 jest panowanie na emocjami, dokładna analiza stanu gry oraz umiejętność opuźnienia natychmiastowej
 nagrody z możliwością jej zwiększenia w puźniejszych turach oraz pamięć o wynikach z poprzednich 
 rund \cite{gm}. 
+
 \begin{figure}[h!]
             \center
            \includegraphics[width=0.5\textwidth]{./img/classification.pdf}
@@ -220,28 +221,33 @@ agresywnie \cite{class}.
 
 Jak wynika z powyrzszych faktów, gra 'Poker Texas Hold'em' zawiera wiele elementów nie związanych z
 losowością, gdzie dobieranie odpowiedniej strategi do typu gracza pełni kluczową rolę. W takim
-wypadku jest uzasadnione wysunięcie tezy, że można utworzyć sztuczną inteligencję dobierającą
-odpowiedni rodzaj strategii do odpowiedniego stanu gry.
+wypadku jest uzasadnione wysunięcie tezy, że można utworzyć sztuczną inteligencję mogącą wygrywać w
+pokera z ludzmi.
 
 \subsection{Uczenie przez wzmacnianie}
 
+Jest wiele sposobów na tworzenie sztucznej inteligencji do gier, między innymi mozna użyć technik uczenia
+nadzorowanego pod warunkiem jeśli przygotuje się odpowiednie zbiory danych. W pracy jednak
+zdecydowano się na uczenie przez wzmacnianie. Wynika to z faktu, że jest mało publicznych zapisów
+gry profesjonalnych graczy, które mogły by posłużyć jako zbiory uczące. Algorytmy należące do
+wybranego działu uczenia maszynowego powinny być w stanie uczyć się na podstawie interakcji ze
+środowiskiem.  
 
 
 \subsection{Teoria Gier}
 
 Aby zrozumieć działanie wymienionych algorytmów nalerzy zapoznać się
-działem matematyki o nazwie "Teoria Gier" \cite{gt}. Bada on optymalne zachowanie w grach
+działem matematyki o nazwie "Teoria Gier" . Bada on optymalne zachowanie w grach
 hazardowych przez dobieranie odpowiedniej strategii bazującej na zasadzie "Równości Nasha" oraz 
-opisie środowiska jako gry w postaci ektensywnej.
+opisie środowiska jako gry w postaci ektensywnej \cite{gt}.
 
 \subsubsection{Gra w postaci ekstensywnej}
 
-Aby rozwiązać skąplikowane grę należy ją przeanalizować przy pomocy uproszczonego opisu. Gry w
+Gry w
 formie ekstensywnej można przedstawić jako drzewo decyzyjne gdzie każdy węzeł rozgałęzia się na
 możliwe akcje oraz identyfikuje aktualny stan gracza przez zestaw informacji I,
-ostatnie węzły to stany końcowe gdzie określony gracz zyskuje nagrode lub ją traci.
-Poniewż drzewo przedstawia grę wielu graczy, dlatego każdy z węzłów należy przypisać odpowiedniemu
-uczestnikowi. 
+ostatnie węzły to stany końcowe gdzie określony gracz zyskuje nagrode lub ją traci. Jest to sposób
+na uproszczony opisu gry.
 
 \begin{figure}[h!]
   \centering
@@ -252,19 +258,18 @@ uczestnikowi.
 
 \subsubsection{Równość Nasha}
 
-W grach postaci normalnej \cite{n} to twierdzenie określa perfekcyjny stan gry gdzie wszyscy gracze wykorzystują najlepszy
+W grach to twierdzenie określa perfekcyjny stan gry gdzie wszyscy gracze wykorzystują najlepszy
 zestaw strategii, którego zmiana przyniesie tylko straty. Oznacza to, że nie jest możliwe
 zwiększenie uzyskanej nagrody bedąc w tym stanie \cite{gt}.
 
-\subsubsection{Podział gier}
+\subsubsection{Zero-sum}
 
-Dodatkowo dział nauki zakłada, że omawiane środowiska można podzielić na gry o sumie stałej, 
-zmiennej oraz zerowej. Wszystkie wymienione formy opisują różnice między wygraną i przegraną 
-graczy. W pracy założono, że "Heads Up Poker Texas Hold'em" jest grą
+W pracy założono, że "Heads Up Poker Texas Hold'em" jest grą
 2-osobową o sumie zerowej, czyli wygrana jednego
 uczestnika oznacza całkowitą porażkę oponenta w wyskokości wygranej stawki w taki sposób, że suma 
-wygranej i przegranej wynosi zero. W takiej formie można
-zaimplementować "Deep CFR", który ma szanse zbiec się do stanu bliskiego "Równości Nasha" \cite{dcfr}.
+wygranej i przegranej wynosi zero.
+W takiej formie można
+zaimplementować Deep CFR, który ma szanse zbiec się do stanu bliskiego "Równości Nasha" \cite{dcfr}.
 Algorytm będzie przez wiele iteracji eksplorował drzewo decyzyjne i dobierał odpowiednie 
 strategie aż trafi na takie, które dają najlepsze rezultaty.
 
@@ -272,12 +277,12 @@ strategie aż trafi na takie, które dają najlepsze rezultaty.
 \subsection{Historia modeli Texas Hold'em Poker}
 
 Bazując na teorii gier oraz różnych algorytmach powstało wiele rozwiązań różnych wersji gry Poker.
-Pierwsze dokumenty naukowe badające grę zaczęły powstawać w 2005 roku omawiające bardzo proste
-środowiska jak "Poker Kuhn", na pierwszy duży sukces trzeba było czekać 10 lat.
-W 2015 roku utworzono sztuczną inteligencje "Cepheus" rozwiązującą problem
-"Heads Up Limit Texas Hold'em" wykorzystujące algorytm CFR+. Po tym osiągnięciu rozpoczęto prace nad
-algorytmem mogącym rozwiązać problem gry "Heads Up No-limit Texas Hold'em". Zajeło to 2 lata od 
-"Cepheus'a", model nazwano "DeepStack", mieszał on techniki znane z CFR z siecimi neuronowymi. 
+Pierwsze dokumenty naukowe omawiały bardzo proste
+środowiska jak Poker Kuhn.
+Dopiero w 2015 roku utworzono pierwszą znaną sztuczną inteligencję Cepheus rozwiązującą problem
+Heads Up Limit Texas Hold'em wykorzystujące algorytm CFR+. Po tym osiągnięciu rozpoczęto prace nad
+algorytmem mogącym rozwiązać problem gry Heads Up No-limit Texas Hold'em. Zajeło to 2 lata od 
+Cepheus'a, model nazwano "DeepStack", mieszał on techniki znane z Deep CFR. 
 Przetestowano go na 33 profesjonalnych graczach w wielu iteracjach gry. Algorytm w większości
 przypadków wygrał \cite{ds}. Była to pierwsza wygrana AI z człowiekiem w najtrudniejszej wersji gry Poker.
 
@@ -305,6 +310,7 @@ Gdzie $R^{t} \text{(a)}$ jest równe formule 2.2, a $R^{t,\text{+}}(a)$ oblicza 
    R^{t} (a) = \frac{1}{T} {\sum_{t=1}^{T} u^{t} (a)} - \sum_{a \in A} p^{t} (a) u^{t} (a)
 \end{equation}
 
+\vspace{1cm}
 \begin{equation}
    R^{t,\text{+}}(a) = max(R^t(a),0)
 \end{equation}
@@ -312,7 +318,7 @@ Gdzie $R^{t} \text{(a)}$ jest równe formule 2.2, a $R^{t,\text{+}}(a)$ oblicza 
 Podsómowując pwyżesze wzory, dla każdej akcji wektora w danym stanie wylicza się $R^{t}(a)$, gdzie
 należy skorzystać z sumy przyszłych wartości $u^{t}(a)$ oraz $p^{t}(a)$ 
 dla wybrania danych ruchów. Całość obrazuje jak bardzo gracz żałuje wybranych
-akcji w czasie od t do T.
+akcji w czasie od t.
 
 \subsection{Regret Minimization}
 
@@ -368,6 +374,13 @@ Teraz kożystając z formuły 2.7 oraz metody 'Regret Matching' można zaktualiz
 stanie I dla akcji a.
 
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{./img/rsp.png}
+  \caption{Drzewo decyzyjne dla algorytmu
+  CFR \cite{iig}.}
+\end{figure}
+
 \subsection{Monte Carlo Conterfactual Regret Minimization}
 
 W praktyce algorytm CFR przelicza całego drzewa decyzyjnego w jednej iteracji co tworzy wymagania
@@ -412,7 +425,6 @@ popularny algorytm NFSP z 2016 roku \cite{dcfr}.
    \bibitem{class} Félix, Dinis Alexandre Marialva. "Artificial intelligence techniques in games with incomplete information: opponent modelling in Texas Hold'em." (2008).
 
    \bibitem{gt} Myerson, Roger B. Game theory. Harvard university press, 2013.
-   \bibitem{chess} Koller, Daphne, and Avi Pfeffer. "Generating and solving imperfect information games." IJCAI. 1995.
    \bibitem{rmg} Zinkevich, Martin, et al. "Regret minimization in games with incomplete information." Advances in neural information processing systems 20 (2007): 1729-1736.
    \bibitem{dcfr} Brown, Noam, et al. "Deep counterfactual regret minimization." International conference on machine learning. PMLR, 2019. 
    \bibitem{ds} Moravčík, Matej, et al. "Deepstack: Expert-level artificial intelligence in heads-up no-limit poker." Science 356.6337 (2017): 508-513. 

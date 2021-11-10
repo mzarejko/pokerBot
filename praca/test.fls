@@ -461,6 +461,11 @@ INPUT ./img/tree1.pdf
 INPUT ./img/tree1.pdf
 INPUT ./img/tree1.pdf
 INPUT ./img/tree1.pdf
+INPUT ./img/rsp.png
+INPUT ./img/rsp.png
+INPUT ./img/rsp.png
+INPUT ./img/rsp.png
+INPUT ./img/rsp.png
 INPUT test.aux
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc

@@ -11,12 +11,12 @@ class Poker_network:
     def __init__(self, 
                  env,
                  activation,
-                 small_hidden=128, 
-                 large_hidden=256,
-                 learning_rate=0.001):
+                 small_hidden=256, 
+                 large_hidden=512,
+                 learning_rate=0.0001):
         self.__small_hidden = small_hidden
         self.__large_hidden = large_hidden
-        self.__init_weights = initializers.Zeros()
+        self.__init_weights = initializers.RandomUniform(minval=-0.005, maxval=0.005)
         self.__path_to_save = './models/'
         self.__activation = activation
 
@@ -43,8 +43,12 @@ class Poker_network:
 
         model = Model(inputs=input_layer,outputs=output)
 
-        model.compile(loss='mse',
-                      optimizer=Adam(learning_rate=self.LEARNING_RATE))
+        def loss_func(y_true, y_pred):
+            output, timestep = y_true[0], y_true[1]
+            return timestep*(output - y_pred)**2
+
+        model.compile(loss=loss_func,
+                      optimizer=Adam(learning_rate=self.LEARNING_RATE, clipnorm=1))
         return model
 
     def predict(self, hole, board, hist):
@@ -52,7 +56,7 @@ class Poker_network:
         return self.model.predict(data[np.newaxis, :])
 
     def train_net(self, info_set, output, tensorboard=None):
-        early_stop = EarlyStopping(monitor='val_loss', patience=5)
+        early_stop = EarlyStopping(monitor='val_loss', patience=10)
 
         if tensorboard:
             callbacks = [early_stop, tensorboard]

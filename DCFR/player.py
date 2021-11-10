@@ -10,18 +10,18 @@ class Brain:
         self.__memory = Memory(size=memory_size)
         self.__net = Poker_network(env, activation) 
 
-    def collect_samples(self, bet_history, hole_cards, community_cards, output):
-        self.__memory.append(hole_cards, community_cards, bet_history, output)
+    def collect_samples(self, bet_history, hole_cards, community_cards, timestep, output):
+        self.__memory.append(hole_cards, community_cards, bet_history, timestep, output)
 
     def train_net(self, verbose=False):
         if self.__memory.is_enough_samples():
             self.__net.clear_net()
-            info_set, outputs = self.__memory.get_storage()
+            info_set, timesteps, outputs = self.__memory.get_storage()
             if verbose:
-                self.__net.train_net(info_set, outputs, 
+                self.__net.train_net(info_set, [outputs, timesteps], 
                                      tensorboard=TensorBoard(log_dir=f'./logs/{self.uuid}/{time.time()}'))
             else:
-                self.__net.train_net(info_set, outputs)
+                self.__net.train_net(info_set, [outputs, timesteps])
 
     def predict(self, hole, board, hist):
         return self.__net.predict(hole, board, hist).ravel()

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  7 NOV 2021 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  9 NOV 2021 00:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -537,21 +537,31 @@ Rozdzia\l  1.
 <./img/classification.pdf, id=17, 705.62834pt x 421.10078pt>
 File: ./img/classification.pdf Graphic file (type pdf)
 <use ./img/classification.pdf>
-Package pdftex.def Info: ./img/classification.pdf  used on input line 173.
+Package pdftex.def Info: ./img/classification.pdf  used on input line 174.
 (pdftex.def)             Requested size: 227.62206pt x 135.83447pt.
  [4 <./img/classification.pdf>]
 <./img/class.pdf, id=31, 458.08937pt x 298.75392pt>
 File: ./img/class.pdf Graphic file (type pdf)
 <use ./img/class.pdf>
-Package pdftex.def Info: ./img/class.pdf  used on input line 216.
+Package pdftex.def Info: ./img/class.pdf  used on input line 217.
 (pdftex.def)             Requested size: 227.62206pt x 148.45119pt.
  [5 <./img/class.pdf>]
 <./img/tree1.pdf, id=42, 529.22125pt x 421.10078pt>
 File: ./img/tree1.pdf Graphic file (type pdf)
 <use ./img/tree1.pdf>
-Package pdftex.def Info: ./img/tree1.pdf  used on input line 248.
+Package pdftex.def Info: ./img/tree1.pdf  used on input line 254.
 (pdftex.def)             Requested size: 318.66948pt x 253.56198pt.
- [6 <./img/tree1.pdf>] [7] [8] [9]
+ [6 <./img/tree1.pdf>] [7]
+<./img/rsp.png, id=224, 618.81187pt x 309.40594pt>
+File: ./img/rsp.png Graphic file (type png)
+<use ./img/rsp.png>
+Package pdftex.def Info: ./img/rsp.png  used on input line 379.
+(pdftex.def)             Requested size: 273.14923pt x 136.5781pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] [9 <./img/rsp.png (PNG copy)>]
 Rozdzia\l  2.
 [10
 
@@ -559,18 +569,18 @@ Rozdzia\l  2.
 
 ] [12] (./test.aux) ) 
 Here is how much of TeX's memory you used:
- 6063 strings out of 478994
- 87018 string characters out of 5864750
- 443024 words of memory out of 5000000
+ 6065 strings out of 478994
+ 87050 string characters out of 5864750
+ 444019 words of memory out of 5000000
  23455 multiletter control sequences out of 15000+600000
  410920 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,14n,88p,305b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,14n,88p,305b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy8.pfb>
-Output written on test.pdf (13 pages, 332813 bytes).
+Output written on test.pdf (13 pages, 407318 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
+ 285 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

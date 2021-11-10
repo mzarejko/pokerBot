@@ -25,19 +25,19 @@ class DCFR:
             for traverser in [self.__player, self.__opponent]:
                 for k in tqdm(range(k_iter), position=1, desc=f"travers {i+1}, {traverser.uuid}", ncols=100):
                     # number of two actions Small blind + Big blind
-                    start_timestep = 2 
+                    timestep = 2 
                     if verbose_timestep['i'] == i+1 and verbose_timestep['k_max'] > k:
                         self.traverse(state, 
                                       events,
                                       traverser,
-                                      start_timestep,
+                                      timestep,
                                       verbose=True)
                         self.__save_tree()
                     else:
                         self.traverse(state, 
                                       events,
                                       traverser,
-                                      start_timestep)
+                                      timestep)
 
                 traverser.train_net()
 
@@ -56,7 +56,9 @@ class DCFR:
         if cumulative_regrets > 0:
             strategy = positive_imm_regrets / cumulative_regrets
         else:
-            strategy = np.repeat(1/self.__env.ACTIONS_NUM, self.__env.ACTIONS_NUM)
+            highest_adv = np.argmax(advantages)
+            strategy = positive_imm_regrets
+            strategy[highest_adv] = 1
 
         return strategy
 
@@ -100,6 +102,7 @@ class DCFR:
             traverser.collect_samples(self.__env.get_bet_history(events),
                                       self.__env.get_hole_cards(state, traverser.uuid),
                                       self.__env.get_community_cards(state),
+                                      timestep,
                                       regrets)
             return util
 
@@ -117,6 +120,7 @@ class DCFR:
             self.__strategy.collect_samples(self.__env.get_bet_history(events),
                                             self.__env.get_hole_cards(state, turn.uuid),
                                             self.__env.get_community_cards(state),
+                                            timestep,
                                             strategy)
 
             action = self.__env.sample_action(state, strategy)
