@@ -1,6 +1,6 @@
 import numpy as np
 from tqdm import tqdm
-from .Tree_visualizer.Json_creator import Json_creator
+from .Tree_visualizer.Tree_creator import Tree_creator
 from .player import Brain 
 import time
 
@@ -12,13 +12,13 @@ class DCFR:
         self.__opponent = Brain('linear', env, env.opponent_uuid)
         self.__strategy = Brain('softmax', env, 'strategy', memory_size=200_000)
         self.__env = env
-        self.__tree_diagram = Json_creator()
+        self.__tree_diagram = Tree_creator()
 
     def __save_tree(self):
         self.__tree_diagram.save_file(f'./DCFR/Tree_visualizer/data_{time.time()}.json')
         self.__tree_diagram.clear_tree()
 
-    def iterate(self, iterate, k_iter, checkpoints=None, verbose_timestep=None):
+    def iterate(self, iterate, k_iter, checkpoints=None, verbose_timestep={}):
         for i in tqdm(range(iterate), position=0, desc="Iterate", ncols=100):
             state, events = self.__env.initial_game()
 
@@ -26,15 +26,16 @@ class DCFR:
                 for k in tqdm(range(k_iter), position=1, desc=f"travers {i+1}, {traverser.uuid}", ncols=100):
                     # number of two actions Small blind + Big blind
                     timestep = 2 
-                    if verbose_timestep['i'] == i+1 and verbose_timestep['k_max'] > k:
-                        self.traverse(state, 
+                    if verbose_timestep:
+                        if verbose_timestep['i'] == i+1 and verbose_timestep['k_max'] > k:
+                            self.__traverse(state, 
                                       events,
                                       traverser,
                                       timestep,
                                       verbose=True)
-                        self.__save_tree()
+                            self.__save_tree()
                     else:
-                        self.traverse(state, 
+                        self.__traverse(state, 
                                       events,
                                       traverser,
                                       timestep)
@@ -62,7 +63,7 @@ class DCFR:
 
         return strategy
 
-    def traverse(self, 
+    def __traverse(self, 
                  state, 
                  events,
                  traverser,
@@ -87,7 +88,7 @@ class DCFR:
             for id, action in enumerate(self.__env.get_legal_actions(state)):
                 new_state, new_events = self.__env.act(state, action)
                     
-                action_utils[id] = -1 * self.traverse(new_state, 
+                action_utils[id] = -1 * self.__traverse(new_state, 
                                                       new_events, 
                                                       traverser,
                                                       timestep+1,
@@ -125,9 +126,12 @@ class DCFR:
 
             action = self.__env.sample_action(state, strategy)
             new_state, new_events = self.__env.act(state, action) 
-            return -1 * self.traverse(new_state,
-                                      new_events,
-                                      traverser,
-                                      timestep+1,
-                                      self.__env.get_turn(state),
-                                      verbose)
+            util =  self.__traverse(new_state,
+                                    new_events,
+                                    traverser,
+                                    timestep+1,
+                                    self.__env.get_turn(state),
+                                    verbose)
+            if verbose:
+                self.__tree_diagram.update_data(events, timestep, util)
+            return -util

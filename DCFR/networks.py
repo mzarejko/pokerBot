@@ -5,6 +5,8 @@ from tensorflow.keras import initializers
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.metrics import mean_squared_error
+
 
 class Poker_network:
 
@@ -19,16 +21,25 @@ class Poker_network:
         self.__init_weights = initializers.RandomUniform(minval=-0.005, maxval=0.005)
         self.__path_to_save = './models/'
         self.__activation = activation
+        self.__learning_rate = learning_rate
 
-        self.LEARNING_RATE = learning_rate
-        self.HIST_INPUT = env.BET_HISTORY_LENGTH 
-        self.BATCH_SIZE = 500
-        self.EPOCHS = 16_000
+        self.__batch_size = 500
+        self.__epochs = 16_000
 
         self.__env = env
-        self.model = self.create_network()
+        self.model = self.__create_network()
 
-    def create_network(self):
+    @staticmethod
+    def loss_func(y_true, y_pred):
+        output, timestep = y_true[:, :-2], y_true[:, -1]
+        value =  tf.math.reduce_mean(
+                tf.math.multiply(
+                    ((output - y_pred)**2),
+                    timestep[:, np.newaxis])
+        )
+        return value
+
+    def __create_network(self):
         input_layer = Input(shape=(len(self.__env.CARDS), 3))
         flat = Flatten()(input_layer)
         dense_first = Dense(self.__large_hidden, kernel_initializer=self.__init_weights,
@@ -43,33 +54,33 @@ class Poker_network:
 
         model = Model(inputs=input_layer,outputs=output)
 
-        def loss_func(y_true, y_pred):
-            output, timestep = y_true[0], y_true[1]
-            return timestep*(output - y_pred)**2
 
-        model.compile(loss=loss_func,
-                      optimizer=Adam(learning_rate=self.LEARNING_RATE, clipnorm=1))
+        model.compile(loss=Poker_network.loss_func,
+                      optimizer=Adam(learning_rate=self.__learning_rate, clipnorm=1),
+                      run_eagerly=True)
         return model
 
     def predict(self, hole, board, hist):
         data = np.stack((hole, board, hist), axis=-1)
         return self.model.predict(data[np.newaxis, :])
 
-    def train_net(self, info_set, output, tensorboard=None):
+    def train_net(self, info_set, output, timesteps, tensorboard=None):
         early_stop = EarlyStopping(monitor='val_loss', patience=10)
 
         if tensorboard:
             callbacks = [early_stop, tensorboard]
         else:
             callbacks = [early_stop]
-            
+        
+        timesteps = np.array(timesteps)[:, np.newaxis]
+        out_merge = np.append(output, timesteps, axis=1)
         with tf.device('/gpu:0'):
             self.model.fit(np.array(info_set), 
-                           np.array(output),
+                           out_merge,
                            validation_split=0.2,
                            shuffle=True,
-                           batch_size=self.BATCH_SIZE,
-                           epochs=self.EPOCHS,
+                           batch_size=self.__batch_size,
+                           epochs=self.__epochs,
                            verbose=1,
                            callbacks=callbacks)
 

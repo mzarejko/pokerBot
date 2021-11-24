@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  9 NOV 2021 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  23 NOV 2021 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,43 +195,25 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 (Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 360.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 360.
-) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/03/24 3.56 The Babel package
- (/usr/share/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/03/24 3.56 Babel common definitions
-\babel@savecnt=\count271
-\U@D=\dimen160
-\l@babelnohyphens=\language87
- (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
-)
-\bbl@dirlevel=\count272
- (/usr/share/texmf-dist/tex/generic/babel-polish/polish.ldf
-Language: polish 2005/03/31 v1.2l Polish support from the babel system
-Package babel Info: Making " an active character on input line 83.
-\pl@left=\dimen161
-\pl@down=\dimen162
-\pl@right=\dimen163
-\pl@temp=\dimen164
-)) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+) (/usr/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count273
+\c@tracingmulticols=\count271
 \mult@box=\box52
-\multicol@leftmargin=\dimen165
-\c@unbalance=\count274
-\c@collectmore=\count275
-\doublecol@number=\count276
-\multicoltolerance=\count277
-\multicolpretolerance=\count278
-\full@width=\dimen166
-\page@free=\dimen167
-\premulticols=\dimen168
-\postmulticols=\dimen169
+\multicol@leftmargin=\dimen160
+\c@unbalance=\count272
+\c@collectmore=\count273
+\doublecol@number=\count274
+\multicoltolerance=\count275
+\multicolpretolerance=\count276
+\full@width=\dimen161
+\page@free=\dimen162
+\premulticols=\dimen163
+\postmulticols=\dimen164
 \multicolsep=\skip59
 \multicolbaselineskip=\skip60
 \partial@page=\box53
 \last@line=\box54
-\maxbalancingoverflow=\dimen170
+\maxbalancingoverflow=\dimen165
 \mult@rightbox=\box55
 \mult@grightbox=\box56
 \mult@gfirstbox=\box57
@@ -273,15 +255,15 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box93
 \@tempa=\box94
 \@tempa=\box95
-\c@minrows=\count279
-\c@columnbadness=\count280
-\c@finalcolumnbadness=\count281
-\last@try=\dimen171
-\multicolovershoot=\dimen172
-\multicolundershoot=\dimen173
+\c@minrows=\count277
+\c@columnbadness=\count278
+\c@finalcolumnbadness=\count279
+\last@try=\dimen166
+\multicolovershoot=\dimen167
+\multicolundershoot=\dimen168
 \mult@nat@firstbox=\box96
 \colbreak@box=\box97
-\mc@col@check@num=\count282
+\mc@col@check@num=\count280
 ) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
@@ -293,8 +275,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen174
-\Gin@req@width=\dimen175
+\Gin@req@height=\dimen169
+\Gin@req@width=\dimen170
 ) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -302,28 +284,28 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count283
-\Gm@cntv=\count284
-\c@Gm@tempcnt=\count285
-\Gm@bindingoffset=\dimen176
-\Gm@wd@mp=\dimen177
-\Gm@odd@mp=\dimen178
-\Gm@even@mp=\dimen179
-\Gm@layoutwidth=\dimen180
-\Gm@layoutheight=\dimen181
-\Gm@layouthoffset=\dimen182
-\Gm@layoutvoffset=\dimen183
+\Gm@cnth=\count281
+\Gm@cntv=\count282
+\c@Gm@tempcnt=\count283
+\Gm@bindingoffset=\dimen171
+\Gm@wd@mp=\dimen172
+\Gm@odd@mp=\dimen173
+\Gm@even@mp=\dimen174
+\Gm@layoutwidth=\dimen175
+\Gm@layoutheight=\dimen176
+\Gm@layouthoffset=\dimen177
+\Gm@layoutvoffset=\dimen178
 \Gm@dimlist=\toks25
 ) (/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count286
+\c@AlgoLine=\count284
  (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip61
  (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count287
+\c@checkoddpage=\count285
 ) (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/share/texmf-dist/tex/latex/relsize/relsize.sty
@@ -337,12 +319,12 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip67
 \algomargin=\skip68
 \skipalgocfslide=\skip69
-\algowidth=\dimen184
-\inoutsize=\dimen185
-\inoutindent=\dimen186
-\interspacetitleruled=\dimen187
-\interspacealgoruled=\dimen188
-\interspacetitleboxruled=\dimen189
+\algowidth=\dimen179
+\inoutsize=\dimen180
+\inoutindent=\dimen181
+\interspacetitleruled=\dimen182
+\interspacealgoruled=\dimen183
+\interspacetitleboxruled=\dimen184
 \algocf@ruledwidth=\skip70
 \algocf@inoutbox=\box98
 \algocf@inputbox=\box99
@@ -359,75 +341,148 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip77
 \algotitleheightruledefault=\skip78
 \algotitleheightrule=\skip79
-\c@algocfline=\count288
-\c@algocfproc=\count289
-\c@algocf=\count290
+\c@algocfline=\count286
+\c@algocfproc=\count287
+\c@algocf=\count288
 \algocf@algoframe=\box104
 \algocf@algobox=\box105
 ) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen190
-\lightrulewidth=\dimen191
-\cmidrulewidth=\dimen192
-\belowrulesep=\dimen193
-\belowbottomsep=\dimen194
-\aboverulesep=\dimen195
-\abovetopsep=\dimen196
-\cmidrulesep=\dimen197
-\cmidrulekern=\dimen198
-\defaultaddspace=\dimen199
-\@cmidla=\count291
-\@cmidlb=\count292
-\@aboverulesep=\dimen256
-\@belowrulesep=\dimen257
-\@thisruleclass=\count293
-\@lastruleclass=\count294
-\@thisrulewidth=\dimen258
+\heavyrulewidth=\dimen185
+\lightrulewidth=\dimen186
+\cmidrulewidth=\dimen187
+\belowrulesep=\dimen188
+\belowbottomsep=\dimen189
+\aboverulesep=\dimen190
+\abovetopsep=\dimen191
+\cmidrulesep=\dimen192
+\cmidrulekern=\dimen193
+\defaultaddspace=\dimen194
+\@cmidla=\count289
+\@cmidlb=\count290
+\@aboverulesep=\dimen195
+\@belowrulesep=\dimen196
+\@thisruleclass=\count291
+\@lastruleclass=\count292
+\@thisrulewidth=\dimen197
 ) (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen259
-\TX@old@table=\dimen260
-\TX@old@col=\dimen261
-\TX@target=\dimen262
-\TX@delta=\dimen263
-\TX@cols=\count295
+\TX@col@width=\dimen198
+\TX@old@table=\dimen199
+\TX@old@col=\dimen256
+\TX@target=\dimen257
+\TX@delta=\dimen258
+\TX@cols=\count293
 \TX@ftn=\toks26
+) (/usr/share/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+ (/usr/share/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count294
+\c@ALG@rem=\count295
+\c@ALG@nested=\count296
+\ALG@tlm=\skip80
+\ALG@thistlm=\skip81
+\c@ALG@Lnr=\count297
+\c@ALG@blocknr=\count298
+\c@ALG@storecount=\count299
+\c@ALG@tmpcounter=\count300
+\ALG@tmplength=\skip82
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texmf-dist/tex/latex/diagbox/diagbox.sty
+Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
+ (/usr/share/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+ (/usr/share/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+ (/usr/share/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks27
+\@arclen=\dimen259
+\@arcrad=\dimen260
+\pIIe@tempdima=\dimen261
+\pIIe@tempdimb=\dimen262
+\pIIe@tempdimc=\dimen263
+\pIIe@tempdimd=\dimen264
+\pIIe@tempdime=\dimen265
+\pIIe@tempdimf=\dimen266
+
+
+Package pict2e Warning: \arc redefined on input line 682.
+
+)
+\diagbox@boxa=\box106
+\diagbox@boxb=\box107
+\diagbox@boxm=\box108
+\diagbox@wd=\dimen267
+\diagbox@ht=\dimen268
+\diagbox@insepl=\dimen269
+\diagbox@insepr=\dimen270
+\diagbox@outsepl=\dimen271
+\diagbox@outsepr=\dimen272
+) (/usr/share/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen273
+\c@nlinenum=\count301
+\TeXr@lab=\toks28
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen274
+\captionmargin@=\dimen275
+\captionwidth=\dimen276
+\caption@tempdima=\dimen277
+\caption@indent=\dimen278
+\caption@parindent=\dimen279
+\caption@hangindent=\dimen280
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count302
+\c@continuedfloat=\count303
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
-\l__pdf_internal_box=\box106
+\l__color_backend_stack_int=\count304
+\l__pdf_internal_box=\box109
 ) (./test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
-\scratchdimen=\dimen264
-\scratchbox=\box107
-\nofMPsegments=\count298
-\nofMParguments=\count299
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count300
-\MPscratchDim=\dimen265
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count305
+\scratchdimen=\dimen281
+\scratchbox=\box110
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count308
+\MPscratchDim=\dimen282
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -468,6 +523,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
@@ -504,24 +561,24 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
  (./test.toc
-LaTeX Font Info:    Trying to load font information for OML+plm on input line 3.
+LaTeX Font Info:    Trying to load font information for OML+plm on input line 2.
  (/usr/share/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 3.
+LaTeX Font Info:    Trying to load font information for OMS+plsy on input line 2.
  (/usr/share/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Trying to load font information for OMX+plex on input line 3.
+LaTeX Font Info:    Trying to load font information for OMX+plex on input line 2.
  (/usr/share/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 2.
 )
 \tf@toc=\write3
 \openout3 = `test.toc'.
@@ -530,57 +587,538 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 
 ]
-Rozdzia\l  1.
+Rozdzia\PlPrIeC {\l } 1.
 [2
 
 ] [3]
-<./img/classification.pdf, id=17, 705.62834pt x 421.10078pt>
+Rozdzia\PlPrIeC {\l } 2.
+<./img/classification.pdf, id=18, 705.62834pt x 421.10078pt>
 File: ./img/classification.pdf Graphic file (type pdf)
 <use ./img/classification.pdf>
-Package pdftex.def Info: ./img/classification.pdf  used on input line 174.
+Package pdftex.def Info: ./img/classification.pdf  used on input line 212.
 (pdftex.def)             Requested size: 227.62206pt x 135.83447pt.
- [4 <./img/classification.pdf>]
-<./img/class.pdf, id=31, 458.08937pt x 298.75392pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4
+
+]
+<./img/class.pdf, id=22, 458.08937pt x 298.75392pt>
 File: ./img/class.pdf Graphic file (type pdf)
 <use ./img/class.pdf>
-Package pdftex.def Info: ./img/class.pdf  used on input line 217.
+Package pdftex.def Info: ./img/class.pdf  used on input line 247.
 (pdftex.def)             Requested size: 227.62206pt x 148.45119pt.
- [5 <./img/class.pdf>]
-<./img/tree1.pdf, id=42, 529.22125pt x 421.10078pt>
-File: ./img/tree1.pdf Graphic file (type pdf)
-<use ./img/tree1.pdf>
-Package pdftex.def Info: ./img/tree1.pdf  used on input line 254.
-(pdftex.def)             Requested size: 318.66948pt x 253.56198pt.
- [6 <./img/tree1.pdf>] [7]
-<./img/rsp.png, id=224, 618.81187pt x 309.40594pt>
-File: ./img/rsp.png Graphic file (type png)
-<use ./img/rsp.png>
-Package pdftex.def Info: ./img/rsp.png  used on input line 379.
-(pdftex.def)             Requested size: 273.14923pt x 136.5781pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] [9 <./img/rsp.png (PNG copy)>]
-Rozdzia\l  2.
-[10
+[5 <./img/classification.pdf>]
+<./img/MDP.png, id=36, 790.45313pt x 428.35031pt>
+File: ./img/MDP.png Graphic file (type png)
+<use ./img/MDP.png>
+Package pdftex.def Info: ./img/MDP.png  used on input line 283.
+(pdftex.def)             Requested size: 227.62206pt x 123.3491pt.
+ [6 <./img/class.pdf> <./img/MDP.png (PNG copy)>]
+<./img/drawing1.pdf, id=48, 995.84645pt x 421.10078pt>
+File: ./img/drawing1.pdf Graphic file (type pdf)
+<use ./img/drawing1.pdf>
+Package pdftex.def Info: ./img/drawing1.pdf  used on input line 322.
+(pdftex.def)             Requested size: 409.71692pt x 173.25pt.
+ [7 <./img/drawing1.pdf>] [8] [9]
+<./img/drawing2.pdf, id=84, 1024.29918pt x 421.10078pt>
+File: ./img/drawing2.pdf Graphic file (type pdf)
+<use ./img/drawing2.pdf>
+Package pdftex.def Info: ./img/drawing2.pdf  used on input line 497.
+(pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
+<./img/drawing3.pdf, id=85, 1024.29918pt x 421.10078pt>
+File: ./img/drawing3.pdf Graphic file (type pdf)
+<use ./img/drawing3.pdf>
+Package pdftex.def Info: ./img/drawing3.pdf  used on input line 507.
+(pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
+ [10 <./img/drawing2.pdf>]
+<./img/drawing4.pdf, id=108, 1024.29918pt x 421.10078pt>
+File: ./img/drawing4.pdf Graphic file (type pdf)
+<use ./img/drawing4.pdf>
+Package pdftex.def Info: ./img/drawing4.pdf  used on input line 520.
+(pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
+ [11 <./img/drawing3.pdf> <./img/drawing4.pdf
 
-] [11
+pdfTeX warning: pdflatex (file ./img/drawing4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<./img/tree.pdf, id=147, 685.71141pt x 597.50786pt>
+File: ./img/tree.pdf Graphic file (type pdf)
+<use ./img/tree.pdf>
+Package pdftex.def Info: ./img/tree.pdf  used on input line 565.
+(pdftex.def)             Requested size: 455.24411pt x 396.69041pt.
+ [12 <./img/tree.pdf>]
+./test.tex:618: Missing $ inserted.
+<inserted text> 
+                $
+l.618 $
+       \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] [12] (./test.aux) ) 
+
+./test.tex:618: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 $
+       \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:618: Missing $ inserted.
+<inserted text> 
+                $
+l.618 $
+       \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:618: Missing $ inserted.
+<inserted text> 
+                $
+l.618 $
+       \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:618: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 $
+       \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:618: Missing $ inserted.
+<inserted text> 
+                $
+l.618 $\theta_{s}$ \leftarrow
+                              \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:618: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.618 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
+                                                  \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:618: Missing $ inserted.
+<inserted text> 
+                $
+l.618 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
+                                                  \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[13]
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 690.
+ (/usr/share/texmf-dist/tex/latex/polski/ot4cmtt.fd
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./test.tex:690: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:690: Missing $ inserted.
+<inserted text> 
+                $
+l.690  \caption
+               {Implementacja MCCFRES kożystając z sieci neuronowych}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[14] [15]
+Rozdzia\PlPrIeC {\l } 3.
+[16
+
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17]
+<./img/nn.pdf, id=227, 671.48505pt x 421.10078pt>
+File: ./img/nn.pdf Graphic file (type pdf)
+<use ./img/nn.pdf>
+Package pdftex.def Info: ./img/nn.pdf  used on input line 889.
+(pdftex.def)             Requested size: 455.24411pt x 285.49657pt.
+
+./test.tex:906: Undefined control sequence.
+l.906 ...nych na tensorach, jakie udostępnia \emp
+                                                  {Tensorflow} \cite{tensorf...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[18]
+<./img/bzd.pdf, id=232, 773.91496pt x 597.50786pt>
+File: ./img/bzd.pdf Graphic file (type pdf)
+<use ./img/bzd.pdf>
+Package pdftex.def Info: ./img/bzd.pdf  used on input line 931.
+(pdftex.def)             Requested size: 455.24411pt x 351.47809pt.
+ [19 <./img/nn.pdf>]
+./test.tex:954: Undefined control sequence.
+l.954 ...enia wyników uczenia użyto funkcji \emp
+                                                  {EarlyStopping} \cite{tens...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<./img/early.pdf, id=251, 258.92007pt x 210.5504pt>
+File: ./img/early.pdf Graphic file (type pdf)
+<use ./img/early.pdf>
+Package pdftex.def Info: ./img/early.pdf  used on input line 963.
+(pdftex.def)             Requested size: 318.66948pt x 259.14894pt.
+[20 <./img/bzd.pdf>] [21 <./img/early.pdf>]
+<./img/uml.pdf, id=316, 2976.1582pt x 3383.03278pt>
+File: ./img/uml.pdf Graphic file (type pdf)
+<use ./img/uml.pdf>
+Package pdftex.def Info: ./img/uml.pdf  used on input line 1051.
+(pdftex.def)             Requested size: 500.77129pt x 569.22319pt.
+
+Overfull \hbox (19.68552pt too wide) in paragraph at lines 1050--1052
+ []|  [] 
+ []
+
+[22] [23 <./img/uml.pdf>]
+Rozdzia\PlPrIeC {\l } 4.
+<./img/model1.pdf, id=330, 836.511pt x 421.10078pt>
+File: ./img/model1.pdf Graphic file (type pdf)
+<use ./img/model1.pdf>
+Package pdftex.def Info: ./img/model1.pdf  used on input line 1078.
+(pdftex.def)             Requested size: 455.24411pt x 229.17088pt.
+<./img/model2.pdf, id=331, 526.37596pt x 298.75392pt>
+File: ./img/model2.pdf Graphic file (type pdf)
+<use ./img/model2.pdf>
+Package pdftex.def Info: ./img/model2.pdf  used on input line 1084.
+(pdftex.def)             Requested size: 455.24411pt x 258.3958pt.
+<./img/model3.pdf, id=332, 756.8433pt x 421.10078pt>
+File: ./img/model3.pdf Graphic file (type pdf)
+<use ./img/model3.pdf>
+Package pdftex.def Info: ./img/model3.pdf  used on input line 1089.
+(pdftex.def)             Requested size: 455.24411pt x 253.29854pt.
+<./img/model4.pdf, id=333, 569.05513pt x 304.4445pt>
+File: ./img/model4.pdf Graphic file (type pdf)
+<use ./img/model4.pdf>
+Package pdftex.def Info: ./img/model4.pdf  used on input line 1094.
+(pdftex.def)             Requested size: 455.24411pt x 243.56522pt.
+<./img/model5.pdf, id=334, 560.51927pt x 298.75392pt>
+File: ./img/model5.pdf Graphic file (type pdf)
+<use ./img/model5.pdf>
+Package pdftex.def Info: ./img/model5.pdf  used on input line 1098.
+(pdftex.def)             Requested size: 455.24411pt x 242.65034pt.
+<./img/mecze.png, id=335, 1387.584pt x 718.3638pt>
+File: ./img/mecze.png Graphic file (type png)
+<use ./img/mecze.png>
+Package pdftex.def Info: ./img/mecze.png  used on input line 1105.
+(pdftex.def)             Requested size: 500.77129pt x 259.24652pt.
+
+Overfull \hbox (19.68552pt too wide) in paragraph at lines 1104--1106
+ []|  [] 
+ []
+
+[24
+
+] [25 <./img/model1.pdf> <./img/model2.pdf
+
+pdfTeX warning: pdflatex (file ./img/model2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [26 <./img/model3.pdf> <./img/model4.pdf
+
+pdfTeX warning: pdflatex (file ./img/model4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [27 <./img/model5.pdf> <./img/mecze.png>] [28
+
+] [29] (./test.aux) ) 
 Here is how much of TeX's memory you used:
- 6065 strings out of 478994
- 87050 string characters out of 5864750
- 444019 words of memory out of 5000000
- 23455 multiletter control sequences out of 15000+600000
- 410920 words of font info for 45 fonts, out of 8000000 for 9000
+ 7466 strings out of 478994
+ 114277 string characters out of 5864750
+ 455666 words of memory out of 5000000
+ 24818 multiletter control sequences out of 15000+600000
+ 415615 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,14n,88p,305b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy8.pfb>
-Output written on test.pdf (13 pages, 407318 bytes).
+ 81i,22n,88p,362b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plti12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/pltt12.pfb>
+Output written on test.pdf (30 pages, 1567577 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
+ 917 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

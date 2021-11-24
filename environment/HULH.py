@@ -9,13 +9,13 @@ class HULH_Emulator:
 
 
     def __init__(self, player_uuid, opponent_uuid):
-        self.emulator = Emulator()
+        self.__emulator = Emulator()
         self.player_uuid = player_uuid
         self.opponent_uuid = opponent_uuid
 
         self.SMALL_BLIND = 5
         self.ROUNDS_LIMIT = 1 
-        self.ANTE = 5
+        self.ANTE = 0
         self.NUM_PLAYERS = 2
         self.BIG_BLIND = 10
         self.STACK = 80
@@ -37,26 +37,19 @@ class HULH_Emulator:
 
 
     def initial_game(self):
-        self.emulator.set_game_rule(player_num=self.NUM_PLAYERS,
+        self.__emulator.set_game_rule(player_num=self.NUM_PLAYERS,
                                max_round=self.ROUNDS_LIMIT,
                                small_blind_amount=self.SMALL_BLIND,
                                ante_amount=self.ANTE)
         
-        first_reg = random.choice([self.player_uuid, self.opponent_uuid]) 
 
-        if first_reg == self.player_uuid:
-            players_info = {
-                self.player_uuid: { "name": "player", "stack": self.STACK},
-                self.opponent_uuid: { "name": "opponent", "stack": self.STACK}
-            }
-        else:
-            players_info = {
-                self.opponent_uuid: { "name": "opponent", "stack": self.STACK },
-                self.player_uuid: { "name": "player", "stack": self.STACK }
-            }
+        players_info = {
+            self.opponent_uuid: { "name": "opponent", "stack": self.STACK},
+            self.player_uuid: { "name": "player", "stack": self.STACK}
+        }
 
-        initial_state = self.emulator.generate_initial_game_state(players_info)
-        game_state, events = self.emulator.start_new_round(initial_state)
+        initial_state = self.__emulator.generate_initial_game_state(players_info)
+        game_state, events = self.__emulator.start_new_round(initial_state)
         for player in game_state['table'].seats.players:
             game_state = attach_hole_card_from_deck(game_state, player.uuid)
             
@@ -118,13 +111,13 @@ class HULH_Emulator:
 
     def get_legal_actions(self, state):
         actions = []
-        act_list = self.emulator.generate_possible_actions(state)
+        act_list = self.__emulator.generate_possible_actions(state)
         for act in act_list:
             actions.append(act['action'])
         return actions
 
-    def get_legal_amount(self, state, act):
-        act_list = self.emulator.generate_possible_actions(state)
+    def __get_legal_amount(self, state, act):
+        act_list = self.__emulator.generate_possible_actions(state)
         for id, a in enumerate(act_list):
             if a['action'] == act:
                 if act == 'raise':
@@ -133,9 +126,9 @@ class HULH_Emulator:
                     return act_list[id]['amount']
 
     def act(self, state, action):
-        amount = self.get_legal_amount(state, action)
+        amount = self.__get_legal_amount(state, action)
         if action:
-            state, events = self.emulator.apply_action(state, action, amount)
+            state, events = self.__emulator.apply_action(state, action, amount)
         else:
             raise Exception('invalid action: ', action)  
         return state, events

@@ -18,10 +18,10 @@ class Brain:
             self.__net.clear_net()
             info_set, timesteps, outputs = self.__memory.get_storage()
             if verbose:
-                self.__net.train_net(info_set, [outputs, timesteps], 
+                self.__net.train_net(info_set, outputs, timesteps, 
                                      tensorboard=TensorBoard(log_dir=f'./logs/{self.uuid}/{time.time()}'))
             else:
-                self.__net.train_net(info_set, [outputs, timesteps])
+                self.__net.train_net(info_set, outputs, timesteps)
 
     def predict(self, hole, board, hist):
         return self.__net.predict(hole, board, hist).ravel()
