@@ -14,59 +14,84 @@
 \usepackage{diagbox}
 \usepackage{makecell}
 \usepackage[justification=centering]{caption}
+\usepackage[section]{placeins}
 
 \begin{document}
 \begin{titlepage}
    \begin{center}
         \vspace*{2cm}
 
-        \large Politechnika Wrocławska Wydział Elektroniki Kierunek Teleinformatyki
-        \vspace*{2cm}
+        \Huge Politechnika Wrocławska
 
-        \large Inżynierska praca dyplomowa
-
-        \vspace*{0.5cm}
-        \huge\textbf{Projekt sztucznej inteligencji}
-
-        \vspace{0.5cm}
-        \normalsize 
-            
-        \textbf{Michał Żarejko}
-        \vspace{3cm}
+        \Huge Wydział Elektroniki
+        ---------------------------------------------------------
 
    \end{center}
-
-        \setlength{\columnsep}{-20pt}
+        \setlength{\columnsep}{-200pt}
         \begin{multicols}{2}
-           Dyplomant:  
+            \large KIERUNEK:
 
-           \vspace{0.2cm}
-           Nr albumu:
 
-           \vspace{0.2cm}
-           Promotor:
+            \large SPECIALNOŚĆ: 
+
 
         \columnbreak
-           \textbf{Michał Żarejko}
+           Teleinformatyka
 
-           \vspace{0.2cm}
-            \textbf{249374}
-
-           \vspace{0.2cm}
-            \textbf{dr inż. Paweł Zyblewski}
+            Projektowanie Sieci Teleinformatycznych
         \end{multicols}
 
-        \vspace{0.5cm}
-
-
-        \vspace{2cm}
+        \vspace{1cm}
    \begin{center}
-        Wrocław. 2021
 
+      \huge \textbf{PRACA DYPLOMOWA}
+
+   \huge \textbf{INŻYNIERKSA}
+
+
+   \vspace{1.5cm}
+   
+         
+
+
+            \large tu jest tytuł
+
+            \vspace{0.5cm}
+
+            \large tu tytuł w jezyku angielskim
+
+            \vspace{2cm}
+            \setlength{\columnsep}{-200pt}
+            \begin{multicols}{2}
+
+               \text{}
+
+            \columnbreak
+            \large AUTOR:
+
+
+            Michał Żarejko
+
+
+            \vspace{1cm}
+            PROWADZĄCY PRACĘ:
+
+
+            dr. mgr. Paweł Zyblewski
+
+        \end{multicols}
+   \vspace{3cm}
+
+-----------------------------------------------------------------------------------------------
+
+
+   Wrocław  2021
 
    \end{center}
+
 \end{titlepage}
 
+%\shipout\null
 
 \newgeometry{top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm}
 \tableofcontents{}
@@ -75,6 +100,8 @@
 \setlength{\parindent}{0.5em}
 \setlength{\parskip}{0.5em}
 \renewcommand{\baselinestretch}{1.5}
+
+
 
 \chapter{Wstęp}
 
@@ -116,7 +143,7 @@ zespołów.
 Wydarzenie było mocno omawiane w mediach z powodu pierwszego takiego osiągnięcia w tej dziedzinie
 sportu. 
 Dodatkowo Dota 2 była bardzo skomplikowanym środowiskiem.
-Przykładowo gra $\text{Go}$ rozwiązana pare lat wcześniej, zawierała 150 możliwych ruchów na turę, 
+Przykładowo gra $\text{Go}$ rozwiązana parę lat wcześniej, zawierała 150 możliwych ruchów na turę, 
 $\text{Dota 2}$
 mogła posiadać ich 20 000 w niecałą godzinę \cite{Dota2}.
 
@@ -137,14 +164,14 @@ Aktualnie jednak jednym z większych problemów takich programów jest niedostat
 zakres dostępnych informacji o środowisku \cite{iig}.
 
 Sztuczna inteligencja, aby zwyciężać,
-musi zostać nauczona grać, więc potrzebuje dużej ilości danych wejściowych, które są 
+musi nauczyć się grać, więc potrzebuje dużej ilości danych wejściowych, które są 
 rozróżnialne. Przykładem gry, która jest pozbawiona tego problemu, są szachy. 
 AI wykonuje ruchy, bazując na informacjach jak np. ułożenie pionków
 w danej turze. Widoczna zmiana stanu środowiska przeciwnika jest
 zauważalna przez gracza, przez co może on łatwiej powiązać
 obserwacje z wykonywanymi akcjami. 
 
-Przykładem gry ciężkiej do rozwiązania w której, występuje niepełny zestaw informacji, 
+Przykładem gry ciężkiej w uczeniu AI w której, występuje niepełny zestaw informacji, 
 jest $\text{Poker Texas Hold'em}$, pomimo wiedzy o kartach w ręce i na stole, gracz nie posiada
 wiedzy o 
 kartach przeciwników. W takim przypadku dwa pozornie identyczne stany środowiska w
@@ -161,85 +188,118 @@ Głównym celem pracy jest implementacji algorytmu Deep CFR, który stworzy 5 mo
 rozpoznawania w grze HULH ($\text{\emph{Heads Up Limit Texas 
 Poker Hold'em}}$). Jest to popularna wersja rozgrywki 2-osobowej, gdzie uczestnicy nie mogą wybrać
 samodzielnie kwoty podbicia stawki. Jest ona ograniczona przez ustaloną wartość. Takie środowisko
-minimalizuje możliwe ruchy do 3 akcji co czyni go prostszą bazą do uczenia maszynowego. Uzyskane modele zostaną następnie 
+minimalizuje możliwe ruchy do 3 akcji, co czyni go prostszą bazą do uczenia maszynowego. Uzyskane modele zostaną następnie 
 wykorzystane do stworzenia
 rozgrywek składających się na wszystkie kombinacje dwóch modeli, gdzie każda gra zostanie 
-powtórzona 100 razy. Taki proces pozwoli określić, który modela posiada najwięcej wygranych meczów i
-jest najbardziej dopracowany. 
+powtórzona 200 razy. Drugim etapem
+będzie obliczenie średniej puli wygrywanej i przegrywanej przez każdy model wraz z rozkładem
+wykonywanych ruchów.
+Taki proces pozwoli określić, który model osiąga najlepsze wyniki i jakiej strategii używa do gry.
 
-Praca została podzielona w tym celu na rozdziały opisujące każdy z etapów projektu. Pierwszy przedstawia
-możliwe rozwiązania problemu, analizę gry Poker Texas Hold'em oraz wymagana teorię do zrozumienia algorytmu.
-Trzecia część przedstawia implementacje Deep CFR wraz z użytymi technologiami. Ostatnia część przedstawia wyniki
-rozgrywek modeli oraz podsumowanie algorytmu.
+
+Praca została podzielona w tym celu na rozdziały opisujące każdy z etapów projektu.
+Następny rozdział jest wstępem teoretycznym do implementacji programu. Opisuje on 
+możliwe rozwiązania problemu, analizę gry Poker Texas Hold'em oraz wymaganą teorię do zrozumienia
+Deep CFR.
+Trzecia część przedstawia implementacje programu wraz z użytymi technologiami. Końcowe rozdziały 
+omawiają wyniki uczenia, rezultaty
+rozgrywek modeli oraz podsumowanie pracy.
 
 \chapter{Analiza istniejących rozwiązań}
 
-W ciągu ostatnich 10 lat powstało wiele algorytmów rozwiązujących różne wersje gry Poker.
+W ciągu ostatnich 15 lat powstało wiele algorytmów rozwiązujących różne wersje gry Poker.
 Między innymi CFR (\emph{Counterfactual Regret Minimization}) \cite{CFR}, XFP (\emph{Extensive-Form
 Fictitious Play}) \cite{XFP} lub
 NFSP (\emph{Neural Fictitious Self-Play}) \cite{NFSP}.
 Pierwszy z wymienionych, CFR powstał w 2007 roku. Był 
-pomyślną prób rozwiązania abstrakcyjnego środowiska Texas Hold'em \cite{CFR}. 
+pomyślną prób rozwiązania abstrakcyjnego środowiska Poker Texas Hold'em \cite{CFR}. 
 Na jego podstawie utworzono wiele nowoczesnych
-algorytmów, które dają szanse rozwiązać takie środowiska jak HULH \cite{CFR}.
+algorytmów, które dają szanse rozwiązać takie gry jak HULH \cite{CFR}.
 
 
 Z wymienionych metod zaimplementowanym rozwiązaniem w niniejszej pracy jest CFR 
 rozszerzony o sieci neuronowe,
-czyli Deep CFR z grą HULH. Pozwala on na szybsze trenowanie modeli,
-dodatkowo jest prostszy niż bazowy 
-CFR \cite{DCFR}.
+czyli Deep CFR z grą HULH. Pozwala on na szybsze trenowanie modeli w środowisku typu zero-sum,
+dodatkowo lepiej rozwiązuje gry o dużych rozmiarach \cite{DCFR}.
 
-W tym rozdziale zostanie przedstawiona argument, dlaczego gra Poker Texas Hold'em nie bazuje
-tylko na szczęściu i utworzenie dla niej modelu rozpoznawania jest możliwe.
-Następnie zostanie opisany algorytm CFR oraz jego następca,
-czyli MCCFR. Ostatnim etapem będzie przedstawienie Deep CFR.
+W tym rozdziale zostaną przedstawione profesjonalne sposoby wyboru strategii w grze Poker Texas Hold'em. 
+Określą one cechy, jakimi powinien charakteryzować się prawidłowo utworzony model rozpoznawania.
+Następnie rozdział przedstawi istniejące sztuczne inteligencje, które wykorzystały metodę CFR do
+zwyciężania z profesjonalnymi graczami.
+Ostatnim krokiem jest przedstawienie zbioru informacji wymaganych 
+do zrozumienia implementowanego algorytmu.
 
 \section{Analiza Texas hold'em Poker}
 
-Omawiana gra jest jedną z najpopularniejszych gier rywalizacyjnych w kasynach, dodatkowo jest to
+Jest to jedna z najpopularniejszych gier rywalizacyjnych w kasynach, dodatkowo jest to
 dominująca gra hazardowa. Można ją scharakteryzować brakiem stanów deterministycznych oraz częściową 
-obserwowalnością, rys. 2.1 \cite{poker}.  
+obserwowalnością, tab. 2.1 \cite{poker}.  
 
 
 Przez takie cechy gra była od zawsze tematem sporów, czy na jej wynik ma większy wpływ
 losowość, czy umiejętności. Jak wynika z badań dużym aspektem pomagającym w osiągnięciu zwycięstwa,
 jest panowanie nad emocjami, dokładna analiza stanu gry oraz umiejętność opóźnienia natychmiastowej
-nagrody \cite{theory poker}. 
+nagrody \cite{theory poker}.
 
-\begin{figure}[h!]
-            \center
-           \includegraphics[width=0.5\textwidth]{./img/classification.pdf}
-           \caption{Charakterystyka gier  \cite{poker}.}
-\end{figure}
+\begin{table}[h!]
+\centering
+\caption{Charakterystyka gier}
+\begin{tabular}{|c|c|c|c| }
+   \hline
+    & \makecell{środowisko \\ deterministyczne} & \makecell{środowisko \\ niedeterministyczne} \\
+    \hline
+   \makecell{pełny zestaw \\ informacji} &  \makecell{szachy \\ Go } & \makecell{Monopoly \\ Tetris }\\ 
+   \hline
+   \makecell{niepełny zestaw \\ informacji} &  \makecell{Saper \\ Mahjong } & \makecell{Poker \\
+   Makao}  \\  
+   \hline
+\end{tabular}
+\end{table}
 
-Dodatkowo ważnym elementem jest umiejętności obserwacji gry oraz wybór prawidłowej strategii. Na podstawie
-tego, można sklasyfikować graczy na cztery kategorie. 
+\vspace{6cm}
+Dodatkowo ważnym elementem jest obserwacja gry oraz wybór prawidłowej strategii.
+Można ja wybrać na bazie dostępnych kart i dotychczasowego zachowania oponenta.
+
+Kolejną ważną zasadą jest obserwacja przeciwnika oraz zapamiętywanie jego
+poprzednich akcji. Przez to można określić, czy gra on agresywnie, czy pasywnie i dobrać do 
+niego odpowiednią strategię. W tym celu dokonuje się klasyfikacji przeciwników na 
+bazie częstotliwości wykonywanych ruchów \cite{class}.
+
+Każdego gracza można podzielić na cztery grupy, Loose Aggressive, Losse Passive, Tight
+Passive oraz Tight Aggressive \cite{class}. Prawidłowe rozpoznanie danego stylu gry
+może zadecydować o wyborze prawidłowej strategii i zwycięstwie. Poniżej opisano każdy z nich oraz
+porównano je z rys. 2.2, który pokazuje, w jakim stopniu profesjonalny gracz powinien używać każdego
+z nich \cite{class}. 
 
 \subsubsection{Loose Passive}
 
-Osoba, która bardzo często wchodzi do gry niezależnie czy karty, które posiada, dają jej
-wysokie szanse na wygraną. Ten typ gry charakteryzuje się częstym wykonywanie akcji 'call' oraz
-małą ilością przebić stawki \cite{class}. 
+Osoba, która bardzo często wchodzi do gry niezależnie czy posiadane karty dają jej
+wysokie szanse na wygraną. 
+Ten typ gry nie jest dobrą strategią, ponieważ można łatwo się do niego 
+dostosować przez używanie tylko mocnych kart \cite{class}.
 
 \subsubsection{Loose Aggressive}
 
-Ten typ gry określa osobę, która często wykonuje akcję 'raise' i 're-raise' 
-pod warunkiem, że ma silne karty \cite{class}. W innym przypadku wyrównuje żetony do aktualnej stawki.
-Taka strategia okazuje się nieefektywna w przypadku gry z osobami, które często wchodzą do gry 
-niezależnie od kart jak na przykład typ 'Loose-Passive' \cite{class}. 
+Osobę, która często przebija stawkę, zaczynając od rundy \emph{pre-flop} pod
+warunkiem, że ma dobre startowe karty \cite{class}. Strategia ma stworzyć przekonanie wśród
+oponentów, że gracz ma bardzo duże szanse wygranej od samego początku. 
+Okazuje się ona jednak nieefektywna, jeśli przeciwnicy nie pasują w początkowych etapach gry
+\cite{class}. 
 
 \subsubsection{Tight Passive}
 
-Można poznać tę kategorię gry przez to, że uczestnik wchodzi tylko z dobrymi kartami i często 
-pasuje przy spotkaniu z graczem agresywnym, który przebija. Taki gracz traci wiele okazji, kiedy
-mógłby wygrać \cite{class}. 
+Uczestnik gry wchodzi tylko z dobrymi kartami, wykonując często akcję \emph{call}. 
+Ostatecznie pasuje przy spotkaniu z graczem agresywnym. Taka osoba gra bardzo dokładnie tak, aby
+mało ryzykować, przez co często traci wiele okazji, kiedy
+mogła, by wygrać \cite{class}. 
 
 \subsubsection{Tight Aggressive}
 
-Typ gry popularny wśród profesjonalnych graczy i najtrudniejszy do opanowania \cite{class}.
+Grają podobnie do typu \emph{Tight Passive} w początkowych etapach gry, a następnie zmieniają swój
+styl na bardziej agresywny \cite{class}. Rys. 2.1 pokazuje, że jest to najlepsza wersja strategii, jaką można
+grać, dlatego często jest ona wybierana przez profesjonalnych graczy.
 
-
+\vspace{1cm}
 
 
 \begin{figure}[h!]
@@ -249,33 +309,33 @@ Typ gry popularny wśród profesjonalnych graczy i najtrudniejszy do opanowania 
 \end{figure}
 
 
-Jak wynika z powyższych kategorii, gra 'Poker Texas Hold'em' zawiera wiele elementów niezwiązanych z
+Jak wynika z powyższych kategorii, gra Poker Texas Hold'em zawiera wiele elementów niezwiązanych z
 losowością, gdzie obserwacje i dobieranie odpowiedniej strategi do typu gracza pełni kluczową
-funkcję. W takim
-wypadku jest uzasadnione wysunięcie tezy, że można utworzyć sztuczną inteligencję,
-która będzie bazować na podobnych założeniach, które mogłyby być charakterystyczne
-dla profesjonalnych graczy.
+funkcję. Korzystając z tych informacji, będzie można określić poziom  zaawansowania utworzonych modeli, które
+są opisane w rozdziale 4.
 
 \section{Uczenie przez wzmacnianie}
 
-Jest wiele sposobów na tworzenie sztucznej inteligencji do gier, między innymi można użyć technik uczenia
+Jest wiele sposobów na stworzenie sztucznych inteligencji w grach. Między innymi można użyć technik 
+uczenia
 nadzorowanego pod warunkiem, jeśli przygotuje się odpowiednie zbiory danych. W pracy jednak
-zdecydowano się na uczenie przez wzmacnianie. Wynika to z faktu, że jest mało publicznych zapisów
-gry profesjonalnych graczy, które mogłyby posłużyć jako zbiory uczące.
+zdecydowano się na stworzenie modelu, korzystając z uczenia przez wzmacnianie, czyli rozwiązania gdzie
+AI nie potrzebuje wstępnej bazy uczącej. Wynika to z faktu, że jest mało publicznych zapisów
+gry Poker Texas Hold'em z profesjonalnymi graczami, które mogłyby posłużyć jako zbiory uczące.
 Algorytmy należące do
-wybranego działu uczenia powinny być w stanie polepszać swoje wyniki na podstawie interakcji ze
+wybranego działu powinny być w stanie polepszać swoje wyniki na podstawie interakcji ze
 środowiskiem bez korzystania z zewnętrznych materiałów.  
 
 
-Wiele istniejących algorytmów należących do wybranej techniki zakłada, że środowisko można opisać
+Wiele istniejących metod należących do wybranej techniki zakłada, że środowisko można opisać
 przez model
 matematyczny
 MDP (\emph{Markov Decision Process}). 
 Określa ona sekwencyjnie podejmowane decyzje w niepewnym środowisku \cite{mdp}. W każdym z nowych
 stanów, w
-jakich znajduje się \emph{Agent}, wykonuje on pojedyńczą akcję, zyskując od środowiska informacje o nowym stanie
+jakich znajduje się agent (uczące się AI), wykonuje on pojedynczą akcję, zyskując od środowiska informacje o nowym stanie
 oraz nagrodzie. Elementem wyjściowym zasady powinien być
-zbiór strategii w postaci modelu, rys. 2.3.
+zbiór strategii w postaci modelu, rys. 2.2.
 
 
 \begin{figure}[th!]
@@ -294,28 +354,29 @@ należy rozpatrywać zasadę Partially Observable Markov Process, POMDP \cite{md
 W przeciwieństwie do poprzedniej zasady tutaj agent nie zna aktualnego stanu, w którym
 się znajduje \cite{mdp}. Przez takie okoliczności musi połączyć zależnością wykonywane akcie i
 obserwacje, a nie stany. Większość gier karcianych można zakwalifikować do tego typu problemów
-\cite{mdp}. Dodatkowo gry karciane można powiązać z terminem "Teoria Gier".
+\cite{mdp}.
 
 \section{Teoria Gier}
 
 Aby zrozumieć działanie algorytmów CFR, Deep CFR, MCCFR itd. należy zapoznać się
-z podstawami działu matematyki o nazwie Teoria Gier. Bada on optymalne zachowanie w środowiskach gdzie
-występuję konflikt \cite{gt}. W przypadku gry Poker Texas
-Hold'em zostaną wytłumaczone tylko takie terminy jak Równości Nasha lub
-gra w postaci ekstensywnej.
+z podstawami działu matematyki o nazwie Teoria Gier. Bada on optymalne zachowanie w środowiskach, gdzie
+występuje konflikt \cite{gt}. W przypadku gry Poker Texas
+Hold'em zostaną wytłumaczone terminy Równowaga Nasha oraz
+postać ekstensywna. Są one obowiązkowe do zrozumienia algorytmu Deep CFR.
 
 \subsubsection{Gra w postaci ekstensywnej}
 
 Gry w
 formie ekstensywnej można przedstawić jako drzewo decyzyjne, gdzie każdy węzeł rozgałęzia się na
-możliwe akcje oraz identyfikuje aktualny stan gracza przez zestaw informacji,
-ostatnie węzły to stany końcowe gdzie określony gracz zyskuje nagrodę lub ją traci \cite{gt}.
+możliwe akcje oraz identyfikuje aktualny stan gracza przez zestaw informacji.
+Stany końcowe drzewa określają zysk lub stratę nagrody wybranego gracza \cite{gt}.
 Jest to sposób
 na uproszczenie opisu gry.
 
-Na rys. 1.4 przedstawiono przykład gry 'Papier-Kamień-Nożyce' w formie ekstensywnej, gdzie gracze P1 i
-P2 eksplorują 3 akcie w swoich węzłach. 
-
+Na rys. 2.4 przedstawiono przykład gry 'Papier-Kamień-Nożyce' w formie ekstensywnej, gdzie gracze P1 i
+P2 eksplorują 3 akcje w swoich węzłach. 
+Każdy z nich uzyskuje wyniki danych ścieżek oraz zapamiętuje dotychczasową historię, co może zostać potem
+wykorzystane do znalezienia najbardziej opłacalnych strategii.
 
 \begin{figure}[th!]
             \center
@@ -323,25 +384,25 @@ P2 eksplorują 3 akcie w swoich węzłach.
            \caption{przykład gry w postaci ekstensywnej.}
 \end{figure}
 
-Każdy z graczy eksploruje wyniki swoich akcji oraz zapamiętuje dotychczasową historię, co może zostać potem
-wykorzystane do znalezienia najbardziej opłacalnych ścieżek.
-
 \vspace{5cm}
 \subsubsection{Równowaga Nasha}
 
-W grach to twierdzenie określa perfekcyjny stan gry, gdzie wszyscy gracze wykorzystują najlepszy
+W grach to twierdzenie określa perfekcyjny stan wyboru akcji, gdzie wszyscy gracze wykorzystują najlepszy
 zestaw strategii, którego zmiana przyniesie tylko straty. Oznacza to, że nie jest możliwa
 zmiana ruchów oraz zwiększenie uzyskanej nagrody \cite{gt}. 
 
 Dobrym przykładem prezentującym taki stan jest "Dylemat Więźnia" \cite{rn}. To środowisko zawiera 
 dwóch przestępców, którzy są przesłuchiwani w odseparowanych pomieszczeniach. Każdy z nich ma dwie
 opcje, przyznać się do zarzutów lub tego nie robić. Każda z kombinacji akcji uczestników jest
-zaprezentowana w tab. 2.1, gdzie wartości określają lata spędzone w więzieniu po danym ruchu.
-
-
+zaprezentowana w tab. 2.2, gdzie wartości określają lata spędzone w więzieniu po danym ruchu.
 Posługując się Równowagą Nasha, można stwierdzić, że najlepszą opcją dla
 obu uczestników będzie przyznawanie się za każdym razem \cite{rn}. Wynika to z faktu, że wyniki
-przegranej są tam małe wraz z brakiem ryzykowania porażką, czyli 5 latami w więzienia.
+przegranej są tam małe wraz z brakiem ryzykowania porażką, czyli 5 latami więzienia. 
+
+Głównym
+zadaniem większości algorytmów gier karcianych bazujących na metodzie CFR jest znalezienie
+takiego stanu. Deep CFR nie odnajduje go, ale odkrywa zbiory strategii, które są bliskie Równowadze
+Nasha \cite{DCFR}.
 
 \vspace{1cm}
 \begin{table}[h!]
@@ -363,21 +424,51 @@ przegranej są tam małe wraz z brakiem ryzykowania porażką, czyli 5 latami w
 
 \section{Historia modeli Texas Hold'em Poker}
 
-Bazując na teorii gier oraz różnych algorytmach powstało wiele rozwiązań różnych wersji gry Poker.
+Bazując na Teorii Gier oraz innych twierdzeniach powstało wiele rozwiązań różnych wersji gry Poker.
 Pierwsze dokumenty naukowe omawiały bardzo proste
-środowiska jak Poker Kuhn.
-Dopiero w 2015 roku utworzono pierwszą znaną sztuczną inteligencję $"\text{Cepheus}"$ rozwiązującą problem
-HULH przez algorytm CFR+ \cite{cepheus}. Po tym osiągnięciu rozpoczęto prace nad
+środowiska jak Poker Kuhn \cite{DCFR}.
+Dopiero w 2015 roku utworzono znaną sztuczną inteligencję $"\text{Cepheus}"$ rozwiązującą problem
+HULH \cite{cepheus}. Było to pierwsze takie osiągnięcie w historii. Kolejnym etapem były prace nad
 algorytmem mogącym rozwiązać problem gry HUNH (\emph{Heads Up No-limit Texas Hold'em}).
-Powstały model nazwano "DeepStack". Mieszał on sieci neuronowe z 
-technikami algorytmu CFR. 
-Przetestowano go na 33 profesjonalnych graczach w wielu iteracjach gry. Algorytm w większości
-przypadków wygrał \cite{ds}. Była to pierwsza wygrana AI z człowiekiem w normalnej 
-wersji gry Poker Texas Hold'em. 
+Powstały model w 2017 roku nazwano "DeepStack" \cite{ds}. Mieszał on sieci neuronowe z 
+technikami algorytmu CFR. W podobnym czasie utworzono kolejne, tym razem najbardziej zaawansowane AI
+w historii, Libratus \cite{libratus}.
 
-Jak pokazują dotychczasowe osiągnięcia Poker Texas Hold'em jest bardzo skomplikowanym środowiskiem 
-do uczenia maszynowego. Sposoby na jego rozwiązanie zaczęły powstawać od niedawna, a pierwsze
-duże osiągnięcie w grze HUNH miało miejsce dopiero w 2017 roku. 
+
+Pomimo takich osiągnięć utworzone modele potrafią grać tylko
+w środowiskach 
+składających się maksymalnie z 2 osób typu zero-sum \cite{libratus} \cite{cepheus} \cite{ds}.  
+Wynika to z poziomu skomplikowania gier częściowo-obserwowalnych.
+Sposoby na jego rozwiązanie zaczęły powstawać od niedawna, a pierwsze
+dwa duże osiągnięcia w grze HUNH miały miejsce dopiero w 2017 roku. Dodatkowo wszystkie wymienione
+modele bazują na metodzie CFR lub na jej nowszych wersjach.
+
+
+\subsubsection{Cepheus}
+
+AI powstałe w celu wygrywania w grach HULH. Był to pierwszy model rozwiązujący dużą wersję gry Texas
+Poker Hold'em w historii \cite{cepheus}.  Wykorzystał on nowszą wersję techniki CFR, którą nazwano CFR+
+\cite{cepheus}. W wyniku dwóch miesięcy nauki i testów nowa metoda zbiegała się znacznie szybciej do
+Równowagi Nasha niż bazowy CFR \cite{cepheus}. Powstały model jest udostępniony publiczne, każdy
+może go przetestować.    
+
+\subsubsection{DeepStack}
+
+Model DeepStack rozwiązał HUNH przez połączenie metody CFR, sieci neuronowych wraz z dodatkowymi
+elementami. W rezultacie AI zaczęło osiągać bardzo dobre wyniki.
+Przetestowano go na 33 profesjonalnych graczach w wielu iteracjach gry. Model w większości
+przypadków wygrał \cite{ds}. Była to pierwsza wygrana AI z człowiekiem w normalnej 
+wersji gry Poker Texas Hold'em z taką częstotliwością.
+
+\subsubsection{Libratus}
+
+Najbardziej zaawansowana sztuczna inteligencja, która jest wykorzystywana w grach HUNH. Jak wynika z
+testów wygrywa znacznie częściej niż DeepStack z profesjonalnymi graczami \cite{libratus}.
+Przetestowano go z najlepszymi graczami na świecie, Dong Kim, Dan McAulay, Jimmy Chou 
+i Jason Les \cite{libratus}. AI wygrało z nimi, z ogromną przewagą.
+
+
+
 
 \section{Counterfactual Regret Minimization}
 
@@ -386,14 +477,17 @@ duże osiągnięcie w grze HUNH miało miejsce dopiero w 2017 roku.
 Jest to nieodłączna metoda uczenia AI w grach karcianych. Polega ona na liczeniu najlepszej 
 strategii pod warunkiem, że znany jest wektor żalu w węźle.
 Taki wektor opisuje się jako tablicę wag o długości równej liczbie możliwych akcji gracza. Każda z 
-tych wag opisuje stopień opłacalności danego ruchu.
+tych wag opisuje, jak dużym błędem będzie niewykonania danego ruchu.
 
 
 Poniżej przedstawiono wzór wynikający z tej metody, gdzie  
-$R^{t}(I, a)$ jest omawianym wektor \cite{CFR}. 
-Następnie aby uzyskać nową strategię, usuwa się wartości ujemne (formuła nr 1.2) 
-i sprawdza, czy ich suma jest 
-większa od zera. W zależności od tego warunku wybierany jest rozkład, wzór nr 1.1.
+$R^{T}(a)$ jest omawianym wektorem \cite{CFR}. 
+Następnie, aby uzyskać nową strategię, usuwa się wartości ujemne, czyli takie, których gracz nie
+żałował (formuła nr 2.2).
+Potem sprawdzana się, czy ich suma jest większa od zera w celu wybrania odpowiedniego wzoru, formuła
+2.1.
+W zależności od tego warunku otrzymuje się określony rozkład prawdopodobieństwa wykonania każdej z
+akcji.
 
 
 \begin{equation}
@@ -414,10 +508,10 @@ Proces ten jest powtarzany wielokrotnie, tak, aby przy każdej iteracji rozkład
 ruchów były stopniowo
 poprawiane.
 
-W przypadku algorytmu Deep CFR, zachodzi modyfikacja formuły nr 1.1. Strategia jest liczona na
+W przypadku algorytmu Deep CFR zachodzi modyfikacja formuły nr 2.1. Strategia jest liczona na
 dodatnich wartościach żalu podzielonego przez  prawdopodobieństwo dostania się do 
 tego stanu $D^{T} (I, a)$ \cite{DCFR}.
-Jeśli suma jest ujemna to zostaje wybrana akcja z najwyższą wartością $D^{T}(I, a)$ \cite{DCFR}.
+Jeśli suma jest ujemna, to zostaje wybrana akcja z najwyższą wartością $D^{T}(I, a)$ \cite{DCFR}.
 
 
 
@@ -438,7 +532,7 @@ imm} (I)$,
 czyli żal przydzielony do węzła I.
 Do obliczenia takiego parametru została zdefiniowana wartość "counterfactual utility" $u_{i}(\sigma,
 I)$. Oznacza ona przewidywany wynik nagrody dla stanu I gdzie wszyscy gracze używają strategi
-$\sigma$, \cite{CFR}. Dodatkowo $\pi^{\sigma} (h, h')$ oznacza prawdopodobieństwo dostania się z historii h do 
+$\sigma$ \cite{CFR}. Dodatkowo $\pi^{\sigma} (h, h')$ oznacza prawdopodobieństwo dostania się z historii h do 
 nowego stanu h' przy strategii $\sigma$ \cite{CFR}.
 
 \begin{equation}
@@ -454,9 +548,10 @@ Na podstawie równania 2.5 można wyliczyć końcową wartość żalu w algorytm
 \end{equation}
 
 
-Powyższe 2 równania można doprowadzic do formuły nr 2.6. Wartość $\pi^{\sigma} (h,h')$ została
-zastąpiona przez 1, ponieważ
-CFR zakłada, że dla $u_{i}(\sigma^{t}|_{I \rightarrow a}, I)$, gracz wykonuje zawsze akcję \emph{a} \cite{CFR}.
+Powyższe 2 równania można doprowadzić do formuły nr 2.6. Wartość $\pi^{\sigma} (h,h')$ została
+zastąpiona przez liczbę 1, ponieważ
+CFR zakłada, że dla $u_{i}(\sigma^{t}|_{I \rightarrow a}, I)$, gracz wykonuje zawsze akcję \emph{a} 
+z całkowitą pewnością \cite{CFR}.
 
 
 
@@ -470,8 +565,8 @@ CFR zakłada, że dla $u_{i}(\sigma^{t}|_{I \rightarrow a}, I)$, gracz wykonuje 
 Po uzyskaniu $R^{T}_{i,\text{imm}} (I, a)$ można wykorzystać metodę "Regret Matchning" i
 zaktualizować strategie.
 Poniżej przedstawiono przykład obliczeń pojedyńczego węzła oraz wyniki 
-dla gry 'Papier-Kamień-Nożyce' przy ustawionych
-nagrodach i karach w stanach końcowych jak na rys. 2.5, 2.6, 2.7.
+dla gry "Papier-Kamień-Nożyce" przy ustawionych
+nagrodach i karach w stanach końcowych jak na rys. 2.4, 2.5, 2.6.
 
 \begin{center}
 $$
@@ -498,7 +593,7 @@ $$
            \caption{Przykład 'counterfactual utility'.}
 \end{figure}
 
-Na podstawie rys. 2.5 widać, że gracz P2 będzie miał stan o najwyższej wartości "counterfactual utility" w węźle $u_{i}
+Na podstawie rys. 2.4 widać, że gracz P2 będzie miał stan o najwyższej wartości "counterfactual utility" w węźle $u_{i}
 (\sigma^{t}, I)=\frac{1}{9}$, a najniższej dla $u_{i}(\sigma^{t}, I)=-\frac{1}{9}$.
 
 
@@ -512,7 +607,8 @@ Na podstawie rys. 2.5 widać, że gracz P2 będzie miał stan o najwyższej wart
 \vspace{10cm}
 
 Powyżej zaprezentowano wektory $R^{T}_{i,\text{imm}} (I, a)$.
-Gracz P1 grając, najbardziej będze żałował nie wykonania akcji 'Kamień', a najmniej 'Papier'.
+Gracz P1 grając, najbardziej będze żałował nie wykonania akcji \emph{Kamień}, a najmniej
+\emph{Papier}.
 
 \vspace{0.5cm}
 \begin{figure}[th!]
@@ -521,76 +617,76 @@ Gracz P1 grając, najbardziej będze żałował nie wykonania akcji 'Kamień', a
            \caption{Przykład strategii.}
 \end{figure}
  
-Rys. 2.7 przedstawia wektory określające jakimi rozkładami akcji powinni się kierować gracze, aby
+Rys. 2.6 przedstawia wektory określające jakimi rozkładami akcji powinni się kierować gracze, aby
 osiągnąć najlepsze wyniki. Są to wektory wyliczone po pierwszej iteracji, w praktyce eksploracja
 drzewa i powyższe obliczenia są powtarzane wielokrotnie. Końcowym etapem algorytmu CFR jest
-policzenie średniej strategii \cite{CFR}.
+policzenie średniej strategii, która ma reprezentować Równowagę Nasha \cite{CFR}.
 
 
 
 
 
-\subsection{Monte Carlo Conterfactual Regret Minimization}
+\section{Monte Carlo Conterfactual Regret Minimization}
 
 Algorytm CFR eksploruje całe drzewa decyzyjnego w jednej iteracji, co tworzy wymagania na
 dużą moc obliczeniową i długi czas uczenia. Dla małych gier takie rozwiązanie jest akceptowalne, ale w przypadku 
-większych środowisk jest nieefektywny.
-Spowodowało to powstanie nowszej wersji algorytmu, MCCFR ('\emph{Monte Carlo Conterfactual Regret
-Minimization}') , 
+większych środowisk jest nieefektywne.
+Spowodowało to powstanie nowszej wersji algorytmu CFR, MCCFR (\emph{Monte Carlo Conterfactual Regret
+Minimization}) , 
 który w każdą iterację eksploruje tylko część drzewa \cite{mccfr}.
 
 Metodę można podzielić na dwie odmiany, Outcome-Sampling oraz External-Sampling \cite{mccfr}.
 
-W pracy zostanie przedstawiony sposób MCCFR ES ('\emph{Monte Carlo Conterfactual Regret
-Minimization External Sampling}'), ponieważ taki został zaimplementowany w algorytmie
+W pracy zostanie przedstawiony sposób MCCFR ES (\emph{Monte Carlo Conterfactual Regret
+Minimization External Sampling}), ponieważ taki został zaimplementowany w algorytmie
 Deep CFR.
 MCCFR ES przed eksploracją drzewa wybiera kolejno spośród graczy jednego uczestnika, którego 
 oznacza
-się jako 'traverser'.
+się jako "traverser" \cite{DCFR}.
 Eksploruje on wszystkie odpowiedzi ze swoich akcji w danym węźle. W międzyczasie inni
-uczestnicy wykonują pojedynczy ruch na podstawie wybranej strategii \cite{mccfr}.  
+uczestnicy wykonują pojedynczy ruch na podstawie swojej najlepszej strategii \cite{mccfr}.  
 
 
-Na rys. 2.8 przedstawiono przykład część drzewa HULH, 
-gdzie gracz 'P2'
-został wybrany jako 'traverser'. 
+Na rys. 2.7 przedstawiono przykład części drzewa HULH, 
+gdzie gracz P2
+został wybrany jako "traverser". 
 Jak można zauważyć, tylko jego węzły rozgałęziają się na wszystkie możliwe ścieżki. 
 Dodatkowo w drodze powrotnej obliczono $u_{i} (\sigma, I)$ dla wszystkich
 stanów używając wzoru 
-1.5.
+2.5.
 
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1\textwidth]{./img/tree.pdf}
-  \caption{Część drzewa decyzyjnego MCCFR ES z graczem P2 jako traverser.}
+  \caption{Część drzewa decyzyjnego MCCFR ES z graczem P2 jako "traverser".}
 \end{figure}
 
 
 \vspace{5cm}
 Jest to przykład z jednej eksploracji gry, w praktyce powtarza się ten proces wielokrotnie, 
-uzyskując różne wersje gry.
+uzyskując różne wersje drzew.
 
 
-Mając takie drzewo, można przystąpić do liczenia $R_{i,imm}^{T} (I)$ oraz poprawiania 
-wyników przez Regret Matching. MCCFR ES spełnia swoją funkcję, ale wymaga wielu iteracji, aby
+Mając takie wyniki, można przystąpić do liczenia $R_{i,imm}^{T} (I)$ oraz poprawiania 
+wartości przez "Regret Matching". MCCFR ES spełnia swoją funkcję, ale wymaga wielu iteracji, aby
 uzyskać dobre wyniki. Z tego powodu w dalszym rozdziale zostanie przedstawiona metoda Deep CFR,
 która przyspiesza proces uczenia przez użycie sieci neuronowych.
 
 \section{Deep CFR}
 
 
-Algorytm Deep CFR rozwija podstawową wersję metody CFR o sieci neuronowe.
-Taka modyfikacja była wymagana, aby utworzyć algorytm, który może rozwiązać nie tylko proste gry,
+Algorytm Deep CFR  opisany w \cite{DCFR} rozwija podstawową wersję metody CFR o sieci neuronowe.
+Taka modyfikacja była wymagana, aby utworzyć AI, które może rozwiązać nie tylko proste gry,
 ale też i duże jak HULH. Liczy on wektory w drzewie decyzyjnym
-przez algorytm MCCFR ES. Dodatkowo Deep CFR zbiega się do Równości Nasha szybciej niż 
+przez algorytm MCCFR ES. Dodatkowo Deep CFR zbiega się do Równowagi Nasha szybciej niż 
 popularny algorytm NFSP z 2016 roku \cite{DCFR}.
 
 Deep CFR wykorzystuje sieci neuronowe do przewidzenia wartości $D^{T}$(I, a) w podobnych
 obserwacjach, potem na
-podstawie predykcji liczy strategię ze wzoru nr 1.3.   
-Następnie liczona jest zaktualizowana wersja wektora żalu, formuła nr 1.5.
-Obliczone wyniki są dodawane do buforów $B_{1}$, $B_{2}$, a strategia do zbioru $B_{s}$.
+podstawie predykcji liczy strategię ze wzoru nr 2.3.   
+Następnie liczona jest zaktualizowana wersja wektora żalu, formuła nr 2.5.
+Obliczone wyniki są dodawane do buforów  $($B_{1}$, $B_{2}$) \in B_{p}$, a strategia do zbioru $B_{s}$.
 
 
 Po wielu iteracjach
@@ -622,29 +718,30 @@ $\theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comment{loss: 
 
 \vspace{1cm}
 Algorytm na wejściu dostaje argumenty przystosowane do gry 2-osobowej.
-Pierwszymi elementami są bufory graczy $B_{p}$ ($B_{1}$, $B_{2}$) oraz kontener na 
+Pierwszymi elementami są bufory graczy ($B_{1}$, $B_{2}$) oraz kontener na 
 strategie $B_{s}$.
-Dodatkowo metoda potrzebuje listę uczestników P, z których będzie wybierać 'traversera'.
-Ostatnimi argumentami są iteracje gry N oraz liczba eksploracji drzewa K.
+Dodatkowo metoda potrzebuje listę uczestników \emph{P}, z których będzie wybierany cyklicznie gracza
+eksplorującego drzewo decyzyjne.
+Ostatnimi argumentami są iteracje gry \emph{N} oraz liczba cykli \emph{K} metody MCCFR ES.
 
 
-W metodzie należy ustawić trzy pętle wraz z nową rundą uzyskując początkową historię oraz
+W metodzie należy ustawić trzy pętle wraz z nową rundą, uzyskując początkową historię oraz
 krok gry t. Kolejnym etapem jest
 wykonanie funkcji \emph{MCCFRES}. Przyjmuje ona na wejściu sieci neuronowe obu graczy, 
 listę uczestników p,
 numer kroku t, historię rundy h oraz bufory. Po k 
-powtórzeniach następuje uczenie sieci neuronowej wybranego wcześniej gracza jako 'traversera'. 
+powtórzeniach następuje uczenie sieci neuronowej wybranego wcześniej gracza eksplorującego drzewo. 
 
 Model używa 
-zmodyfikowanej wersji funckcji MSE do liczenia błędu predykcji. Każdy wynik $(y_{i} - \hat{y_{i}})^2$
+zmodyfikowanej wersji funkcji MSE (\emph{Mean Square Error}) do liczenia błędu predykcji. Każdy wynik $(y_{i} - \hat{y_{i}})^2$
 mnożony jest przez krok $t_{i}$ w, którym uzyskano $y_{i}$ \cite{DCFR}.
-Dodatkowo jak wynika z badań algorytm osiąga lepsze wyniki
+Dodatkowo jak wynika z badań, algorytm osiąga lepsze wyniki
 jeśli
 sieci neuronowe są trenowane od początku \cite{DCFR}. Dlatego należy przed funkcją \emph{TRAIN}
 wyczyścić model.
 
-Po wszystkich powtórzeniach i zebraniu całej bazy bufora $B_{s}$ rozpoczyna się trenowanie sieci 
-neuronowej $\theta_{s}$ w ten sam sposób jak inne modele. Elementem wyjściowym Deep CFR jest 
+Po wszystkich powtórzeniach i zebraniu całej bazy bufora $B_{s}$, rozpoczyna się trenowanie sieci 
+neuronowej $\theta_{s}$ w ten sam sposób jak inne modele. Elementem wyjściowym Deep CFR jest sieć 
 $\theta_{s}$.
 
 
@@ -697,16 +794,16 @@ sprawdzenia, który gracz rozpoczyna daną turę. Na podstawie tej informacji b�
 dalsza część algorytmu.
 
 
-Pierwszym krokiem jest sprawdzenie, czy stan gry jest końcem gry. W przypadku prawdziwego 
+Pierwszym krokiem jest sprawdzenie, czy stan gry jest końcowym etapem. W przypadku prawdziwego 
 warunku zwracana jest wygrana lub przegraną wartość stawki. 
-Jeśli powyższy etap jest fałszywy, algorytm sprawdza, czy gracz jest oznaczony jako 'traverser'.
+Jeśli powyższy etap jest fałszywy, algorytm sprawdza, czy gracz jest oznaczony jako "traverser".
 Wtedy program używając sieci neuronowej gracza,
 otrzymuje wektor $\hat{D}(I)$ przez wprowadzenie do modelu informacji o widocznych kartach oraz
-dotychczasowej historii gry. Korzystając ze wzoru 1.3, liczy strategie, odczytuje $u_{t_{r}}$ (h) 
+dotychczasowej historii gry. Korzystając ze wzoru 2.3, liczy strategie, odczytuje $u_{t_{r}}$ (h) 
 wykonując rekurencję. Ostatnim krokiem jest wyliczenie wektora żalu i dodanie go do bufora.
 
-Jeśli powyższy warunek był fałszywy, gracz liczy tak samo jak wcześniej $\hat{D}(I)$, nowy rozkład
-akcji i dodaje ją do zbioru strategii. Następnie korzystając z tej sieci neuronowej i otrzymanej 
+Jeśli powyższy warunek był fałszywy, gracz liczy nowy rozkład
+akcji i dodaje go do zbioru strategii. Następnie korzystając z tej sieci neuronowej i otrzymanej 
 dystrybucji wykonuje nową akcję.
 
 
@@ -715,33 +812,36 @@ dystrybucji wykonuje nową akcję.
 Środowiska z niepełnym zestawem informacji i brakiem deterministyczności są trudne do rozwiązania.
 Algorytmy tworzące modele
 dla takich gier są często skomplikowane i obciążające obliczeniowo. 
-Przez takie cechy dopiero od niedawna zaczęły powstają algorytmy zdolne pokonać ludzi w 
-dużych grach karcianych jak 'Cepheus' lub 'DeepStack'. 
+Przez takie cechy dopiero od niedawna zaczęły powstają algorytmy, zdolne pokonać ludzi w 
+dużych grach karcianych jak "Cepheus", "DeepStack" lub "Libratus". 
 Metody zdolne tworzyć takie AI dalej są rozwijane i aktualizowane z roku na rok.
-W taki sposób w 2014 roku powstał CFR i MCCFR, po para latch zastąpiono je przez CFR+, a 
-następnie
-Deep CFR bedący tematyką pracy. 
+W taki sposób w 2014 roku powstał CFR, potem MCCFR i po para latach zastąpiono je przez CFR+, aż 
+zaczęto wykorzystywać sieci neuronowe, przez co powstał 
+Deep CFR będący tematyką pracy. 
 
 Rozdział dokładnie opisał działanie omawianego algorytmu
-przez przedstawienie terminów należących do działu matematyki 'Teoria Gier'. Między innymi
+przez przedstawienie terminów należących do działu matematyki Teoria Gier. Między innymi
  pokazał, że opis środowiska przez drzewa decyzyjnych pozwala na wiele uproszczeń i możliwości
- śledzenia gry. Dodatkowo przedstawiono problem poszukiwania stanu Równości Nasha, którego
+ śledzenia gry. Dodatkowo przedstawiono problem poszukiwania stanu Równowagi Nasha, którego
  znalezienie jest celem większości algorytmów sztucznej inteligencji gier karcianych.
 
-Dobrzez zaimplementowany algorytm Deep CFR przy prawdidlowej parametryzacji i odpowiednio dużej
-ilości iteracji powinien zbiec się do pókktu bliskiego takiego stanu.
+Dobrze zaimplementowany algorytm Deep CFR przy prawidłowej parametryzacji i odpowiednio dużej
+liczby iteracji powinien zbiec się do punktu bliskiego takiego stanu. Pomimo tak optymistycznych 
+założeń utworzone AI ("Cepheus", "DeepStack", "Libratus") potrzebowały bardzo wielu iteracji do 
+nauczenia się dobrej gry w HULH i HUNH.
+Przykładem jest "Cepheus", który uczył się przez dwa miesiące, aby móc grać w HULH.
 
 \chapter{Implementacja algorytmu} 
 
-Program Deep CFR został napisany w niniejszej pracy, korzystając z narzędzi
+Program Deep CFR został napisany w niniejszej pracy, korzystając z narzędzi,
 pozwalających na zredukowanie nadmiarowości kodu oraz na prostą implementację.
 W tym rozdziale skupiono się na opisaniu wybranych technologii, parametrów oraz funkcji, 
-które znalazły się w implementacji algorytm.
+które znalazły się w implementacji algorytmu.
 
 Bazą do napisanego kodu jest język programowania, Python 3.8. Zawiera on wiele
 technologii wspomagających uczenie maszynowe i rozległą społeczność wspierającą jego rozwój.
 Poniżej 
-wy listowano i opisano główne narzędzia użyte w pracy.
+wylistowano i opisano główne narzędzia użyte w pracy.
 
 \paragraph{TensorFlow}
 
@@ -752,7 +852,7 @@ i dobrą
 dokumentację stał się jednym z najpopularniejszych narzędzi wykorzystywanych do tworzenia
 sztucznych inteligencji. Dodatkowo od niedawna biblioteki technologi Keras stały się częścią Tensorflow.
 Daje to możliwości znacznego
-zredukowania kodu przy prostych problemach, które często są rozwiązane przez fynkcje w tym module. 
+zredukowania kodu przy prostych problemach, które często są rozwiązane przez funkcje w tym module. 
 
 
 W przypadku niniejszej pracy głównie korzystano z funkcji zawartych w bibliotekach Keras. Wyjątkiem 
@@ -770,8 +870,8 @@ typy danych powiązane z Numpy \cite{tensorflow}.
 \paragraph{Tqdm}
 Małe narzędzie w języku Python pozwalające na wyświetlenie postępu procesów w działającym 
 programie.
-Przydatne narzędzie w celach
-testowych. W przypadku pracy zostały użyte do śledzenia iteracji drzew decyzyjnych 
+Przydatne w celach
+testowych. W pracy zostało użyte do śledzenia iteracji drzew decyzyjnych 
 algorytmu Deep CFR.
 
 \paragraph{TensorBoard}
@@ -788,7 +888,7 @@ metodą Deep CFR.
 \section{Implementacja sieci neuronowych}
 
 Algorytm Deep CFR do działania wymaga dwóch sieci neuronowych, jedna ma rozpoznawać strategie
-$\sigma_{p}^{t}$, a
+$\sigma^{t}$, a
 druga przypisana do określonego gracza przewiduje opłacalność akcji $D_{p}^{t}$. 
 Dodatkowo każdy z tych elementów
 jest trenowany na podstawie cyklicznie aktualizowanych buforów $B_{s}$ i $B_{p}$. W tym rozdziale zostanie
@@ -814,13 +914,13 @@ uczenia modelu.
    \hline
    końcowa funkcja aktywacyjna & \emph{softmax} \\
    \hline
-   rozmiar bufora & 200 000 \\
+   rozmiar bufora & 600 000 \\
    \hline
-   maksymalna liczba iteracji & 16 000 \\
+   maksymalna liczba iteracji & 5 000 \\
    \hline
    rozmiar \emph{minibatch} &  500\\
    \hline
-   parametr \emph{patience} &  10\\
+   parametr \emph{patience} &  40\\
    \hline
 \end{tabular}
 \end{table}
@@ -840,13 +940,13 @@ uczenia modelu.
    \hline
    końcowa funkcja aktywacyjna & \emph{linear} \\
    \hline
-   rozmiar bufora & 100 000 \\
+   rozmiar bufora & 300 000 \\
    \hline
-   maksymalna liczba iteracji & 16 000 \\
+   maksymalna liczba iteracji & 5 000 \\
    \hline
    rozmiar \emph{minibatch} &  500\\
    \hline
-   parametr \emph{patience} &  10\\
+   parametr \emph{patience} &  40\\
    \hline
 \end{tabular}
 \end{table}
@@ -855,7 +955,7 @@ uczenia modelu.
 \subsection{Architektura modelu}
 
 W algorytmie zaimplementowano trzy sieci neuronowe $\theta_{1}$, $\theta_{2}$, $\theta_{s}$ o nieskomplikowanej architekturze. Z tego powodu
-wykorzystano bibliotekę \emph{Keras}, która do takich przypadków jest dobrym rozwiązaniem. 
+wykorzystano bibliotekę Keras, która do takich przypadków jest dobrym rozwiązaniem. 
 Dodatkowo
 założono, że
 wszystkie modele będą miały podobną budowę poza ostatnią warstwą z innymi funkcjami
@@ -868,7 +968,7 @@ trzech warstw ukrytych zakończonych normalizacją i wyjściem w postaci wektora
 
 
 Początkowo sieci dostają tablicę o wymiarach (3, 52), czyli kolumnę kart ze stołu, z ręki oraz
-historię dotychczasowej gry. Model w dalszych obliczeniach musi
+historię ostatniej rundy gry. Model w dalszych obliczeniach musi
 przekształcić takie dane do formy jedno-wymiarowej (None, 156), co robi warstwa $\emph{Flatten}$.
 Kolejne dwa elementy składają się z 512 wag, trzecia warstwa ukryta posiada ich 256.
 Na trzech wymienionych elementach ustawiono funkcję \emph{Relu}.
@@ -905,26 +1005,33 @@ opisu algorytmu Deep CFR, wymaga on zmodyfikowanej wersji MSE (\emph{Mean Square
 Zostało to wykonane przy pomocy 
 funkcji matematycznych na tensorach, jakie udostępnia \emp{Tensorflow} \cite{tensorflow}.
 
+Wszystkie te elementy zostały uwzględnione w funkcjach klasy \emph{Poker\_network} przedstawionej na
+rys. 3.4.
+
 
 \subsection{Budowa zbiorów danych}
 
 Jak wynika z algorytmu Deep CFR, w programie muszą być zawarte trzy bufory.
-Maksymalna pojemność kontenerów $B_{1}$ i $B_{2}$ jest równa 100 000 próbek.
-Bufor $B_{s}$ może posiadać ich 200 000. Każdy z dodatnych elementów do bufora składa się z
+Maksymalna pojemność kontenerów $B_{1}$ i $B_{2}$ jest równa 300 000 próbek.
+Bufor $B_{s}$ może posiadać ich 200 000. Każdy z dodawanych elementów do bufora składa się z
 trzech połączonych wektorów o rozmiarach 52.
 
 Zaimplementowano klasę $\emph{Memory}$ zarządzającą tymi buforami, które zachowują się jak 
-kolejki, w przypadku przepełnienia jest usuwany najstarszy wpis.
+kolejki \emph{deque}, w przypadku przepełnienia jest usuwany najstarszy wpis.
 
 Mając uzupełnione dane w tablicach, program rozpoczyna przygotowanie zbiorów danych do uczenia
 wybranych
 sieci neuronowych. Każdy z buforów zostaje losowo przetasowany i podzielony na dwa podzbiory.
-Pierwszy z nich to zbiór uczący. Wykorzystuje się go do poprawiania wag modelu sekwencyjnie.
+Pierwszy z nich to zbiór uczący zajmujący 80\% całej bazy. Wykorzystuje się go do poprawiania wag modelu sekwencyjnie.
 Drugim zbiorem
 są dane walidacyjne. Dokonanie takiego podziału było wymagane, aby przeciwdziałać stanowi
 przetrenowania modelu. Zbiór walidacyjny jest nadzorowany i na jego podstawie można określić 
 moment od, którego model przestaje dobrze działać. Schemat tego
-podziału przedstawiono na rys. 3.2.
+podziału przedstawiono na rys. 3.2. 
+Dodatkowo w trakcie nauki sieć neuronowa aktualizuje swoje wagi w każdym kroku przez użycie elementu o nazwie
+\emph{minibatch}, będącym parametrem określającym
+mały podzbiór bazy użyty do trenowania sieci w pojedynczym kroku. Jego liczebność jest równa 500
+próbek.
 
 \begin{figure}[!ht]
   \centering
@@ -932,24 +1039,19 @@ podziału przedstawiono na rys. 3.2.
   \caption{Podział danych.}
 \end{figure}
 
-\vspace{4cm}
-W trakcie nauki sieć neuronowa aktualizuje swoje wagi w każdym kroku przez użycie elementu o nazwie
-\emph{minibatch} będący parametrem określającym
-mały podzbiór bazy użyty do trenowania sieci w pojedynczym kroku. Jego liczebność jest równa 500
-próbek.
 
 \subsection{Proces uczenia}
 
 Algorytm Deep CFR do eksploracji wykorzystuje metodę MCCFR ES, która eksploruje w jednej iteracji
-250 razy drzewo dezyzyjne gromadząc przy tym próbki w buforach.
+wiele razy drzewo dezyzyjne gromadząc przy tym próbki w buforach.
 Po zakończeniu 
 wszystkich powtórzeń zachodzi etap uczenia sieci neuronowych $\theta_{1}$, $\theta_{2}$
-wykonując maksymalnie 16 000 aktualizacji wag.
-Taki schemat działania jest wykonywany dla obu graczy i powtarza się 50 razy. Końcowym
+wykonując maksymalnie 5 000 aktualizacji wag.
+Taki schemat działania jest wykonywany dla obu graczy i powtarza się wielokrotnie. Końcowym
 zadaniem jest wytrenowanie sieci neuronowej $\theta_{s}$.  
-Wszystkie te elementy zostały połączone przez klasę $\emph{Player}$ posiadającą obiekty
+Wszystkie te elementy zostały połączone przez klasę $\emph{Brain}$, agregującą obiekty
 $\emph{Memory}$
-oraz $\emph{Network}$, rys. 3.4. 
+oraz $\emph{Poker\_network}$, rys. 3.4. 
 
 Dodatkowo w celu poprawienia wyników uczenia użyto funkcji \emp{EarlyStopping} \cite{tensorflow}.
 Zatrzymuje ona iteracje modelu w przypadku kiedy błąd predykcji na zbiorze
@@ -964,14 +1066,21 @@ Rys. 3.3 prezentuje przykładowy punkt zakończenia nauki modelu.
   \caption{Przykładowy punkt zatrzymania się uczenia po zastosowaniu \emph{EarlyStopping} \cite{early}.}
 \end{figure}
 
+\vspace{2cm}
+Do samego trenowania sieci neuronowych wybrano urządzenie GPU GeForce GTX 1050 z 
+racji uzyskiwania szybszych
+rezultatów w przeciwieństwie do innej możliwości jaka jest wykorzystanie CPU.
+
+
 \section{Implementacja środowiska}
 
-Do symulacji gry HULH z którym model będzie się komunikował, użyto blblioteki PyPokerEngine.
+Do symulacji gry HULH z którą model będzie się komunikował wykonując akcje, użyto blblioteki PyPokerEngine.
 Klasa 
 \emph{HULH\_Emulator} 
 zaimplementowana w programie pozwala na utworzenie obiektu
-zarządzającego grą HULH. Przy tworzeniu obiektu zostają zdefiniowane 
-nazwy graczy P1 i P2, które w dalszej części będą używane do śledzenia histori gry. 
+zarządzającego taką grą. Przy tworzeniu obiektu zostają zdefiniowane 
+nazwy graczy P1 i P2, które w dalszej części będą używane do śledzenia histori gry oraz wykonywania
+wszelkich akcji graczy. 
 W tabeli nr 3.3 wylistowano parametry ustawione w programie, związane z zasadami grą.
 
 
@@ -997,11 +1106,20 @@ W tabeli nr 3.3 wylistowano parametry ustawione w programie, związane z zasadam
 \end{tabular}
 \end{table}
 
-Zaimplementowane środowisko opiera się na PyPokerEngine, co oznacza, że każda akcja zwraca dwa
-elementy, obiekt określający stan gry oraz historię gry w formie json. Obie wartości są używane do
+
+
+Zaimplementowane środowisko każdej wprowadzonej akcji zwraca dwa
+elementy, obiekt \emph{State} określający stan gry oraz historię gry w formie słownika. 
+Obie wartości są używane do
 śledzenia stanu środowiska w drzewie decyzyjnym. Informacje jak karty na stole, historia gry lub 
-wygrana gracza jest zarządzane przez użytą bibliotekę. Napisane funkcje w programie pełnia tylko 
-zadanie interfejsu dla drzewa.
+wygrana gracza jest zarządzane przez obiekt.  
+
+Sama gra działa w taki sposób przy zadanych parametrach aby każde podbicie stawki było wielkości
+dużej w ciemno. Dzięki takiemu założeniu gra nie kończy się zbyt szybko 
+podwarunkiem, że żaden z graczy nie wykona akcji \emph{fold}. Dodatkowo ustalono, że po każdej 
+rundzie środowisko jest resetowane. Taki proces powoduje powstawanie mniejszych drzew
+decyzyjne co pozwala na szybszą naukę modeli przez krutszy czas poświęcany na eksplorację gry przez
+MCCFR ES. 
 
 
 \section{Implementacja Deep CFR}
@@ -1013,15 +1131,22 @@ Do tego ustawiane jest środowisko \emph{HULH\_Emulator} przez referencje.
 
 Cały proces powstawania modelu rozpoczyna się od funkcji \emph{iterate}, która wykonuje trzy pętle
 \emph{for},
-dla iteracji algorytmu i powtórzeń eksploracji drzewa dla każdego z graczy. W pierwszej z nich 
+dla iteracji algorytmu po 50 razy oraz powtórzeń eksploracji drzewa dla każdego z gracza po 270 razy. W pierwszej z nich 
 środowisko tworzy nową grę, w ostatniej pętli jest wykonywana funkcja \emph{\_\_traverse},
 działająca wedłóg metody MCCFR ES. Dostaje ona argumenty \emph{state} czyli obiekt określający
 stan gry, \emph{events} - dotychczasową historię oraz \emph{timestep}.
 Ostatni argument \emph{verbose} jest opcialny i służy tylko do wizualizacji powstałego drzewa
-decyzyjnego. Funckja działa po przez rekurencję.
+decyzyjnego. Funckja działa po przez rekurencję co oznacza, że aktywuje samą siebie wielkrotnie co
+pozwala na sprawdzenie każdej wersji gry.
 Po zakończeniu działania MCCFR ES, rozpoczyna się uczenie sieci neuronowej $\theta_{p}$. I
 powtażanie powyrzszego procesu. 
-Ostatnim etapem jest trenowanie sieci $\theta_{s}$ oraz zapisanie jej do pliku.
+Ostatnim etapem jest trenowanie sieci $\theta_{s}$ oraz zapisanie jej do pliku. Aby spełnic warunek 
+utworzenia pięciu modeli kolejno ustawiono w funkcji \emph{iterate} opciajlny argument
+\emph{checkpoint}. Przyjmuje on bazowo wartość \emph{None}. Przy uruchamianiu programu zmieniono 
+ją na liczbę 10 co oznacza, że co 10 iteracji będzie trenowana sieć $\theta_{s}$ z uzberanego bufora
+i zapisywana do pliku. 
+
+Po ustawieniu wszystich parametrów uruchomiono program, który wykonywał sie przez trzy dni.
 Tab. 3.4 prezentuje podstawowe parametry zaimplementowanego algorytmu.
 
 
@@ -1032,7 +1157,7 @@ Tab. 3.4 prezentuje podstawowe parametry zaimplementowanego algorytmu.
    \hline
    parametr & wartość \\
     \hline
-   liczba powtórzeń eksploracj drzewa & 250  \\ 
+   liczba powtórzeń eksploracj drzewa & 270  \\ 
    \hline
    liczba iteracji algorytmu & 50  \\  
    \hline
@@ -1043,6 +1168,20 @@ Tab. 3.4 prezentuje podstawowe parametry zaimplementowanego algorytmu.
 
 
 
+\section{Podsumowanie}
+
+
+W tym rozdziale zaprezentowano implementację algorytmu wraz z użytymi technologiami. Program
+następnie został uruchomiony  z zadanymi parametrani jak 50 iteracji po 270 eksploracji drzewa.
+Wykonywał sie on przez okres trzech dni używając GPU. Postępy
+tworzonych pięciu modeli były na bieżąco analizowane i zapisywane. Przedstawiono między innymi struktórę sieci
+neuronowych, budowę zbioru danych, działanie środowiska HULH oraz funkcje związane z uczeniem
+algorytmu. Pokazano cel użycia takich metod jak \emph{EarlyStopping} lub \emph{Flatten}. 
+
+Następny
+rozdział przedstawi zapisane wyniki ilustrujące jakość utworzonych modeli oraz sprawdzi, który z
+nich będzie najlepiej grał w HULH.
+
 
 
 \begin{figure}[!ht]
@@ -1052,26 +1191,44 @@ Tab. 3.4 prezentuje podstawowe parametry zaimplementowanego algorytmu.
   \caption{Diagram UML projektu.}
 \end{figure}
 
-\section{Podsumowanie}
+
+
+
 
 \chapter{Wyniki}
 
-Rozdział przedstawia różnice między utworzonymi modelami z algorytmu Deep CFR. Zostały tutaj
-zaprezentowane wykresy jakości uczenia oraz wyniki rozegranych gier między nimi wraz z zwycięscą.
+Rozdział przedstawia rezultaty powstałe po około czterech dniach nauki modelu, następnie
+pezedstawiono wyniki
+wszystkich kombinacji rzgrywek między modelami oraz średnie wartości wygrywanych pól.
+Zostaną tutaj zaprezentowane różnice między utworzonymi AI wraz z ich przewidywaną jakością
+korzystając z odpowiednich wykresów bazujących na danych pobranych z modułu \empg{TensorBoard}. 
+Dodatkowo zostanie dokonana próba wyboru najlepszego modelu na podstawie
+rozegranego turnieju oraz klasyfikacja jego stylu gry na
+podstawie pojedyńczego zapisu rozgrywki z drugim najlepszym modelem.
+Ostatnim etapem będze sprawdzenie o ile lepiej radzi sobie najlepsze AI z graczami wykonującymi
+tylko ruchy w pełni losowe oraz takim, który gra całkowicie szczerze. 
 
 
 \section{Proces uczenia modelów rozpoznawania}
 
-Algorytm Deep CFR pracując przez trzy dni zdołał utworzyć pięć modeli, gdzie każda nauka była
-śledzona przez bibliotekę \emph{TensorBoard}. Uzyskane dane następnei zostały zaimportowane do
-Excela w celu utworzenia czytelnych wykresów ilustrujących zalezność błędu predykcji od liczby
+Algorytm Deep CFR zdołał utworzyć pięć modeli rozpoznawania, gdzie każdy proces nauki
+był
+śledzony przez funkcje biblioteki \emph{TensorBoard}. Uzyskane dane następnie zostąły
+użyte do utworzenia czytelnych wykresów ilustrujących zależność błędu predykcji od liczby
 iteracji.
 
-Pierwszy utworzony model powstał po 10 powtórzeniach algorytmu. Jak można zobaczyć na rys. 4.1
-wartość błędu
-zbiegła się bardzo szybko do wartości bliskiej 0 dla zbioru uczącego i walidacyjnego. Wynika to z 
-małej liczby zebranych próbek w buforze $B_{s}$ o małej różnorodności. Po mimo tak dobrych efektów
-można zauwazyć na rys. 4.2, że model nr 1 nie wygrał tylko z modelem nr 3 z nie wielką przewagą.
+Pierwsze utworzone AI powstał po 10 iteracjach metody Deep CFR co zajeło około 5 godzin.
+Następnie rozpoczęła się nauka sieci $\theta_{s}$ ze zbiorem danych $B_{s}$ zapełnionym przez około 300 000 próbek.
+Można zaóważyć na rys. 4.1,
+że wartość błędu po 40 krokach uczenia nie zmieniła się mocno dla obu zbiorów.
+W przypadku danych walidacyjnych sieć neuronowa przy dokonywaniu predykcji powdowała duże oscylacje
+wartości pozostając na poziomie około 2,2 co przyczyniło sie do zakończenia procesu przedwcześnie przez \emph{EarlyStopping}.
+Przy takim okresie model zmniejszył błąd predykcji zbioru uczącego wynoszący początkowo 0,2 do wartości bliskiej 0.
+
+Analizując taki wykres można stwierdzić, że model nauczył się z zebranych danych zależności między
+wprowadzanymi obserwacjami, a zwracanymi akcjami. Dodatkowo rys. 4.6 pokazuje, że takie AI gra lepiej
+względem wielu utworzonych poźniej modeli.
+
 
 \begin{figure}[!ht]
   \centering
@@ -1079,32 +1236,368 @@ można zauwazyć na rys. 4.2, że model nr 1 nie wygrał tylko z modelem nr 3 z 
 \caption{Wyniki uczenia modelu nr 1.}
 \end{figure}
 
+
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1\textwidth]{./img/model2.pdf}
+\caption{Wyniki uczenia modelu nr 2.}
 \end{figure}
+
+
+\newpage
+Po 20 powtórzeniach algorytmu Deep CFR, utworzono drugi model rozpoznawania. 
+Nastapiło to po około 12 godzinach. Algorym do nauki użył prawie całego zapełnionego buforu $B_{s}$.
+W zbiorze znajdowały się nowe próbki oraz te które zebrano przed nauką pierwszego AI.
+Proces uczenia przebiegał początkowo w podobny sposób jak w poprzednim etapie. Model zaczął od błędu
+predykcji 2,2 dla zbioru walidującego i błędu 0,2 dla buforu uczącego. Pierwszą różnicą względem 
+poprzedniego etapu jest lepsza nauka na podstawie buforu walidacyjnego, po 10
+powtórzeniach wartości zaczęły mocno
+maleć aż do błędu predykcji wynoszącej około 1,4. Następnie pojawił się krótki wzrost wartości i
+utrzymywanie się
+na tym samym poziomie z lekkimi oscylacjami co spowodowało 
+zakończenie procesu. Wykres 4.2 dobrze pokazuje cel używania biblioteki \emph{EarlyStopping}.
+Prawdopodobnie przy większej liczbie iteracji model zaczą by uzyskiwać coraz gorsze wartości
+predykcji zbioru walidacyjnego. Podsumowując model uzyskał lepsze wyniki względem etapu pierwszego
+co może wynikać z większego zbioru danych. Po mimo takich zalet rys. 4.6 pokazuje, że utworzony
+model przegrywa z AI numer 1 przy 400 potwórzonych grach.
+
+Kolejne AI zostało wytrenowane po 30 iteracjach. Był to drugi dzień działania algorytmu
+Deep
+CFR. W tym momencie bufor $B_{s}$ był całkowicie zapełniony przez co
+nowe próbki dodawane do zbioru usuwały najstarsze wpisy. Na tak dużej bazie model uczył sie 
+przez około 100
+powtórzeń. Nauka modelu na podstawie zbioru uczącego była podobna jak w poprzenich etapach. Główną
+różnicą jest bufor walidacyjny, dla którego błąd początkowo wyniusł 3,5 i zmalał do 1,7. 
+
+\vspace{0.5cm}
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1\textwidth]{./img/model3.pdf}
+\caption{Wyniki uczenia modelu nr 3.}
 \end{figure}
+
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1\textwidth]{./img/model4.pdf}
+\caption{Wyniki uczenia modelu nr 4.}
 \end{figure}
+
+Model nr 4 powstał po 40 iteracjach. Wytrenował sieć neuronową po około 75 potwórzeniach gdzie 
+wartości błedu predykcji prezentuja sie w podobny sposób jak w poprzednim etapie. Jedyną róznicą
+jest gwałtowny spadek błędu predykcji w pierwszych 5 iteracjach.
+
+Ostanie AI utworzono po 4 dniach. Rys. 4.5 pokazuje, że proces nauki przebiegał początkowo z 
+niewielkim błędem predykcji i powoli sie zmniejszał do wartości 1,9 w przypadku zbioru walidacyjnego.
+Drugi zbiór doprowadził do podobnych rezoltatów jak we wszystkich etapach.
+
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=1\textwidth]{./img/model5.pdf}
+\caption{Wyniki uczenia modelu nr 5.}
 \end{figure}
+
+Podsumowując powyżesze wyniki można stwierdzić, że zbierane dane w buforze $B_{s}$
+przez Deep CFR są łatwe w znajdowaniu zależności. Główną przyczyną mogą być dane 
+wejściowe i wyjściowe o niewielkim rozmiarze wraz z prostym środowiskiem.
+Prawdopodobnie przy grach dłuższych niż jedna runda, gdzie gracz przegrywa dopiero jak straci 
+wszystkie żetony, oraz przy większym zbiorze informacji wejściowych proces uczenia by nie 
+przebiegał tak szybko. W takim przypadku model by musiał uwzględnić dodatkowe czynniki jak 
+numer rundy, liczba pozostałej sumy żetonów gracza lub przewaga przeciwnika. 
+
 \section{Wyniki rozgrywek modeli}
+
+
+W celu przetestowania jakości utworzonych modeli przeprowadzono 10 
+rozgrywek gdzie każda z nich to
+pojedyncza kombinacja dwóch AI. Każdą grę powtórzono 200 razy po pięć rund tak, aby
+zminimalizować czynnik losowości
+i umożliwić sprawdzenie, kto statystycznie częściej wygrywa.
+Następnie sporządzono trzy wykresy
+ilustrujących wyniki tych rozgrywek. Rys. 4.6 przedstawia każdą kombinację gier 
+z przypisaną liczbą 
+wygranych każdemu z modeli. Rys. 4.7 i 4.8 mają za zadanie pokazać średnią wygrywanych i przegrywanych
+pul przez graczy, a rys. 4.9 pokazuje rozkład wykonanych akcji. Takie wykresy pozwolą stwierdzić, który z modeli częściej wygrywa, ale też częściej
+ryzykuje, przegrywając więcej, a który gra ostrożniej.
+
 
 \begin{figure}[!ht]
   \centering
   \hspace*{-1cm}   
-  \includegraphics[width=1.1\textwidth]{./img/mecze.png}
-  \caption{Diagram UML projektu.}
+  \includegraphics[width=0.9\textwidth]{./img/mecze.png}
+  \caption{Kombinacje rozgrywek między utworzonymi modelami.}
 \end{figure}
+
+
+\vspace{3cm}
+Analizując rys. 4.6 można zaóważyć, że model 1 wygrywał z resztą utworzonych AI najczęściej oprócz
+nr 2.
+Najwięszą przewagę 
+zdobył względem modelu numer 4, około 130 wygranych względem 70 porażek oraz około 118 zwycięstw z
+nr 5. Rozgrywki z resztą
+uczestinków, 
+cechuje się niewielkimi przewagami gracza. Przy wielokrotnym powtarzaniu eksperymentu nr 3 i
+nr 2 mogł by się okazać lepsze przez występujący w grze czynnik losowości, który ma wpływ na
+uzyskiwane karty.
+
+Kolejny obiekt zdobywający najlepsze wyniki
+to nr 3. Osiągnął on tak samo dużą różnicę między wygranymi, a przegranymi z modelem nr 4.
+Na podstawie takich informacji można stwierdzić, że AI powstałe po 40 iteracjach przegrywa
+najczęściej,
+a
+utworzone w 1 i 3 etapie najżadziej. W
+dalszej cześci rozdziału zostanie zbadana możliwa przyczyna takich wyników.
+Powtarzając eksperyment uzyskiwano podobne rezultaty z niewielkimi zmianami, jak więsza
+częstotliwość zwycięstw modelu nr 2 i nr 3 względem nr 1 lub więszka liczba wygranych AI nr 5. 
+
+Problemem wykresu rys. 4.6 jest pokazywanie tylko częstotliwości zwycięstw modeli ale nie zawiera
+informacji o sposobie gry każdego z graczy. 
+Taka wiedza pozwoliła by na stwierdzenie możliwych przyczyn powstałych
+wyników.
+W tym celu zebrano wszystkie wygrane wartości przez graczy z każdej rundy, a następnie
+obliczono ich średnie. Rys. 4.7 przedstawia uśrednione wyniki przegrywanych pulli przez każdego z
+graczy, rys. 4.8 prezentuje odwrotną cechę. Analizując oba rysunki, można zaóważyć, że model
+nr 1, który okazał się wcześniej najlepszym AI, wygyrywa i traci najwięcej w rundach, ale też 
+najczęściej wygyrwa. Rys. 4.9 pokazuje też, że model nr 1 wykonuje tak samo często akcję \emph{call}
+i \emph{fold} oraz bardzo rzadko akcję \emph{fold}. Jest
+najbardziej zrównoważonym graczem, który uzyskuje przy tym najbardziej skrajne wyniki. Zaletą modelu jest to, że 
+średnie wartości są na podobnym poziomie, co oznacza, że wygrywa i tyle samo traci.
+Gracz nr 3, który równie często wygrywał, 
+osiąga na tych wykresach gorsze wyniki. Jego średnia wartość przegrywanej puli jest dużo wieksza
+niż
+wygrywana.  Model nr 5 gra podobnie do nr 1 co widać na rys. 4.9. Też ma równy rozkład wykonanych 
+akcji \emph{call} i \emph{raise}.
+Dodatkowo jego częstotliwośc wygyrwania przedstawiona na rys. 4.6 pokazuje, że nie uzyskuje on
+tak dobrych wyników jak nr 1. AI nr 2 gra najmniej agresywnie, najczęściej wykonywał \emph{call}.
+Może to być powód tak niskiej wygyranej puli.
+Najgorze wyniki ma gracz nr 4, który też najczęściej pasował. Uzyskał
+on znacznie większą średnia wartość wygranej względem przegranej przez taką strategię.
+
+
+\vspace{1cm}
+
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.87\textwidth]{./img/mecze_ps.pdf}
+  \caption{Wyniki przegrywanych pul przez modele.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.87\textwidth]{./img/mecze_pw.pdf}
+  \caption{Wyniki wygrywanych pul przez modele.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.87\textwidth]{./img/akcje.pdf}
+  \caption{Rozkład wybieranych akcji przez modele.}
+\end{figure}
+
+\vspace{2cm}
+\begin{table}
+\centering
+\caption{Dokładne wyniki uśrednionych puli zdobywanych lub traconych przez modele.}
+\begin{tabular}{|c|c|c| }
+   \hline
+   model & średnia wygrana & średnia przegrana \\
+    \hline
+   1 & 61 & 65 \\ 
+   \hline
+   2 & 49 & 52  \\  
+   \hline
+   3 & 53 & 58 \\
+   \hline
+   4 & 61 & 50 \\
+   \hline
+   5 & 60 & 61 \\
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\vspace{20cm}
+\section{Porównanie modeli z graczem nieblefującym}
+
+Końcowym etapem oceny jakości algorytmu Deep CFR jest wykonanie gry między najlepszymi utworzonymi
+modelami, a graczem który nie blefuje. Jest to program symulujący grę w HULH, wykonując tylko 
+akcje opierające się na sile dostępnych kart.
+W tym celu wykorzystano funkcję zawartą w bibliotece PyPokerEngine -
+\emph{estimate\_hole\_card\_win\_rate}. Wykonuje ona określoną liczbę iteracji mozliwych wersji gier, a
+nastepnie liczy szanse wygrania z dostepnymi kartami. W zalezności od zwracanej wartości
+nastepnie wykonuje akcję \emph{fold} lub \emph{call}. 
+
+Rozegrano 2 gry po 200 powtórzeń, gdzie każda z nich składała się z 5 rund. Na rys. 4.9, 4.10, 4.11 zaprezentowano
+wyniki uzyskanych rozgrywek. Pierwszy z wykresów przedstawia częstotliwośc wygrywania modeli z
+graczem szczerym (HP). W przypadku nr 3 liczba zwycięstw jest równa liczbie porażek. Drugi z
+sztucznych inteligencji uzyskał nieznacznie lepsze wyniki. Dodatkowo analizując następne wykresy
+można zauwazyć, że gracz HP przegrywa znacznie wiekszą średnią pulę względem modeli ale też wygrywa 
+większą stawkę. Oznacza to, że po mimo braku wykonywanej akcji \emph{raise} program częściej
+ryzykuje.
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{./img/honest1.pdf}
+  \caption{Wyniki rozgrywek między modelami nr 1, nr 3 i graczem nieblefującym.}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/honest2.pdf}
+  \caption{Wyniki przegrywanych pul między modelami nr 1, nr 3 i graczem nieblefującym.}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/honest3.pdf}
+  \caption{Wyniki wygrywanej pul między modelami nr 1, nr 3 i graczem nieblefującym.}
+\end{figure}
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./img/honest4.pdf}
+  \caption{Rozkład wykonywanych akcji przez modele w trakcie rozgrywek.}
+\end{figure}
+
+\section{Podsumowanie}
+
+
+Rozdział przedstawił wyniki utworzonych AI. Rezultaty okazały się mało optymistyczne. Model
+wytrenowany w ostatniej iteracji nie uzyskuje najlepszych wyników, a przedostanie AI przegrywa
+najcześciej. 
+
+
+\chapter{Podsumowanie}
+
+Praca przedstawiła problem uczenia przez wzmacnianie w środowiskach częściowo obserwowalnych. 
+Rozdziały 1 i 2 omówiły źródło takich problemów. Z tego powodu należy 
+korzystać ze skomplikowanych algorytmów, które potrafią powiązać obserwacje z najlepszymi akcjami w
+danym stanie. W przypadku gier karcianych w tym celu korzysta się z algorytmów bazujących na
+metodzie CFR. 
+
+Zaimplementowany algorytm w niniejszej pracy, Deep CFR usprawnił proces znany w metodzie CFR,
+przez użycie sieci
+neuronowych. Taka konstrukcja przyspiesza zbieganie się AI w dużych grach jak HULH
+do Równowagi Nasha \cite{DCFR}.
+Program użyty w pracy nie pozwolił na określenie stopnia bliskości
+do takiego
+stanu. Wynika to z faktu, że algorytmy używające metody CFR korzystają z metryki
+\emph{Exploaibility} bazującej na wartości BR (\emph{Best Response})  do śledzenia postępów wybieranych
+strategii przez AI \cite{lbr}.
+Taki element głównie się implementuje w grach
+abstrakcyjnych jak \emph{Kuhn Poker} z powodu bardzo dużej obciążalności obliczeniowej. 
+Duże gry stosują mniej dokładną metryki jak LBR(\emph{Local Best Response}) lub
+RL\_BR (\emph{RL Best Response}), które z dużym przybliżeniem zwracają bliskość
+modelu do Równowagi Nasha \cite{lbr} \cite{RL}. Charakteryzują się one dużym skomplikowaniem 
+implementacyjnym.
+
+ 
+Z tego powodu do oceny jakości Deep CFR użyto prostszej metody.
+Rozegrano wiele gier HULH między utworzonymi modelami, a następnie przeanalizowano wyniki
+i wybrano
+najlepszego z nich na bazie uzyskanych cech. Rezultaty okazały się mało optymistyczne w porównaniu
+do czasu poświęconego na czas uczenia modeli.
+Aktualny rozdział przedstawia możliwe przyczyny takich efektów oraz wnioski po dokonaniu wszystkich poprzednich etapów
+pracy wraz z
+mozliwymi poprawami parametów. Końcowa cześć pracy przedstawi dalszą historią algorytmu Deep CFR.
+Dodatkowo zostanie przedstawiony 
+możliwy
+kierunek rozwoju uczenia maszynowego w środowiskach częściowo-obserwowalnych.
+
+
+
+
+
+\section{Wnioski}
+
+Gra Limit Poker Texas Hold'em jest bardzo trudnym środowiskiem do uczenia sztucznych
+inteligencji, wynika to z częściowej obserwowalności. 
+Z tego powodu model Cepheus, zdolny pokonywać ludzi w takim środowisku powstał 
+dopiero w 2015 roku. Od tamtej pory rozpoczął się nagły rozwój metod uczenia maszynowego 
+coraz większych gier 
+karcianych.
+Przykładami są DeepStack lub Libratus rozwiązujące grę No Limit Texas Poker Hold'em i pokonujące
+profesjonalnych ludzi.
+
+Głównym zadaniem niniejszej pracy była próba zmierzenia się z takim środowiskiem. W celu uproszczenia
+zadania wybrano grę HULH. Następnie zaimplementowano 
+nowoczesny algorytm Deep CFR i wytrenowano pięć modeli
+rozpoznawania. Pierwszy problem, jaki napotkano to, powolna nauka sieci $\theta_{p}$,
+wraz z dużym błędem predykcji. Podczas uczenia wartości nie spadały poniżej 600.
+Możliwym rozwiązaniem jest zwiększenie parametru \emph{learning rate} oraz
+dopracowanie architektury sieci neuronowej. Dodatkową przyczyną takich rezultatów mogą być
+zbiory danych o słabej jakości. Prawdopodobnie nauka by przebiegała lepiej przez zwiększenie
+zawartości obserwowalnych informacji wejściowych przez np. liczbę żetonów w grze. W taki sposób
+sieć neuronowa by miała więcej informacji, które by zostały użyte do zwracania właściwego 
+wektora żalu.
+
+Kolejnym problemem, który może mieć duże
+znaczenie w grze to konstrukcja wprowadzanych informacji do modelu.
+Dane wejściowe użyte w implementacji to karty widziane od strony gracza oraz historia 
+z jednej rundy. Wadą takiej architektury jest to, że w praktyce rozgrywki Poker Texas Hold'em 
+mogą odbywać się dłużej. Wtedy gracz musi dodatkowo używać takich informacji jak, wybrana strategia
+przeciwnika w poprzednim etapie, czy grał ostrożnie, agresywnie albo blefował. Kolejnym czynnikiem jest 
+sposób zmieniania się gry zależnie od liczby pozostałych żetonów w puli oraz od numeru rundy. Gracze
+mogą podejmować bardziej ryzykowne i nierozważne ruchy, będąc w stanie bliskim porażki. Takie
+informacje mogłyby być kluczowe w osiągnięciu zwycięstwa.
+Prawdopodobnie przy uwzględnieniu tych elementów, utworzone modele lepiej by
+dobierały strategie do określonych stanów gry. To by wymagało wykonywania eksploracji MCCFR ES na znacznie większych drzewach decyzyjnych
+obejmujących wiele rund. Dodatkowo dane wejściowe sieci neuronowej byłyby większe.
+W takim przypadku
+możliwym zbiorem informacji mógłby być zestaw składający się z widocznych kart, historii z wielu
+rund, liczby żetonów każdego z graczy oraz numeru gry. W taki sposób model nauczyłby się 
+lepiej dostosowywać sposób gry do obserwacji. 
+
+
+Deep CFR spełnił funkcję i utworzył modele, które wygrywają z prostymi programami symulującymi
+grę Poker Texas Hold'em jak przedstawiony gracz nieblefujący, HP w rozdziale 3. Pomimo dobrych
+rezultatów dużym problemem okazał się
+proces powstawiania sztucznych inteligencji. Pozornie można by było oczekiwać, że
+algorytm będzie tworzył lepsze AI wraz z dłuższym czasem działania. W pracy doszło do odwrotnej
+sytuacji. Sztuczne inteligencje utworzone w iteracjach 10 i 40 wygrywały z późniejszymi obiektami.
+Ciężko określić przyczynę takich rezultatów. Pomocne okazałoby się użycie metryki
+$\emph{Exploiability}$ do śledzenia postępów AI pomimo zwiększenia wymaganej mocy obliczeniowej
+przez algorytm. Taki element pozwolił by na stwierdzenie czy algorytm ominął pónkt o najlepszej
+jakości i w dalszym procesie uzyskuje podobne lub coraz gorze efekty. Pozwoliło by to na zatrzymanie procesu 
+uzyskując najlepszy możliwy model z implementacji.
+
+
+
+
+
+
+
+\section{Dalszy rozwój algorytmów bazujących na metodzie CFR}
+
+Algorytm powstały w 2017 roku dawał dobre rezultaty, ale przez wykorzystanie dwuch sieci neuronowych
+tworzył duzą wariancję wyników \cite{SD-CFR}. Z tego powodu powstał jego następca Single Deep CFR.
+Po wykonanych testach uzyskał nie znacznie lepsze wyniki. Algorym dalej nie był perfekcyjny, z tego
+powodu w 2020 roku powstała metoda uczenia maszynowego o nazwie DREAM \cite{DREAM}. Są to bardzo
+dobre sposoby na wtorzenie AI w grach karcianych. Po mimio tego ich wadą jest to, że wymagają od gry
+aby wartość wygranej i przegranej sumowała się do zero. Taką cechą okresla się środowiska Zero-sum
+\cite{gt}. Przez to algorytmy są niemożliwe do użycia w wielu środowiskach.  
+Kolejnym problemem tych
+metod jest przeprowadzenie testów schodzenia się do Równowagi Nasha tylko w grach 2-osobowych \cite{DCFR}.
+Wiele środowisk jak Poker Texas Hold'em standardowo uwzględnia wiekszą ilosć uczestników. Na
+podstawie takich informacji można stwierdzić, że zimplementowany Deep CFR wraz z jego następcami nie
+wyczerpały tematu środowisk gier karcianych. Nawet najnowsze AI, które pokonują profesjonalnych
+graczy jak DeepStack lub Libratus muszą trzymać sie tego warunku \cite{libratus} \cite{ds}. 
+Oznacza to, że takie gry to bardzo trudne środowiska, które prawdopodobnie będą jeszcze
+długo badane pod względem możliwych rozwiązań.
+
+
+
+
 
 \begin{thebibliography}{100}
    \bibitem{hist AI} Haenlein, Michael, and Andreas Kaplan. "A brief history of artificialintelligence: On the past, present, and future of artificial intelligence." California management review 61.4 (2019): 5-14.
@@ -1125,12 +1618,18 @@ można zauwazyć na rys. 4.2, że model nr 1 nie wygrał tylko z modelem nr 3 z 
    \bibitem{rn}  Nogal-Meger, P. (2012). Dylemat więźnia jako przykład wykorzystania teorii gier. Prace i Materiały Wydziału Zarządzania Uniwersytetu Gdańskiego, 10(4, cz. 2), 87–95.
    \bibitem{gt} Myerson, Roger B. Game theory. Harvard university press, 2013.
    \bibitem{cepheus} Bowling, Michael, et al. "Heads-up limit hold'em poker is solved." Communications of the ACM 60.11 (2017): 81-88.
+   \bibitem{libratus} Brown, Noam, and Tuomas Sandholm. "Superhuman AI for heads-up no-limit poker: Libratus beats top professionals." Science 359.6374 (2018): 418-424.
    \bibitem{ds} Moravčík, Matej, et al. "Deepstack: Expert-level artificial intelligence in heads-up no-limit poker." Science 356.6337 (2017): 508-513. 
    \bibitem{ss} Davis, Trevor, Neil Burch, and Michael Bowling. "Using response functions to measure strategy strength." Twenty-Eighth AAAI Conference on Artificial Intelligence. 2014. 
    \bibitem{mccfr} Lanctot, Marc, et al. "Monte Carlo sampling for regret minimization in extensive games." Advances in neural information processing systems 22 (2009): 1078-1086.
    \bibitem{early} Prechelt, Lutz. "Early stopping-but when?." Neural Networks: Tricks of the trade. Springer, Berlin, Heidelberg, 1998. 55-69.
 
+   \bibitem{lbr} Lisy, Viliam, and Michael Bowling. "Eqilibrium approximation quality of current no-limit poker bots." Workshops at the Thirty-First AAAI Conference on Artificial Intelligence. 2017.
+   \bibitem{RL} Eric Steinberger (2019). PokerRL in 
+   \text{https://github.com/TinkeringCode/PokerRL} GitHub.GitHub repository.
    \bibitem{numpy} Harris, C.R., Millman, K.J., van der Walt, S.J. et al. Array programming with NumPy. Nature 585, 357–362 (2020)
+   \bibitem{SD-CFR} Steinberger, Eric. "Single deep counterfactual regret minimization." arXiv preprint arXiv:1901.07621 (2019).
+   \bibitem{DREAM} Steinberger, Eric, Adam Lerer, and Noam Brown. "DREAM: Deep regret minimization with advantage baselines and model-free learning." arXiv preprint arXiv:2006.10410 (2020).
    \bibitem{tensorflow} Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo,
 Zhifeng Chen, Craig Citro, Greg S. Corrado, Andy Davis,
 Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow,

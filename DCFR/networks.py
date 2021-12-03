@@ -11,27 +11,29 @@ from sklearn.metrics import mean_squared_error
 class Poker_network:
 
     def __init__(self, 
-                 env,
+                 num_actions,
+                 cards_len,
                  activation,
                  small_hidden=256, 
                  large_hidden=512,
                  learning_rate=0.0001):
         self.__small_hidden = small_hidden
         self.__large_hidden = large_hidden
-        self.__init_weights = initializers.RandomUniform(minval=-0.005, maxval=0.005)
+        self.__init_weights = initializers.RandomUniform(minval=-0.01, maxval=0.01)
         self.__path_to_save = './models/'
         self.__activation = activation
         self.__learning_rate = learning_rate
 
         self.__batch_size = 500
-        self.__epochs = 16_000
+        self.__epochs = 5_000
 
-        self.__env = env
+        self.__num_actions = num_actions
+        self.__cards_len = cards_len
         self.model = self.__create_network()
 
     @staticmethod
     def loss_func(y_true, y_pred):
-        output, timestep = y_true[:, :-2], y_true[:, -1]
+        output, timestep = y_true[:, :-1], y_true[:, -1]
         value =  tf.math.reduce_mean(
                 tf.math.multiply(
                     ((output - y_pred)**2),
@@ -40,7 +42,7 @@ class Poker_network:
         return value
 
     def __create_network(self):
-        input_layer = Input(shape=(len(self.__env.CARDS), 3))
+        input_layer = Input(shape=(self.__cards_len, 3))
         flat = Flatten()(input_layer)
         dense_first = Dense(self.__large_hidden, kernel_initializer=self.__init_weights,
                                   activation='relu')(flat)
@@ -50,7 +52,7 @@ class Poker_network:
         dense_last = Dense(self.__small_hidden, kernel_initializer=self.__init_weights,
                                  activation='relu')(dense_second)
         norm = BatchNormalization()(dense_last)
-        output = Dense(self.__env.ACTIONS_NUM, activation=self.__activation)(norm)
+        output = Dense(self.__num_actions, activation=self.__activation)(norm)
 
         model = Model(inputs=input_layer,outputs=output)
 
@@ -65,7 +67,7 @@ class Poker_network:
         return self.model.predict(data[np.newaxis, :])
 
     def train_net(self, info_set, output, timesteps, tensorboard=None):
-        early_stop = EarlyStopping(monitor='val_loss', patience=10)
+        early_stop = EarlyStopping(monitor='val_loss', patience=40)
 
         if tensorboard:
             callbacks = [early_stop, tensorboard]
@@ -88,4 +90,4 @@ class Poker_network:
         self.model.save(self.__path_to_save+name)
 
     def clear_net(self):
-        self.model = self.create_network()
+        self.model = self.__create_network()

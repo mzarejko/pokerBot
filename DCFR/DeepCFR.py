@@ -1,6 +1,5 @@
 import numpy as np
 from tqdm import tqdm
-from .Tree_visualizer.Tree_creator import Tree_creator
 from .player import Brain 
 import time
 
@@ -10,13 +9,8 @@ class DCFR:
     def __init__(self, env):
         self.__player = Brain('linear', env, env.player_uuid)
         self.__opponent = Brain('linear', env, env.opponent_uuid)
-        self.__strategy = Brain('softmax', env, 'strategy', memory_size=200_000)
+        self.__strategy = Brain('softmax', env, 'strategy', memory_size=600_000)
         self.__env = env
-        self.__tree_diagram = Tree_creator()
-
-    def __save_tree(self):
-        self.__tree_diagram.save_file(f'./DCFR/Tree_visualizer/data_{time.time()}.json')
-        self.__tree_diagram.clear_tree()
 
     def iterate(self, iterate, k_iter, checkpoints=None, verbose_timestep={}):
         for i in tqdm(range(iterate), position=0, desc="Iterate", ncols=100):
@@ -33,7 +27,6 @@ class DCFR:
                                       traverser,
                                       timestep,
                                       verbose=True)
-                            self.__save_tree()
                     else:
                         self.__traverse(state, 
                                       events,
@@ -74,8 +67,6 @@ class DCFR:
         if self.__env.is_terminal(state):
             reward = self.__env.get_reward(state, events, previous_turn)
 
-            if verbose:
-                self.__tree_diagram.update_data(events, timestep, reward*-1)
             return reward
 
         if self.__env.get_turn(state) == traverser.uuid:
@@ -96,8 +87,6 @@ class DCFR:
                                                       verbose)
 
             util = sum(action_utils*strategy)
-            if verbose:
-                self.__tree_diagram.update_data(events, timestep, util)
 
             regrets = action_utils - util
             traverser.collect_samples(self.__env.get_bet_history(events),
@@ -132,6 +121,4 @@ class DCFR:
                                     timestep+1,
                                     self.__env.get_turn(state),
                                     verbose)
-            if verbose:
-                self.__tree_diagram.update_data(events, timestep, util)
             return -util

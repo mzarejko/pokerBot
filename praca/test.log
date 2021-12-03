@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  23 NOV 2021 22:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.10.26)  3 DEC 2021 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -447,6 +447,8 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count302
 \c@continuedfloat=\count303
+) (/usr/share/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 ) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
@@ -454,22 +456,22 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (./test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
@@ -485,7 +487,28 @@ LaTeX Font Info:    ... okay on input line 18.
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
@@ -592,433 +615,444 @@ Rozdzia\PlPrIeC {\l } 1.
 
 ] [3]
 Rozdzia\PlPrIeC {\l } 2.
-<./img/classification.pdf, id=18, 705.62834pt x 421.10078pt>
-File: ./img/classification.pdf Graphic file (type pdf)
-<use ./img/classification.pdf>
-Package pdftex.def Info: ./img/classification.pdf  used on input line 212.
-(pdftex.def)             Requested size: 227.62206pt x 135.83447pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4
 
-]
-<./img/class.pdf, id=22, 458.08937pt x 298.75392pt>
+] [5]
+<./img/class.pdf, id=25, 458.08937pt x 298.75392pt>
 File: ./img/class.pdf Graphic file (type pdf)
 <use ./img/class.pdf>
-Package pdftex.def Info: ./img/class.pdf  used on input line 247.
+Package pdftex.def Info: ./img/class.pdf  used on input line 307.
 (pdftex.def)             Requested size: 227.62206pt x 148.45119pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5 <./img/classification.pdf>]
-<./img/MDP.png, id=36, 790.45313pt x 428.35031pt>
+<./img/MDP.png, id=26, 790.45313pt x 428.35031pt>
 File: ./img/MDP.png Graphic file (type png)
 <use ./img/MDP.png>
-Package pdftex.def Info: ./img/MDP.png  used on input line 283.
+Package pdftex.def Info: ./img/MDP.png  used on input line 343.
 (pdftex.def)             Requested size: 227.62206pt x 123.3491pt.
- [6 <./img/class.pdf> <./img/MDP.png (PNG copy)>]
-<./img/drawing1.pdf, id=48, 995.84645pt x 421.10078pt>
+ [6 <./img/class.pdf>]
+<./img/drawing1.pdf, id=38, 995.84645pt x 421.10078pt>
 File: ./img/drawing1.pdf Graphic file (type pdf)
 <use ./img/drawing1.pdf>
-Package pdftex.def Info: ./img/drawing1.pdf  used on input line 322.
+Package pdftex.def Info: ./img/drawing1.pdf  used on input line 383.
 (pdftex.def)             Requested size: 409.71692pt x 173.25pt.
- [7 <./img/drawing1.pdf>] [8] [9]
-<./img/drawing2.pdf, id=84, 1024.29918pt x 421.10078pt>
+ [7 <./img/MDP.png (PNG copy)>] [8 <./img/drawing1.pdf>]
+Overfull \hbox (10.74959pt too wide) in paragraph at lines 465--469
+\OT4/cmr/m/n/12 Najbardziej za-awan-so-wa-na sztucz-na in-te-li-gen-cja, kt�-ra jest wy-ko-rzy-sty-wa-na w grach HUNH.
+ []
+
+[9] [10]
+<./img/drawing2.pdf, id=77, 1024.29918pt x 421.10078pt>
 File: ./img/drawing2.pdf Graphic file (type pdf)
 <use ./img/drawing2.pdf>
-Package pdftex.def Info: ./img/drawing2.pdf  used on input line 497.
+Package pdftex.def Info: ./img/drawing2.pdf  used on input line 592.
 (pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
-<./img/drawing3.pdf, id=85, 1024.29918pt x 421.10078pt>
+<./img/drawing3.pdf, id=78, 1024.29918pt x 421.10078pt>
 File: ./img/drawing3.pdf Graphic file (type pdf)
 <use ./img/drawing3.pdf>
-Package pdftex.def Info: ./img/drawing3.pdf  used on input line 507.
+Package pdftex.def Info: ./img/drawing3.pdf  used on input line 602.
 (pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
- [10 <./img/drawing2.pdf>]
-<./img/drawing4.pdf, id=108, 1024.29918pt x 421.10078pt>
+ [11 <./img/drawing2.pdf>]
+<./img/drawing4.pdf, id=101, 1024.29918pt x 421.10078pt>
 File: ./img/drawing4.pdf Graphic file (type pdf)
 <use ./img/drawing4.pdf>
-Package pdftex.def Info: ./img/drawing4.pdf  used on input line 520.
+Package pdftex.def Info: ./img/drawing4.pdf  used on input line 616.
 (pdftex.def)             Requested size: 455.24411pt x 187.15472pt.
- [11 <./img/drawing3.pdf> <./img/drawing4.pdf
+ [12 <./img/drawing3.pdf> <./img/drawing4.pdf
 
 pdfTeX warning: pdflatex (file ./img/drawing4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-<./img/tree.pdf, id=147, 685.71141pt x 597.50786pt>
+<./img/tree.pdf, id=141, 685.71141pt x 597.50786pt>
 File: ./img/tree.pdf Graphic file (type pdf)
 <use ./img/tree.pdf>
-Package pdftex.def Info: ./img/tree.pdf  used on input line 565.
+Package pdftex.def Info: ./img/tree.pdf  used on input line 661.
 (pdftex.def)             Requested size: 455.24411pt x 396.69041pt.
- [12 <./img/tree.pdf>]
-./test.tex:618: Missing $ inserted.
+ [13 <./img/tree.pdf>]
+./test.tex:689: Missing $ inserted.
 <inserted text> 
                 $
-l.618 $
+l.689 ...e wyniki są dodawane do buforów  $($B_
+                                                  {1}$, $B_{2}$) \in B_{p}$,...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:689: Missing $ inserted.
+<inserted text> 
+                $
+l.689 ...wane do buforów  $($B_{1}$, $B_{2}$) \in
+                                                   B_{p}$, a strategia do zb...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./test.tex:714: Missing $ inserted.
+<inserted text> 
+                $
+l.714 $
        \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:618: LaTeX Error: There's no line here to end.
+./test.tex:714: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 $
+l.714 $
        \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:618: Missing $ inserted.
+./test.tex:714: Missing $ inserted.
 <inserted text> 
                 $
-l.618 $
+l.714 $
        \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:618: Missing $ inserted.
+./test.tex:714: Missing $ inserted.
 <inserted text> 
                 $
-l.618 $
+l.714 $
        \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:618: LaTeX Error: Bad math environment delimiter.
+./test.tex:714: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 $
+l.714 $
        \theta_{s}$ \leftarrow \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:618: Missing $ inserted.
+./test.tex:714: Missing $ inserted.
 <inserted text> 
                 $
-l.618 $\theta_{s}$ \leftarrow
+l.714 $\theta_{s}$ \leftarrow
                               \text{TRAIN($B_{s}$, $\theta_{s}$, $t$)} \Comm...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:618: LaTeX Error: Bad math environment delimiter.
+./test.tex:714: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.618 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
+l.714 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
                                                   \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:618: Missing $ inserted.
+./test.tex:714: Missing $ inserted.
 <inserted text> 
                 $
-l.618 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
+l.714 ...(y_{i} -\widehat{y_{i}})^2$$\cdot$t_{i}$}
                                                   \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[13]
-LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 690.
+[14]
+LaTeX Font Info:    Trying to load font information for OT4+cmtt on input line 787.
  (/usr/share/texmf-dist/tex/latex/polski/ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: Bad math environment delimiter.
+./test.tex:787: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./test.tex:690: LaTeX Error: There's no line here to end.
+./test.tex:787: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./test.tex:690: Missing $ inserted.
+./test.tex:787: Missing $ inserted.
 <inserted text> 
                 $
-l.690  \caption
+l.787  \caption
                {Implementacja MCCFRES kożystając z sieci neuronowych}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[14] [15]
+[15] [16]
 Rozdzia\PlPrIeC {\l } 3.
-[16
+[17
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17]
-<./img/nn.pdf, id=227, 671.48505pt x 421.10078pt>
+[18]
+<./img/nn.pdf, id=221, 671.48505pt x 421.10078pt>
 File: ./img/nn.pdf Graphic file (type pdf)
 <use ./img/nn.pdf>
-Package pdftex.def Info: ./img/nn.pdf  used on input line 889.
+Package pdftex.def Info: ./img/nn.pdf  used on input line 989.
 (pdftex.def)             Requested size: 455.24411pt x 285.49657pt.
 
-./test.tex:906: Undefined control sequence.
-l.906 ...nych na tensorach, jakie udostępnia \emp
+./test.tex:1006: Undefined control sequence.
+l.1006 ...ych na tensorach, jakie udostępnia \emp
                                                   {Tensorflow} \cite{tensorf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1026,15 +1060,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[18]
-<./img/bzd.pdf, id=232, 773.91496pt x 597.50786pt>
+[19] [20 <./img/nn.pdf>]
+<./img/bzd.pdf, id=243, 859.73558pt x 597.50786pt>
 File: ./img/bzd.pdf Graphic file (type pdf)
 <use ./img/bzd.pdf>
-Package pdftex.def Info: ./img/bzd.pdf  used on input line 931.
-(pdftex.def)             Requested size: 455.24411pt x 351.47809pt.
- [19 <./img/nn.pdf>]
-./test.tex:954: Undefined control sequence.
-l.954 ...enia wyników uczenia użyto funkcji \emp
+Package pdftex.def Info: ./img/bzd.pdf  used on input line 1038.
+(pdftex.def)             Requested size: 455.24411pt x 316.39502pt.
+
+./test.tex:1056: Undefined control sequence.
+l.1056 ...nia wyników uczenia użyto funkcji \emp
                                                   {EarlyStopping} \cite{tens...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1042,83 +1076,148 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./img/early.pdf, id=251, 258.92007pt x 210.5504pt>
+<./img/early.pdf, id=244, 258.92007pt x 210.5504pt>
 File: ./img/early.pdf Graphic file (type pdf)
 <use ./img/early.pdf>
-Package pdftex.def Info: ./img/early.pdf  used on input line 963.
+Package pdftex.def Info: ./img/early.pdf  used on input line 1065.
 (pdftex.def)             Requested size: 318.66948pt x 259.14894pt.
-[20 <./img/bzd.pdf>] [21 <./img/early.pdf>]
-<./img/uml.pdf, id=316, 2976.1582pt x 3383.03278pt>
+[21 <./img/bzd.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22 <./img/early.pdf>] [23]
+<./img/uml.pdf, id=385, 3383.03278pt x 2392.87677pt>
 File: ./img/uml.pdf Graphic file (type pdf)
 <use ./img/uml.pdf>
-Package pdftex.def Info: ./img/uml.pdf  used on input line 1051.
-(pdftex.def)             Requested size: 500.77129pt x 569.22319pt.
+Package pdftex.def Info: ./img/uml.pdf  used on input line 1190.
+(pdftex.def)             Requested size: 500.77129pt x 354.20595pt.
 
-Overfull \hbox (19.68552pt too wide) in paragraph at lines 1050--1052
+Overfull \hbox (19.68552pt too wide) in paragraph at lines 1189--1191
  []|  [] 
  []
 
-[22] [23 <./img/uml.pdf>]
+[24 <./img/uml.pdf>]
 Rozdzia\PlPrIeC {\l } 4.
-<./img/model1.pdf, id=330, 836.511pt x 421.10078pt>
+./test.tex:1204: Undefined control sequence.
+l.1204 ...cych na danych pobranych z modułu \empg
+                                                  {TensorBoard}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<./img/model1.pdf, id=396, 628.80588pt x 298.75392pt>
 File: ./img/model1.pdf Graphic file (type pdf)
 <use ./img/model1.pdf>
-Package pdftex.def Info: ./img/model1.pdf  used on input line 1078.
-(pdftex.def)             Requested size: 455.24411pt x 229.17088pt.
-<./img/model2.pdf, id=331, 526.37596pt x 298.75392pt>
+Package pdftex.def Info: ./img/model1.pdf  used on input line 1235.
+(pdftex.def)             Requested size: 455.24411pt x 216.29701pt.
+<./img/model2.pdf, id=397, 421.10078pt x 210.5504pt>
 File: ./img/model2.pdf Graphic file (type pdf)
 <use ./img/model2.pdf>
-Package pdftex.def Info: ./img/model2.pdf  used on input line 1084.
-(pdftex.def)             Requested size: 455.24411pt x 258.3958pt.
-<./img/model3.pdf, id=332, 756.8433pt x 421.10078pt>
-File: ./img/model3.pdf Graphic file (type pdf)
-<use ./img/model3.pdf>
-Package pdftex.def Info: ./img/model3.pdf  used on input line 1089.
-(pdftex.def)             Requested size: 455.24411pt x 253.29854pt.
-<./img/model4.pdf, id=333, 569.05513pt x 304.4445pt>
-File: ./img/model4.pdf Graphic file (type pdf)
-<use ./img/model4.pdf>
-Package pdftex.def Info: ./img/model4.pdf  used on input line 1094.
-(pdftex.def)             Requested size: 455.24411pt x 243.56522pt.
-<./img/model5.pdf, id=334, 560.51927pt x 298.75392pt>
-File: ./img/model5.pdf Graphic file (type pdf)
-<use ./img/model5.pdf>
-Package pdftex.def Info: ./img/model5.pdf  used on input line 1098.
-(pdftex.def)             Requested size: 455.24411pt x 242.65034pt.
-<./img/mecze.png, id=335, 1387.584pt x 718.3638pt>
-File: ./img/mecze.png Graphic file (type png)
-<use ./img/mecze.png>
-Package pdftex.def Info: ./img/mecze.png  used on input line 1105.
-(pdftex.def)             Requested size: 500.77129pt x 259.24652pt.
+Package pdftex.def Info: ./img/model2.pdf  used on input line 1242.
+(pdftex.def)             Requested size: 455.24411pt x 227.62236pt.
+[25
 
-Overfull \hbox (19.68552pt too wide) in paragraph at lines 1104--1106
- []|  [] 
- []
-
-[24
-
-] [25 <./img/model1.pdf> <./img/model2.pdf
+] [26 <./img/model1.pdf> <./img/model2.pdf
 
 pdfTeX warning: pdflatex (file ./img/model2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [26 <./img/model3.pdf> <./img/model4.pdf
+>]
+<./img/model3.pdf, id=575, 623.11537pt x 298.75392pt>
+File: ./img/model3.pdf Graphic file (type pdf)
+<use ./img/model3.pdf>
+Package pdftex.def Info: ./img/model3.pdf  used on input line 1276.
+(pdftex.def)             Requested size: 455.24411pt x 218.27089pt.
+<./img/model4.pdf, id=576, 426.79132pt x 210.5504pt>
+File: ./img/model4.pdf Graphic file (type pdf)
+<use ./img/model4.pdf>
+Package pdftex.def Info: ./img/model4.pdf  used on input line 1283.
+(pdftex.def)             Requested size: 455.24411pt x 224.58952pt.
+ [27 <./img/model3.pdf> <./img/model4.pdf
 
 pdfTeX warning: pdflatex (file ./img/model4.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [27 <./img/model5.pdf> <./img/mecze.png>] [28
+>]
+<./img/model5.pdf, id=766, 1258.3713pt x 597.55246pt>
+File: ./img/model5.pdf Graphic file (type pdf)
+<use ./img/model5.pdf>
+Package pdftex.def Info: ./img/model5.pdf  used on input line 1297.
+(pdftex.def)             Requested size: 455.24411pt x 216.17639pt.
+<./img/mecze.png, id=767, 491.436pt x 527.571pt>
+File: ./img/mecze.png Graphic file (type png)
+<use ./img/mecze.png>
+Package pdftex.def Info: ./img/mecze.png  used on input line 1328.
+(pdftex.def)             Requested size: 409.71692pt x 439.86414pt.
+ [28 <./img/model5.pdf>] [29 <./img/mecze.png>]
+<./img/mecze_ps.pdf, id=864, 462.52802pt x 346.89601pt>
+File: ./img/mecze_ps.pdf Graphic file (type pdf)
+<use ./img/mecze_ps.pdf>
+Package pdftex.def Info: ./img/mecze_ps.pdf  used on input line 1384.
+(pdftex.def)             Requested size: 396.06015pt x 297.05968pt.
+<./img/mecze_pw.pdf, id=865, 462.52802pt x 346.89601pt>
+File: ./img/mecze_pw.pdf Graphic file (type pdf)
+<use ./img/mecze_pw.pdf>
+Package pdftex.def Info: ./img/mecze_pw.pdf  used on input line 1391.
+(pdftex.def)             Requested size: 396.06015pt x 297.05968pt.
+<./img/akcje.pdf, id=866, 462.52802pt x 346.89601pt>
+File: ./img/akcje.pdf Graphic file (type pdf)
+<use ./img/akcje.pdf>
+Package pdftex.def Info: ./img/akcje.pdf  used on input line 1398.
+(pdftex.def)             Requested size: 396.06015pt x 297.05968pt.
+ [30 <./img/mecze_ps.pdf>]
 
-] [29] (./test.aux) ) 
+LaTeX Warning: Text page 31 contains only floats.
+
+[31 <./img/mecze_pw.pdf> <./img/akcje.pdf
+
+pdfTeX warning: pdflatex (file ./img/akcje.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<./img/honest1.pdf, id=903, 462.52798pt x 346.89601pt>
+File: ./img/honest1.pdf Graphic file (type pdf)
+<use ./img/honest1.pdf>
+Package pdftex.def Info: ./img/honest1.pdf  used on input line 1447.
+(pdftex.def)             Requested size: 273.14923pt x 204.8733pt.
+<./img/honest2.pdf, id=904, 462.52798pt x 346.89601pt>
+File: ./img/honest2.pdf Graphic file (type pdf)
+<use ./img/honest2.pdf>
+Package pdftex.def Info: ./img/honest2.pdf  used on input line 1455.
+(pdftex.def)             Requested size: 364.19667pt x 273.16087pt.
+<./img/honest3.pdf, id=905, 462.52798pt x 346.89601pt>
+File: ./img/honest3.pdf Graphic file (type pdf)
+<use ./img/honest3.pdf>
+Package pdftex.def Info: ./img/honest3.pdf  used on input line 1461.
+(pdftex.def)             Requested size: 364.19667pt x 273.16087pt.
+<./img/honest4.pdf, id=906, 462.52802pt x 346.89601pt>
+File: ./img/honest4.pdf Graphic file (type pdf)
+<use ./img/honest4.pdf>
+Package pdftex.def Info: ./img/honest4.pdf  used on input line 1468.
+(pdftex.def)             Requested size: 364.19667pt x 273.16087pt.
+ [32 <./img/honest1.pdf>]
+
+LaTeX Warning: Text page 33 contains only floats.
+
+[33 <./img/honest2.pdf> <./img/honest3.pdf
+
+pdfTeX warning: pdflatex (file ./img/honest3.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [34 <./img/honest4.pdf>]
+Rozdzia\PlPrIeC {\l } 5.
+[35
+
+] [36] [37] [38
+
+] [39] (./test.aux) ) 
 Here is how much of TeX's memory you used:
- 7466 strings out of 478994
- 114277 string characters out of 5864750
- 455666 words of memory out of 5000000
- 24818 multiletter control sequences out of 15000+600000
+ 7968 strings out of 478994
+ 123103 string characters out of 5864750
+ 465215 words of memory out of 5000000
+ 25282 multiletter control sequences out of 15000+600000
  415615 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,22n,88p,362b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plti12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/pltt12.pfb>
-Output written on test.pdf (30 pages, 1567577 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbx8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy6.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plsy8.pfb></usr/share/texmf-dist/fonts/type1/public/pl/plti12.pfb></usr/share/texmf-dist/fonts/type1/public/pl/pltt12.pfb>
+Output written on test.pdf (40 pages, 1675890 bytes).
 PDF statistics:
- 917 PDF objects out of 1000 (max. 8388607)
- 613 compressed objects within 7 object streams
+ 1163 PDF objects out of 1200 (max. 8388607)
+ 720 compressed objects within 8 object streams
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
