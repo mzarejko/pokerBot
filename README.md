@@ -19,12 +19,11 @@ program which simulate beginner player.
 2. [Technologies](#Technologies)
 3. [Build](#Build)
 4. [Results](#Results)
-5. [Current page layout](#layout)
 
 ## Goal <a name="goal"></a>
 
 - [x] Implementation of [Deep CFR](./DCFR) and [MCCFR ES](./DCFR).
-- [x] Create emulator for HULH (*Heads Up Limit Texas Poker Hold’em*) by [PyPokerEngine](https://github.com/ishikota/PyPokerEngine)
+- [x] Create emulator for [HULH](./HULH.py) by [PyPokerEngine](https://github.com/ishikota/PyPokerEngine)
 - [x] Train AI by 50 iterations and create 5 models ([M10](./models/M10), [M20](./models/M20), [M30](./models/M30),
     [M40](./models/M40), [M50](./models/M50)) every 10 epochs.
 - [ ] Implementation RNN
@@ -48,12 +47,12 @@ For local development all libraries can be installed with command:
 ### Neural Network Architecture
 
 
-![alt text](./praca/img/nn.pdf?raw=true)
+![alt text](./praca/img_png/nn.png?raw=true)
 
 ### Replay Memory
 
 
-![alt text](./praca/img/bzd.pdf?raw=true)
+![alt text](./praca/img_png/bzd.png?raw=true)
 
 ### HULH parametrs
 
@@ -77,13 +76,13 @@ save model each iterations          | 10
 
 ### UML
 
-![alt text](./praca/img/uml.pdf?raw=true)
+![alt text](./praca/img_png/uml.png?raw=true)
 
 ## Results  <a name="Results"></a>
 
-![alt text](./praca/img/mecze.pdf?raw=true)
-![alt text](./praca/img/mecze_ps.pdf?raw=true)
-![alt text](./praca/img/mecze_pw.pdf?raw=true)
-![alt text](./praca/img/akcje.pdf?raw=true)
+![alt text](./praca/img_png/mecze.png?raw=true)
+![alt text](./praca/img_png/mecze_ps.png?raw=true)
+![alt text](./praca/img_png/mecze_pw.png?raw=true)
+![alt text](./praca/img_png/akcje.png?raw=true)
 
 
