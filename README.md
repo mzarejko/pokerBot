@@ -35,7 +35,9 @@ program which simulate beginner player.
 
 For local development all libraries can be installed with command:
 
-  $ pip install -r requirements.txt 
+
+    $ pip install -r requirements.txt 
+
 
    Neural Network             | DCFR                        | HULH
 ------------------------------|------------------------------|------------                                                                     
