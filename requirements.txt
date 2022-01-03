@@ -1,5 +1,9 @@
 tensorflow==2.6
 numpy==1.21
 pypokerengine
+tqdm
+pandas
+matplotlib
+
 
 

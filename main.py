@@ -14,7 +14,7 @@ def train():
 def eval(paths, iters):
     models = {}
     for path in paths:
-        models[path.split('_')[-1]] = load_model(path, custom_objects={'loss_func': Poker_network.loss_func})
+        models[path.split('/')[-1]] = load_model(path, custom_objects={'loss_func': Poker_network.loss_func})
 
     h2hs = list(combinations(models.keys(), 2))
     ev = Evaluator(models)
@@ -29,7 +29,7 @@ def model_vs_honest(paths, iters):
     player = HonestPlayer(100, 2)
     models['HP'] = player
     for path in paths:
-        models[path.split('_')[-1]] = load_model(path, custom_objects={'loss_func': Poker_network.loss_func})
+        models[path.split('/')[-1]] = load_model(path, custom_objects={'loss_func': Poker_network.loss_func})
     h2hs = list(combinations(models.keys(), 2))
     for vs in h2hs:
         if 'HP' not in vs:
@@ -44,10 +44,10 @@ def model_vs_honest(paths, iters):
     
 if __name__ == '__main__':
     #train()
-    eval(['./models/model_1', 
-           './models/model_2',
-           './models/model_3',
-           './models/model_4',
-           './models/model_5']
-          , 1)
-    # model_vs_honest(['./models/model_1', './models/model_3'], 200)
+    # eval(['./models/M10', 
+           # './models/M20',
+           # './models/M30',
+           # './models/M40',
+           # './models/M50']
+          # , 200)
+    model_vs_honest(['./models/M10', './models/M30'], 200)

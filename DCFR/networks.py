@@ -5,7 +5,6 @@ from tensorflow.keras import initializers
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras.callbacks import EarlyStopping
-from sklearn.metrics import mean_squared_error
 
 
 class Poker_network:

@@ -1,6 +1,6 @@
 import numpy as np
 from tqdm import tqdm
-from .player import Brain 
+from .brain import Brain 
 import time
 
 

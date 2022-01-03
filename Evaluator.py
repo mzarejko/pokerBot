@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import logging
 from tensorflow.python.keras.engine.functional import Functional
 
-
 class Evaluator:
 
     def __init__(self, models):
@@ -53,6 +52,7 @@ class Evaluator:
         ax.set_ylabel('Wykonywane akcje [%]', fontsize=12)
         ax.grid(ls=":")
         ax.legend()
+        plt.xticks(rotation=0)
         plt.tight_layout()
         plt.show()
 
@@ -62,7 +62,6 @@ class Evaluator:
         for model in rews.keys():
             avg[model] = np.mean([-x for x in rews[model] if x < 0])
 
-        print(avg)
         id = list(avg.keys())
         data = list(avg.values())
 
@@ -190,5 +189,4 @@ class Evaluator:
                 else:
                     winners[1][id] += 1
 
-        print(actions_rate)
         return winners, matchs, rewards, actions_rate
