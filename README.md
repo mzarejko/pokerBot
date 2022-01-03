@@ -23,8 +23,7 @@ program which simulate beginner player.
 
 ## Goal <a name="goal"></a>
 
-- [x] Implementation of Deep CFR (*Counterfactual Regret Minimization*) and MCCFR ES (*Monte  Carlo  Conterfactual  
-  RegretMinimization*).
+- [x] Implementation of [Deep CFR](./DCFR) and [MCCFR ES](./DCFR).
 - [x] Create emulator for HULH (*Heads Up Limit Texas Poker Hold’em*) by [PyPokerEngine](https://github.com/ishikota/PyPokerEngine)
 - [x] Train AI by 50 iterations and create 5 models ([M10](./models/M10), [M20](./models/M20), [M30](./models/M30),
     [M40](./models/M40), [M50](./models/M50)) every 10 epochs.
