@@ -23,13 +23,13 @@ program which simulate beginner player.
 
 ## Goal <a name="goal"></a>
 
-[x] Implementation of Deep CFR (*Counterfactual Regret Minimization*) and MCCFR ES (*Monte  Carlo  Conterfactual  
+- [x] Implementation of Deep CFR (*Counterfactual Regret Minimization*) and MCCFR ES (*Monte  Carlo  Conterfactual  
   RegretMinimization*).
-[x] Create emulator for HULH (*Heads Up Limit Texas Poker Hold’em*) by [PyPokerEngine](https://github.com/ishikota/PyPokerEngine)
-[x] Train AI by 50 iterations and create 5 models ([M10](./models/M10), [M20](./models/M20), [M30](./models/M30),
+- [x] Create emulator for HULH (*Heads Up Limit Texas Poker Hold’em*) by [PyPokerEngine](https://github.com/ishikota/PyPokerEngine)
+- [x] Train AI by 50 iterations and create 5 models ([M10](./models/M10), [M20](./models/M20), [M30](./models/M30),
     [M40](./models/M40), [M50](./models/M50)) every 10 epochs.
-[ ] Implementation RNN
-[ ] Train MCCFR ES for many rounds
+- [ ] Implementation RNN
+- [ ] Train MCCFR ES for many rounds
 
 ## Technologies <a name="technologies"></a>
 
@@ -38,9 +38,9 @@ For local development all libraries can be installed with command:
   $ pip install -r requirements.txt 
 
    Neural Network             | DCFR                        | HULH
-------------------------------|-------------------------------------------                                                                     
-tensorflow 2.6                | tqdm                        | pypokerengine
-numpy 1.21                    | numpy 1.21                  | numpy 1.21
+------------------------------|------------------------------|------------                                                                     
+   tensorflow 2.6                | tqdm                        | pypokerengine
+   numpy 1.21                    | numpy 1.21                  | numpy 1.21
 
 ## Build <a name="Build"></a>
 
