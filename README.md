@@ -47,12 +47,12 @@ For local development all libraries can be installed with command:
 ### Neural Network Architecture
 
 
-![alt text](./praca/img_png/nn.png?raw=true)
+![alt text](./thesis/img_png/nn.png?raw=true)
 
 ### Replay Memory
 
 
-![alt text](./praca/img_png/bzd.png?raw=true)
+![alt text](./thesis/img_png/bzd.png?raw=true)
 
 ### HULH parametrs
 
@@ -76,13 +76,13 @@ save model each iterations          | 10
 
 ### UML
 
-![alt text](./praca/img_png/uml.png?raw=true)
+![alt text](./thesis/img_png/uml.png?raw=true)
 
 ## Results  <a name="Results"></a>
 
-![alt text](./praca/img_png/mecze.png?raw=true)
-![alt text](./praca/img_png/mecze_ps.png?raw=true)
-![alt text](./praca/img_png/mecze_pw.png?raw=true)
-![alt text](./praca/img_png/akcje.png?raw=true)
+![alt text](./thesis/img_png/mecze.png?raw=true)
+![alt text](./thesis/img_png/mecze_ps.png?raw=true)
+![alt text](./thesis/img_png/mecze_pw.png?raw=true)
+![alt text](./thesis/img_png/akcje.png?raw=true)
 
 
